@@ -1,0 +1,45 @@
+.site-footer {
+    border-top: 1.5px solid $lightBrown;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    .site-info {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__logo {
+        width: 8rem;
+        height: 8rem;
+        g {
+            fill: $lightBrown !important;
+        }
+    }
+    .footer-navigation {
+        #footer-menu {
+            list-style: none;
+            li {
+                a {
+                    text-decoration: none;
+                    color: $lightBrown;
+                    font-weight: 300;
+                    letter-spacing: 0.5px;
+                    display: block;
+                    padding-bottom: 1rem;
+                }
+            }
+        }
+        margin-bottom: 4rem;
+    }
+    &__copyright {
+        display: block;
+        color: $lightBrown;
+        font-weight: 300;
+        margin-bottom: 1.2rem;
+    }
+    &__design-credit {
+        a {
+            color: $brown;
+            font-style: italic;
+            letter-spacing: 0.8px;
+        }
+    }
+}

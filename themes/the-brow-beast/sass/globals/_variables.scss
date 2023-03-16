@@ -1,0 +1,28 @@
+$italiana: 'Italiana', serif;
+$roboto: 'Roboto', sans-serif;
+$poppins: 'Poppins', sans-serif;
+
+/*
+ * Responsive Breakpoints
+ ***************************/
+ $mobile_max: 767px;
+ $tablet_min: 768px;
+ $tablet_max: 1024px;
+ $desktop_min: 1025px;
+ $desktop_max: 1439px;
+ $widescreen_min: 1440px;
+
+/*
+  * Margins / Max Widths
+  ***************************/
+  $container_mobile_margins: 16px;
+  $container_desktop_margins: 16px;
+  $container_desktop_max_width: 959px;
+  $container_widescreen_margins: 16px;
+  $container_widescreen_max_width: 1200px;
+  
+  $content_mobile_margins: 32px;
+  $content_desktop_margins: 32px;
+  $content_desktop_max_width: 620px;
+  $content_widescreen_margins: 32px;
+  $content_widescreen_max_width: 750px;
