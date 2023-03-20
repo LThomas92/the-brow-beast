@@ -5,6 +5,15 @@ let gutenbergScrollAnims = false;
 let blockTriggerHeight = $(window).height() * 0.33;
 
 $( document ).ready(function() {
+  $('.c-page-services__service').each(function() {
+    $(this).find('.c-page-services__more-info').click(function() {
+     var moreInfo = $(this).find('.c-page-services__more-info-text');
+     console.log(moreInfo);
+     $(moreInfo).addClass('sumfin');
+    });
+});
+
+
   //slick js
   $('.c-homepage-slider__slides').slick({
     slidesToShow: 1,
@@ -88,5 +97,4 @@ if (
     }
   });
 }
-
 });

@@ -79,6 +79,40 @@ l-844 0 0 1665 0 1665 863 0 c524 0 897 -4 952 -10z"/>
 		</div>
 
 		<div class="site-footer__right-side">
+      <?php $newsletterText = get_field('newsletter_text', 'option'); ?>
+      <div class="site-footer__signup-section">
+        <a class="site-footer__signup-cta" href="">Sign Up</a>
+        <p class="site-footer__signup-newsletter-text"><?php echo $newsletterText; ?></p>
+      </div>
+      <div class="site-footer__payment-methods">
+        <?php 
+          $paymentMethods = get_field('payment_methods', 'option'); ?>
+        <img src="<?php echo $paymentMethods['url']; ?>" alt="<?php echo $paymentMethods['alt']; ?>">
+      </div>
+      
+      <?php if( have_rows('social_media', 'option') ): ?>
+           <ul class="site-footer__social-media-icons">
+        <?php while( have_rows('social_media', 'option') ) : the_row();
+
+        // Load sub field value.
+        $socialMediaCTA = get_sub_field('cta');
+        $socialMediaIcon = get_sub_field('icon'); ?>
+       
+        <li class="site-footer__social-media-icon">
+          <a target="_blank" href="<?php echo $socialMediaCTA; ?>">
+            <img src="<?php echo esc_url($socialMediaIcon['url']); ?>" alt="<?php echo esc_attr($socialMediaIcon['alt']); ?>"/>
+          </a>
+        </li>
+
+        <?php // End loop.
+        endwhile; ?>
+        </ul>
+
+    <?php // No value.
+    else :
+        // Do something...
+    endif; 
+    ?>
 
 		</div>
 		
