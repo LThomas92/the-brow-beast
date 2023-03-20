@@ -282,22 +282,14 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 			// save post_title
 			if ( isset( $_POST['acf']['_post_title'] ) ) {
 
-<<<<<<< HEAD
 				$save['post_title'] = acf_extract_var( $_POST['acf'], '_post_title' );
-=======
-				$save['post_title'] = acf_extract_var( $_POST['acf'], '_post_title' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized by WP when saved.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 			}
 
 			// save post_content
 			if ( isset( $_POST['acf']['_post_content'] ) ) {
 
-<<<<<<< HEAD
 				$save['post_content'] = acf_extract_var( $_POST['acf'], '_post_content' );
-=======
-				$save['post_content'] = acf_extract_var( $_POST['acf'], '_post_content' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized by WP when saved.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 			}
 			// phpcs:enable WordPress.Security.NonceVerification.Missing
@@ -381,19 +373,11 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 			}
 
 			// Load registered form using id.
-<<<<<<< HEAD
 			$form = $this->get_form( $_POST['_acf_form'] );
 
 			// Fallback to encrypted JSON.
 			if ( ! $form ) {
 				$form = json_decode( acf_decrypt( $_POST['_acf_form'] ), true );
-=======
-			$form = $this->get_form( acf_sanitize_request_args( $_POST['_acf_form'] ) );
-
-			// Fallback to encrypted JSON.
-			if ( ! $form ) {
-				$form = json_decode( acf_decrypt( sanitize_text_field( $_POST['_acf_form'] ) ), true );
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 				if ( ! $form ) {
 					return false;
 				}
@@ -401,11 +385,7 @@ if ( ! class_exists( 'acf_form_front' ) ) :
 
 			// Run kses on all $_POST data.
 			if ( $form['kses'] && isset( $_POST['acf'] ) ) {
-<<<<<<< HEAD
 				$_POST['acf'] = wp_kses_post_deep( $_POST['acf'] );
-=======
-				$_POST['acf'] = wp_kses_post_deep( $_POST['acf'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- False positive.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			}
 
 			// Validate data and show errors.

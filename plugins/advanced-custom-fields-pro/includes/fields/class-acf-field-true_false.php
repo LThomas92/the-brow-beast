@@ -131,17 +131,10 @@ if ( ! class_exists( 'acf_field_true_false' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-<<<<<<< HEAD
 					'label' => __( 'Message', 'acf' ),
 					'hint'  => __( 'Displays text alongside the checkbox', 'acf' ),
 					'type'  => 'text',
 					'name'  => 'message',
-=======
-					'label'        => __( 'Message', 'acf' ),
-					'instructions' => __( 'Displays text alongside the checkbox', 'acf' ),
-					'type'         => 'text',
-					'name'         => 'message',
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 				)
 			);
 

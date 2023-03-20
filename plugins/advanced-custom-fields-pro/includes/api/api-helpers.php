@@ -786,11 +786,7 @@ function acf_verify_nonce( $value ) {
 function acf_verify_ajax() {
 
 	// bail early if not acf nonce
-<<<<<<< HEAD
 	if ( empty( $_REQUEST['nonce'] ) || ! wp_verify_nonce( $_REQUEST['nonce'], 'acf_nonce' ) ) {
-=======
-	if ( empty( $_REQUEST['nonce'] ) || ! wp_verify_nonce( sanitize_text_field( $_REQUEST['nonce'] ), 'acf_nonce' ) ) {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 		return false;
 	}
 
@@ -2703,7 +2699,6 @@ function acf_isset_termmeta( $taxonomy = '' ) {
  */
 function acf_upload_files( $ancestors = array() ) {
 
-<<<<<<< HEAD
 	// vars
 	$file = array(
 		'name'     => '',
@@ -2719,9 +2714,6 @@ function acf_upload_files( $ancestors = array() ) {
 		$file[ $k ] = $_FILES['acf'][ $k ];
 
 	}
-=======
-	$file = acf_sanitize_files_array( $_FILES['acf'] );
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 	// walk through ancestors
 	if ( ! empty( $ancestors ) ) {
@@ -2759,11 +2751,7 @@ function acf_upload_files( $ancestors = array() ) {
 	$field_key  = end( $ancestors );
 	$nonce_name = $field_key . '_file_nonce';
 
-<<<<<<< HEAD
 	if ( empty( $_REQUEST['acf'][ $nonce_name ] ) || ! wp_verify_nonce( $_REQUEST['acf'][ $nonce_name ], 'acf/file_uploader_nonce/' . $field_key ) ) {
-=======
-	if ( empty( $_REQUEST['acf'][ $nonce_name ] ) || ! wp_verify_nonce( sanitize_text_field( $_REQUEST['acf'][ $nonce_name ] ), 'acf/file_uploader_nonce/' . $field_key ) ) {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 		return;
 	}
 
@@ -2944,21 +2932,13 @@ function acf_maybe_get( $array = array(), $key = 0, $default = null ) {
 
 function acf_maybe_get_POST( $key = '', $default = null ) {
 
-<<<<<<< HEAD
 	return isset( $_POST[ $key ] ) ? $_POST[ $key ] : $default; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.NonceVerification.Missing -- Checked elsewhere.
-=======
-	return isset( $_POST[ $key ] ) ? acf_sanitize_request_args( $_POST[ $key ] ) : $default; // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.NonceVerification.Missing -- Checked elsewhere.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 }
 
 function acf_maybe_get_GET( $key = '', $default = null ) {
 
-<<<<<<< HEAD
 	return isset( $_GET[ $key ] ) ? $_GET[ $key ] : $default; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Checked elsewhere.
-=======
-	return isset( $_GET[ $key ] ) ? acf_sanitize_request_args( $_GET[ $key ] ) : $default; // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Checked elsewhere.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 }
 
@@ -3776,11 +3756,7 @@ function acf_get_browser() {
 
 	// Check server var.
 	if ( isset( $_SERVER['HTTP_USER_AGENT'] ) ) {
-<<<<<<< HEAD
 		$agent = $_SERVER['HTTP_USER_AGENT'];
-=======
-		$agent = sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] );
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 		// Loop over search terms.
 		$browsers = array(

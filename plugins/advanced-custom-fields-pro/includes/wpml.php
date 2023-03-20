@@ -286,11 +286,7 @@ if ( ! class_exists( 'ACF_WPML_Compatibility' ) ) :
 			// this will allow get_posts to work as expected (load posts from the correct language)
 			if ( isset( $_REQUEST['lang'] ) ) {
 				global $sitepress;
-<<<<<<< HEAD
 				$sitepress->switch_lang( $_REQUEST['lang'] );
-=======
-				$sitepress->switch_lang( sanitize_text_field( $_REQUEST['lang'] ) );
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			}
 			// phpcs:enable WordPress.Security.NonceVerification.Recommended
 		}

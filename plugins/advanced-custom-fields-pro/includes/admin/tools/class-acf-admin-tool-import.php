@@ -94,12 +94,8 @@ if ( ! class_exists( 'ACF_Admin_Tool_Import' ) ) :
 				return acf_add_admin_notice( __( 'No file selected', 'acf' ), 'warning' );
 			}
 
-<<<<<<< HEAD
 			// Get file data.
 			$file = $_FILES['acf_import_file'];
-=======
-			$file = acf_sanitize_files_array( $_FILES['acf_import_file'] );
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 			// Check errors.
 			if ( $file['error'] ) {

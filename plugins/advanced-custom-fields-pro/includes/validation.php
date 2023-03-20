@@ -205,11 +205,7 @@ if ( ! class_exists( 'acf_validation' ) ) :
 			}
 
 			// validate
-<<<<<<< HEAD
 			acf_validate_values( $_POST['acf'], 'acf' );
-=======
-			acf_validate_values( $_POST['acf'], 'acf' ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			// phpcs:enable WordPress.Security.NonceVerification.Missing
 		}
 

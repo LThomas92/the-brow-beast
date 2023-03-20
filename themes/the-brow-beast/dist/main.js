@@ -74,13 +74,96 @@ __webpack_require__(2);
 /* 1 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: ModuleBuildError: Module build failed: \n$roboto: 'Roboto', sans-serif;\n                             ^\n      Invalid CSS after \"...o', sans-serif;\": expected 1 selector or at-rule, was \"<<<<<<< HEAD\"\n      in /Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/sass/globals/_variables.scss (line 2, column 31)\n    at /Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/webpack/lib/NormalModule.js:195:19\n    at /Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.callback (/Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/sass-loader/lib/loader.js:55:13)\n    at Object.done [as callback] (/Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/neo-async/async.js:8069:18)\n    at options.error (/Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/node-sass/lib/index.js:293:32)");
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
-throw new Error("Module build failed: SyntaxError: /Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/package.json: Error while parsing JSON - Unexpected token < in JSON at position 479\n    at JSON.parse (<anonymous>)\n    at ConfigChainBuilder.addConfig (/Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/babel-core/lib/transformation/file/options/build-config-chain.js:150:65)\n    at ConfigChainBuilder.findConfigs (/Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/babel-core/lib/transformation/file/options/build-config-chain.js:102:30)\n    at buildConfigChain (/Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/babel-core/lib/transformation/file/options/build-config-chain.js:61:13)\n    at OptionManager.init (/Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/babel-core/lib/transformation/file/options/option-manager.js:354:58)\n    at File.initOptions (/Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/babel-core/lib/transformation/file/index.js:212:65)\n    at new File (/Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/babel-core/lib/transformation/file/index.js:135:24)\n    at Pipeline.transform (/Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/babel-core/lib/transformation/pipeline.js:46:16)\n    at transpile (/Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/babel-loader/lib/index.js:50:20)\n    at Object.module.exports (/Users/lawrence/Sites/localhost/the-brow-beast/wp-content/themes/the-brow-beast/node_modules/babel-loader/lib/index.js:173:20)");
+$ = jQuery.noConflict();
+let windowSize = false;
+let windowHeight = $(window).height();
+let gutenbergScrollAnims = false;
+let blockTriggerHeight = $(window).height() * 0.33;
+
+$(document).ready(function () {
+  $('.c-page-services__service').each(function () {
+    $(this).find('.c-page-services__more-info').click(function () {
+      var moreInfo = $(this).find('.c-page-services__more-info-text');
+      console.log(moreInfo);
+      $(moreInfo).addClass('sumfin');
+    });
+  });
+
+  //slick js
+  $('.c-homepage-slider__slides').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: false,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    fade: true,
+    fadeSpeed: 1000
+  });
+
+  if (jQuery(".gutenberg-styles > *").length && !(window.location.hash != "" && jQuery(window.location.hash).length)) {
+    gutenbergScrollAnims = true;
+    jQuery(".gutenberg-styles > *").each(function () {
+      let offset = jQuery(this).get(0).getBoundingClientRect().top;
+      jQuery(this).data("offset", offset);
+      jQuery(this).addClass("to-reveal");
+    });
+
+    let numRevealed = 0;
+    jQuery(".gutenberg-styles .to-reveal").each(function () {
+      if (jQuery(window).scrollTop() + windowHeight - blockTriggerHeight >= jQuery(this).data("offset")) {
+        numRevealed++;
+        const thisRef = $(this);
+        setTimeout(function () {
+          thisRef.removeClass("to-reveal");
+          thisRef.addClass("revealed");
+        }, 700 + numRevealed * 600);
+      }
+    });
+  }
+});
+
+$(window).scroll(() => {
+  let scrolled = $(window).scrollTop();
+  // gutenberg scroll anims
+  if (gutenbergScrollAnims) {
+    $(".gutenberg-styles .to-reveal").each(function () {
+      if (scrolled + windowHeight - blockTriggerHeight >= $(this).data("offset")) {
+        $(this).removeClass("to-reveal");
+        $(this).addClass("revealed");
+      }
+    });
+  }
+});
+
+$(window).resize(() => {
+  if (jQuery(".gutenberg-styles > *").length && !(window.location.hash != "" && jQuery(window.location.hash).length)) {
+    gutenbergScrollAnims = true;
+    jQuery(".gutenberg-styles > *").each(function () {
+      let offset = jQuery(this).get(0).getBoundingClientRect().top;
+      jQuery(this).data("offset", offset);
+      jQuery(this).addClass("to-reveal");
+    });
+
+    let numRevealed = 0;
+    jQuery(".gutenberg-styles .to-reveal").each(function () {
+      if (jQuery(window).scrollTop() + (windowHeight - blockTriggerHeight) >= jQuery(this).data("offset")) {
+        numRevealed++;
+        const thisRef = $(this);
+        setTimeout(function () {
+          thisRef.removeClass("to-reveal");
+          thisRef.addClass("revealed");
+        }, 700 + numRevealed * 600);
+      }
+    });
+  }
+});
 
 /***/ })
 /******/ ]);

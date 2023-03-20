@@ -9,18 +9,11 @@
 
 (function (window, undefined) {
   'use strict';
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Handles managing all events for whatever you plug it into. Priorities for hooks are based on lowest to highest in
    * that, lowest priority hooks are fired first.
    */
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   var EventManager = function () {
     /**
      * Maintain a reference to the object scope so our public methods never get confusing.
@@ -34,33 +27,19 @@
       addAction: addAction,
       storage: getStorage
     };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Contains the hooks that get registered with this EventManager. The array for storage utilizes a "flat"
      * object literal such that looking up the hook utilizes the native object literal hash.
      */
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     var STORAGE = {
       actions: {},
       filters: {}
     };
-<<<<<<< HEAD
 
     function getStorage() {
       return STORAGE;
     }
-=======
-    function getStorage() {
-      return STORAGE;
-    }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Adds an action to the event manager.
      *
@@ -69,7 +48,6 @@
      * @param [priority=10] Used to control when the function is executed in relation to other callbacks bound to the same hook
      * @param [context] Supply a value to be used for this
      */
-<<<<<<< HEAD
 
 
     function addAction(action, callback, priority, context) {
@@ -81,21 +59,10 @@
 
       return MethodsAvailable;
     }
-=======
-    function addAction(action, callback, priority, context) {
-      if (typeof action === 'string' && typeof callback === 'function') {
-        priority = parseInt(priority || 10, 10);
-        _addHook('actions', action, callback, priority, context);
-      }
-      return MethodsAvailable;
-    }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Performs an action if it exists. You can pass as many arguments as you want to this function; the only rule is
      * that the first argument must always be the action.
      */
-<<<<<<< HEAD
 
 
     function
@@ -110,42 +77,21 @@
 
       return MethodsAvailable;
     }
-=======
-    function doAction( /* action, arg1, arg2, ... */
-    ) {
-      var args = Array.prototype.slice.call(arguments);
-      var action = args.shift();
-      if (typeof action === 'string') {
-        _runHook('actions', action, args);
-      }
-      return MethodsAvailable;
-    }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Removes the specified action if it contains a namespace.identifier & exists.
      *
      * @param action The action to remove
      * @param [callback] Callback function to remove
      */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     function removeAction(action, callback) {
       if (typeof action === 'string') {
         _removeHook('actions', action, callback);
       }
-<<<<<<< HEAD
 
       return MethodsAvailable;
     }
-=======
-      return MethodsAvailable;
-    }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Adds a filter to the event manager.
      *
@@ -154,7 +100,6 @@
      * @param [priority=10] Used to control when the function is executed in relation to other callbacks bound to the same hook
      * @param [context] Supply a value to be used for this
      */
-<<<<<<< HEAD
 
 
     function addFilter(filter, callback, priority, context) {
@@ -166,21 +111,10 @@
 
       return MethodsAvailable;
     }
-=======
-    function addFilter(filter, callback, priority, context) {
-      if (typeof filter === 'string' && typeof callback === 'function') {
-        priority = parseInt(priority || 10, 10);
-        _addHook('filters', filter, callback, priority, context);
-      }
-      return MethodsAvailable;
-    }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Performs a filter if it exists. You should only ever pass 1 argument to be filtered. The only rule is that
      * the first argument must always be the filter.
      */
-<<<<<<< HEAD
 
 
     function
@@ -195,42 +129,21 @@
 
       return MethodsAvailable;
     }
-=======
-    function applyFilters( /* filter, filtered arg, arg2, ... */
-    ) {
-      var args = Array.prototype.slice.call(arguments);
-      var filter = args.shift();
-      if (typeof filter === 'string') {
-        return _runHook('filters', filter, args);
-      }
-      return MethodsAvailable;
-    }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Removes the specified filter if it contains a namespace.identifier & exists.
      *
      * @param filter The action to remove
      * @param [callback] Callback function to remove
      */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     function removeFilter(filter, callback) {
       if (typeof filter === 'string') {
         _removeHook('filters', filter, callback);
       }
-<<<<<<< HEAD
 
       return MethodsAvailable;
     }
-=======
-      return MethodsAvailable;
-    }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Removes the specified hook by resetting the value of it.
      *
@@ -238,28 +151,19 @@
      * @param hook The hook (namespace.identifier) to remove
      * @private
      */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     function _removeHook(type, hook, callback, context) {
       if (!STORAGE[type][hook]) {
         return;
       }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (!callback) {
         STORAGE[type][hook] = [];
       } else {
         var handlers = STORAGE[type][hook];
         var i;
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         if (!context) {
           for (i = handlers.length; i--;) {
             if (handlers[i].callback === callback) {
@@ -269,10 +173,7 @@
         } else {
           for (i = handlers.length; i--;) {
             var handler = handlers[i];
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
             if (handler.callback === callback && handler.context === context) {
               handlers.splice(i, 1);
             }
@@ -280,10 +181,6 @@
         }
       }
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Adds the hook to the appropriate storage container
      *
@@ -294,42 +191,26 @@
      * @param [context] A value to be used for this
      * @private
      */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     function _addHook(type, hook, callback, priority, context) {
       var hookObject = {
         callback: callback,
         priority: priority,
         context: context
-<<<<<<< HEAD
       }; // Utilize 'prop itself' : http://jsperf.com/hasownproperty-vs-in-vs-undefined/19
 
       var hooks = STORAGE[type][hook];
 
-=======
-      };
-
-      // Utilize 'prop itself' : http://jsperf.com/hasownproperty-vs-in-vs-undefined/19
-      var hooks = STORAGE[type][hook];
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (hooks) {
         hooks.push(hookObject);
         hooks = _hookInsertSort(hooks);
       } else {
         hooks = [hookObject];
       }
-<<<<<<< HEAD
 
       STORAGE[type][hook] = hooks;
     }
-=======
-      STORAGE[type][hook] = hooks;
-    }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Use an insert sort for keeping our hooks organized based on priority. This function is ridiculously faster
      * than bubble sort, etc: http://jsperf.com/javascript-sort
@@ -337,7 +218,6 @@
      * @param hooks The custom array containing all of the appropriate hooks to perform an insert sort on.
      * @private
      */
-<<<<<<< HEAD
 
 
     function _hookInsertSort(hooks) {
@@ -347,31 +227,16 @@
         tmpHook = hooks[i];
         j = i;
 
-=======
-    function _hookInsertSort(hooks) {
-      var tmpHook, j, prevHook;
-      for (var i = 1, len = hooks.length; i < len; i++) {
-        tmpHook = hooks[i];
-        j = i;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         while ((prevHook = hooks[j - 1]) && prevHook.priority > tmpHook.priority) {
           hooks[j] = hooks[j - 1];
           --j;
         }
-<<<<<<< HEAD
 
         hooks[j] = tmpHook;
       }
 
       return hooks;
     }
-=======
-        hooks[j] = tmpHook;
-      }
-      return hooks;
-    }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Runs the specified hook. If it is an action, the value is not modified but if it is a filter, it is.
      *
@@ -380,7 +245,6 @@
      * @param args Arguments to pass to the action/filter. If it's a filter, args is actually a single parameter.
      * @private
      */
-<<<<<<< HEAD
 
 
     function _runHook(type, hook, args) {
@@ -393,15 +257,6 @@
       var i = 0,
           len = handlers.length;
 
-=======
-    function _runHook(type, hook, args) {
-      var handlers = STORAGE[type][hook];
-      if (!handlers) {
-        return type === 'filters' ? args[0] : false;
-      }
-      var i = 0,
-        len = handlers.length;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (type === 'filters') {
         for (; i < len; i++) {
           args[0] = handlers[i].callback.apply(handlers[i].context, args);
@@ -411,7 +266,6 @@
           handlers[i].callback.apply(handlers[i].context, args);
         }
       }
-<<<<<<< HEAD
 
       return type === 'filters' ? args[0] : true;
     } // return all of the publicly available methods
@@ -421,16 +275,6 @@
   }; // instantiate
 
 
-=======
-      return type === 'filters' ? args[0] : true;
-    }
-
-    // return all of the publicly available methods
-    return MethodsAvailable;
-  };
-
-  // instantiate
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.hooks = new EventManager();
 })(window);
 
@@ -464,7 +308,6 @@
       // Extract vars.
       var title = this.get('title');
       var content = this.get('content');
-<<<<<<< HEAD
       var toolbar = this.get('toolbar'); // Create element.
 
       var $el = $(['<div>', '<div class="acf-modal">', '<div class="acf-modal-title">', '<h2>' + title + '</h2>', '<button class="acf-modal-close" type="button"><span class="dashicons dashicons-no"></span></button>', '</div>', '<div class="acf-modal-content">' + content + '</div>', '<div class="acf-modal-toolbar">' + toolbar + '</div>', '</div>', '<div class="acf-modal-backdrop acf-modal-close"></div>', '</div>'].join('')); // Update DOM.
@@ -475,20 +318,6 @@
 
       this.$el = $el; // Trigger action.
 
-=======
-      var toolbar = this.get('toolbar');
-
-      // Create element.
-      var $el = $(['<div>', '<div class="acf-modal">', '<div class="acf-modal-title">', '<h2>' + title + '</h2>', '<button class="acf-modal-close" type="button"><span class="dashicons dashicons-no"></span></button>', '</div>', '<div class="acf-modal-content">' + content + '</div>', '<div class="acf-modal-toolbar">' + toolbar + '</div>', '</div>', '<div class="acf-modal-backdrop acf-modal-close"></div>', '</div>'].join(''));
-
-      // Update DOM.
-      if (this.$el) {
-        this.$el.replaceWith($el);
-      }
-      this.$el = $el;
-
-      // Trigger action.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       acf.doAction('append', $el);
     },
     update: function (props) {
@@ -515,10 +344,6 @@
       this.close();
     }
   });
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns a new modal.
    *
@@ -528,10 +353,7 @@
    * @param	object props The modal props.
    * @return	object
    */
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.newModal = function (props) {
     return new acf.models.Modal(props);
   };
@@ -548,10 +370,6 @@
 (function ($, undefined) {
   // Cached regex to split keys for `addEvent`.
   var delegateEventSplitter = /^(\S+)\s*(.*)$/;
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  extend
    *
@@ -568,25 +386,16 @@
   var extend = function (protoProps) {
     // vars
     var Parent = this;
-<<<<<<< HEAD
     var Child; // The constructor function for the new subclass is either defined by you
     // (the "constructor" property in your `extend` definition), or defaulted
     // by us to simply call the parent constructor.
 
-=======
-    var Child;
-
-    // The constructor function for the new subclass is either defined by you
-    // (the "constructor" property in your `extend` definition), or defaulted
-    // by us to simply call the parent constructor.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (protoProps && protoProps.hasOwnProperty('constructor')) {
       Child = protoProps.constructor;
     } else {
       Child = function () {
         return Parent.apply(this, arguments);
       };
-<<<<<<< HEAD
     } // Add static properties to the constructor function, if supplied.
 
 
@@ -601,26 +410,6 @@
 
     return Child;
   };
-=======
-    }
-
-    // Add static properties to the constructor function, if supplied.
-    $.extend(Child, Parent);
-
-    // Set the prototype chain to inherit from `parent`, without calling
-    // `parent`'s constructor function and add the prototype properties.
-    Child.prototype = Object.create(Parent.prototype);
-    $.extend(Child.prototype, protoProps);
-    Child.prototype.constructor = Child;
-
-    // Set a convenience property in case the parent's prototype is needed later.
-    //Child.prototype.__parent__ = Parent.prototype;
-
-    // return
-    return Child;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  Model
    *
@@ -633,7 +422,6 @@
    *  @return	function.
    */
 
-<<<<<<< HEAD
 
   var Model = acf.Model = function () {
     // generate uique client id
@@ -648,30 +436,11 @@
     } // initialize
 
 
-=======
-  var Model = acf.Model = function () {
-    // generate uique client id
-    this.cid = acf.uniqueId('acf');
-
-    // set vars to avoid modifying prototype
-    this.data = $.extend(true, {}, this.data);
-
-    // pass props to setup function
-    this.setup.apply(this, arguments);
-
-    // store on element (allow this.setup to create this.$el)
-    if (this.$el && !this.$el.data('acf')) {
-      this.$el.data('acf', this);
-    }
-
-    // initialize
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     var initialize = function () {
       this.initialize();
       this.addEvents();
       this.addActions();
       this.addFilters();
-<<<<<<< HEAD
     }; // initialize on action
 
 
@@ -683,21 +452,6 @@
   }; // Attach all inheritable methods to the Model prototype.
 
 
-=======
-    };
-
-    // initialize on action
-    if (this.wait && !acf.didAction(this.wait)) {
-      this.addAction(this.wait, initialize);
-
-      // initialize now
-    } else {
-      initialize.apply(this);
-    }
-  };
-
-  // Attach all inheritable methods to the Model prototype.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   $.extend(Model.prototype, {
     // Unique model id
     id: '',
@@ -720,10 +474,7 @@
     wait: false,
     // action priority default
     priority: 10,
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  get
      *
@@ -735,17 +486,10 @@
      *  @param	string name
      *  @return	mixed
      */
-<<<<<<< HEAD
     get: function (name) {
       return this.data[name];
     },
 
-=======
-
-    get: function (name) {
-      return this.data[name];
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  has
      *
@@ -757,17 +501,10 @@
      *  @param	string name
      *  @return	boolean
      */
-<<<<<<< HEAD
     has: function (name) {
       return this.get(name) != null;
     },
 
-=======
-
-    has: function (name) {
-      return this.get(name) != null;
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  set
      *
@@ -780,7 +517,6 @@
      *  @param	mixed value
      *  @return	this
      */
-<<<<<<< HEAD
     set: function (name, value, silent) {
       // bail if unchanged
       var prevValue = this.get(name);
@@ -792,38 +528,16 @@
 
       this.data[name] = value; // trigger events
 
-=======
-
-    set: function (name, value, silent) {
-      // bail if unchanged
-      var prevValue = this.get(name);
-      if (prevValue == value) {
-        return this;
-      }
-
-      // set data
-      this.data[name] = value;
-
-      // trigger events
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (!silent) {
         this.changed = true;
         this.trigger('changed:' + name, [value, prevValue]);
         this.trigger('changed', [name, value, prevValue]);
-<<<<<<< HEAD
       } // return
 
 
       return this;
     },
 
-=======
-      }
-
-      // return
-      return this;
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  inherit
      *
@@ -835,15 +549,10 @@
      *  @param	jQuery $el
      *  @return	this
      */
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     inherit: function (data) {
       // allow jQuery
       if (data instanceof jQuery) {
         data = data.data();
-<<<<<<< HEAD
       } // extend
 
 
@@ -852,16 +561,6 @@
       return this;
     },
 
-=======
-      }
-
-      // extend
-      $.extend(this.data, data);
-
-      // return
-      return this;
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  prop
      *
@@ -873,17 +572,10 @@
      *  @param	type $var Description. Default.
      *  @return	type Description.
      */
-<<<<<<< HEAD
     prop: function () {
       return this.$el.prop.apply(this.$el, arguments);
     },
 
-=======
-
-    prop: function () {
-      return this.$el.prop.apply(this.$el, arguments);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  setup
      *
@@ -895,17 +587,10 @@
      *  @param	n/a
      *  @return	n/a
      */
-<<<<<<< HEAD
     setup: function (props) {
       $.extend(this, props);
     },
 
-=======
-
-    setup: function (props) {
-      $.extend(this, props);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  initialize
      *
@@ -917,13 +602,8 @@
      *  @param	n/a
      *  @return	n/a
      */
-<<<<<<< HEAD
     initialize: function () {},
 
-=======
-
-    initialize: function () {},
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  addElements
      *
@@ -935,25 +615,15 @@
      *  @param	type $var Description. Default.
      *  @return	type Description.
      */
-<<<<<<< HEAD
     addElements: function (elements) {
       elements = elements || this.elements || null;
       if (!elements || !Object.keys(elements).length) return false;
 
-=======
-
-    addElements: function (elements) {
-      elements = elements || this.elements || null;
-      if (!elements || !Object.keys(elements).length) return false;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       for (var i in elements) {
         this.addElement(i, elements[i]);
       }
     },
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  addElement
      *
@@ -965,17 +635,10 @@
      *  @param	type $var Description. Default.
      *  @return	type Description.
      */
-<<<<<<< HEAD
     addElement: function (name, selector) {
       this['$' + name] = this.$(selector);
     },
 
-=======
-
-    addElement: function (name, selector) {
-      this['$' + name] = this.$(selector);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  addEvents
      *
@@ -987,26 +650,16 @@
      *  @param	object events {event1 : callback, event2 : callback, etc }
      *  @return	n/a
      */
-<<<<<<< HEAD
     addEvents: function (events) {
       events = events || this.events || null;
       if (!events) return false;
 
-=======
-
-    addEvents: function (events) {
-      events = events || this.events || null;
-      if (!events) return false;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       for (var key in events) {
         var match = key.match(delegateEventSplitter);
         this.on(match[1], match[2], events[key]);
       }
     },
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  removeEvents
      *
@@ -1018,26 +671,16 @@
      *  @param	object events {event1 : callback, event2 : callback, etc }
      *  @return	n/a
      */
-<<<<<<< HEAD
     removeEvents: function (events) {
       events = events || this.events || null;
       if (!events) return false;
 
-=======
-
-    removeEvents: function (events) {
-      events = events || this.events || null;
-      if (!events) return false;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       for (var key in events) {
         var match = key.match(delegateEventSplitter);
         this.off(match[1], match[2], events[key]);
       }
     },
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  getEventTarget
      *
@@ -1050,17 +693,10 @@
      *  @param	string event	The event name. Optional.
      *  @return	jQuery
      */
-<<<<<<< HEAD
     getEventTarget: function ($el, event) {
       return $el || this.$el || $(document);
     },
 
-=======
-
-    getEventTarget: function ($el, event) {
-      return $el || this.$el || $(document);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  validateEvent
      *
@@ -1073,10 +709,6 @@
      *  @param	type $var Description. Default.
      *  @return	type Description.
      */
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     validateEvent: function (e) {
       if (this.eventScope) {
         return $(e.target).closest(this.eventScope).is(this.$el);
@@ -1084,10 +716,7 @@
         return true;
       }
     },
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  proxyEvent
      *
@@ -1099,16 +728,11 @@
      *  @param	function callback
      *  @return	function
      */
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     proxyEvent: function (callback) {
       return this.proxy(function (e) {
         // validate
         if (!this.validateEvent(e)) {
           return;
-<<<<<<< HEAD
         } // construct args
 
 
@@ -1120,19 +744,6 @@
       });
     },
 
-=======
-        }
-
-        // construct args
-        var args = acf.arrayArgs(arguments);
-        var extraArgs = args.slice(1);
-        var eventArgs = [e, $(e.currentTarget)].concat(extraArgs);
-
-        // callback
-        callback.apply(this, eventArgs);
-      });
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  on
      *
@@ -1146,32 +757,17 @@
      *  @param	string callback
      *  @return	n/a
      */
-<<<<<<< HEAD
     on: function (a1, a2, a3, a4) {
       // vars
       var $el, event, selector, callback, args; // find args
 
-=======
-
-    on: function (a1, a2, a3, a4) {
-      // vars
-      var $el, event, selector, callback, args;
-
-      // find args
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (a1 instanceof jQuery) {
         // 1. args( $el, event, selector, callback )
         if (a4) {
           $el = a1;
           event = a2;
           selector = a3;
-<<<<<<< HEAD
           callback = a4; // 2. args( $el, event, callback )
-=======
-          callback = a4;
-
-          // 2. args( $el, event, callback )
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         } else {
           $el = a1;
           event = a2;
@@ -1182,18 +778,11 @@
         if (a3) {
           event = a1;
           selector = a2;
-<<<<<<< HEAD
           callback = a3; // 4. args( event, callback )
-=======
-          callback = a3;
-
-          // 4. args( event, callback )
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         } else {
           event = a1;
           callback = a2;
         }
-<<<<<<< HEAD
       } // element
 
 
@@ -1206,40 +795,16 @@
 
       event = event + '.' + this.cid; // args
 
-=======
-      }
-
-      // element
-      $el = this.getEventTarget($el);
-
-      // modify callback
-      if (typeof callback === 'string') {
-        callback = this.proxyEvent(this[callback]);
-      }
-
-      // modify event
-      event = event + '.' + this.cid;
-
-      // args
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (selector) {
         args = [event, selector, callback];
       } else {
         args = [event, callback];
-<<<<<<< HEAD
       } // on()
 
 
       $el.on.apply($el, args);
     },
 
-=======
-      }
-
-      // on()
-      $el.on.apply($el, args);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  off
      *
@@ -1252,31 +817,16 @@
      *  @param	string callback
      *  @return	n/a
      */
-<<<<<<< HEAD
     off: function (a1, a2, a3) {
       // vars
       var $el, event, selector, args; // find args
 
-=======
-
-    off: function (a1, a2, a3) {
-      // vars
-      var $el, event, selector, args;
-
-      // find args
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (a1 instanceof jQuery) {
         // 1. args( $el, event, selector )
         if (a3) {
           $el = a1;
           event = a2;
-<<<<<<< HEAD
           selector = a3; // 2. args( $el, event )
-=======
-          selector = a3;
-
-          // 2. args( $el, event )
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         } else {
           $el = a1;
           event = a2;
@@ -1285,7 +835,6 @@
         // 3. args( event, selector )
         if (a2) {
           event = a1;
-<<<<<<< HEAD
           selector = a2; // 4. args( event )
         } else {
           event = a1;
@@ -1297,41 +846,16 @@
 
       event = event + '.' + this.cid; // args
 
-=======
-          selector = a2;
-
-          // 4. args( event )
-        } else {
-          event = a1;
-        }
-      }
-
-      // element
-      $el = this.getEventTarget($el);
-
-      // modify event
-      event = event + '.' + this.cid;
-
-      // args
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (selector) {
         args = [event, selector];
       } else {
         args = [event];
-<<<<<<< HEAD
       } // off()
 
 
       $el.off.apply($el, args);
     },
 
-=======
-      }
-
-      // off()
-      $el.off.apply($el, args);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  trigger
      *
@@ -1344,29 +868,18 @@
      *  @param	string callback
      *  @return	n/a
      */
-<<<<<<< HEAD
     trigger: function (name, args, bubbles) {
       var $el = this.getEventTarget();
 
-=======
-
-    trigger: function (name, args, bubbles) {
-      var $el = this.getEventTarget();
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (bubbles) {
         $el.trigger.apply($el, arguments);
       } else {
         $el.triggerHandler.apply($el, arguments);
       }
-<<<<<<< HEAD
 
       return this;
     },
 
-=======
-      return this;
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  addActions
      *
@@ -1378,25 +891,15 @@
      *  @param	object actions {action1 : callback, action2 : callback, etc }
      *  @return	n/a
      */
-<<<<<<< HEAD
     addActions: function (actions) {
       actions = actions || this.actions || null;
       if (!actions) return false;
 
-=======
-
-    addActions: function (actions) {
-      actions = actions || this.actions || null;
-      if (!actions) return false;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       for (var i in actions) {
         this.addAction(i, actions[i]);
       }
     },
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  removeActions
      *
@@ -1408,25 +911,15 @@
      *  @param	object actions {action1 : callback, action2 : callback, etc }
      *  @return	n/a
      */
-<<<<<<< HEAD
     removeActions: function (actions) {
       actions = actions || this.actions || null;
       if (!actions) return false;
 
-=======
-
-    removeActions: function (actions) {
-      actions = actions || this.actions || null;
-      if (!actions) return false;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       for (var i in actions) {
         this.removeAction(i, actions[i]);
       }
     },
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  addAction
      *
@@ -1439,7 +932,6 @@
      *  @param	string callback
      *  @return	n/a
      */
-<<<<<<< HEAD
     addAction: function (name, callback, priority) {
       //console.log('addAction', name, priority);
       // defaults
@@ -1453,22 +945,6 @@
       acf.addAction(name, callback, priority, this);
     },
 
-=======
-
-    addAction: function (name, callback, priority) {
-      //console.log('addAction', name, priority);
-      // defaults
-      priority = priority || this.priority;
-
-      // modify callback
-      if (typeof callback === 'string') {
-        callback = this[callback];
-      }
-
-      // add
-      acf.addAction(name, callback, priority, this);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  removeAction
      *
@@ -1481,17 +957,10 @@
      *  @param	string callback
      *  @return	n/a
      */
-<<<<<<< HEAD
     removeAction: function (name, callback) {
       acf.removeAction(name, this[callback]);
     },
 
-=======
-
-    removeAction: function (name, callback) {
-      acf.removeAction(name, this[callback]);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  addFilters
      *
@@ -1503,25 +972,15 @@
      *  @param	object filters {filter1 : callback, filter2 : callback, etc }
      *  @return	n/a
      */
-<<<<<<< HEAD
     addFilters: function (filters) {
       filters = filters || this.filters || null;
       if (!filters) return false;
 
-=======
-
-    addFilters: function (filters) {
-      filters = filters || this.filters || null;
-      if (!filters) return false;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       for (var i in filters) {
         this.addFilter(i, filters[i]);
       }
     },
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  addFilter
      *
@@ -1534,7 +993,6 @@
      *  @param	string callback
      *  @return	n/a
      */
-<<<<<<< HEAD
     addFilter: function (name, callback, priority) {
       // defaults
       priority = priority || this.priority; // modify callback
@@ -1547,21 +1005,6 @@
       acf.addFilter(name, callback, priority, this);
     },
 
-=======
-
-    addFilter: function (name, callback, priority) {
-      // defaults
-      priority = priority || this.priority;
-
-      // modify callback
-      if (typeof callback === 'string') {
-        callback = this[callback];
-      }
-
-      // add
-      acf.addFilter(name, callback, priority, this);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  removeFilters
      *
@@ -1573,25 +1016,15 @@
      *  @param	object filters {filter1 : callback, filter2 : callback, etc }
      *  @return	n/a
      */
-<<<<<<< HEAD
     removeFilters: function (filters) {
       filters = filters || this.filters || null;
       if (!filters) return false;
 
-=======
-
-    removeFilters: function (filters) {
-      filters = filters || this.filters || null;
-      if (!filters) return false;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       for (var i in filters) {
         this.removeFilter(i, filters[i]);
       }
     },
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  removeFilter
      *
@@ -1604,17 +1037,10 @@
      *  @param	string callback
      *  @return	n/a
      */
-<<<<<<< HEAD
     removeFilter: function (name, callback) {
       acf.removeFilter(name, this[callback]);
     },
 
-=======
-
-    removeFilter: function (name, callback) {
-      acf.removeFilter(name, this[callback]);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  $
      *
@@ -1626,17 +1052,10 @@
      *  @param	type $var Description. Default.
      *  @return	type Description.
      */
-<<<<<<< HEAD
     $: function (selector) {
       return this.$el.find(selector);
     },
 
-=======
-
-    $: function (selector) {
-      return this.$el.find(selector);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  remove
      *
@@ -1648,20 +1067,13 @@
      *  @param	type $var Description. Default.
      *  @return	type Description.
      */
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     remove: function () {
       this.removeEvents();
       this.removeActions();
       this.removeFilters();
       this.$el.remove();
     },
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  setTimeout
      *
@@ -1673,17 +1085,10 @@
      *  @param	type $var Description. Default.
      *  @return	type Description.
      */
-<<<<<<< HEAD
     setTimeout: function (callback, milliseconds) {
       return setTimeout(this.proxy(callback), milliseconds);
     },
 
-=======
-
-    setTimeout: function (callback, milliseconds) {
-      return setTimeout(this.proxy(callback), milliseconds);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  time
      *
@@ -1695,17 +1100,10 @@
      *  @param	type $var Description. Default.
      *  @return	type Description.
      */
-<<<<<<< HEAD
     time: function () {
       console.time(this.id || this.cid);
     },
 
-=======
-
-    time: function () {
-      console.time(this.id || this.cid);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  timeEnd
      *
@@ -1717,17 +1115,10 @@
      *  @param	type $var Description. Default.
      *  @return	type Description.
      */
-<<<<<<< HEAD
     timeEnd: function () {
       console.timeEnd(this.id || this.cid);
     },
 
-=======
-
-    timeEnd: function () {
-      console.timeEnd(this.id || this.cid);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  show
      *
@@ -1739,17 +1130,10 @@
      *  @param	type $var Description. Default.
      *  @return	type Description.
      */
-<<<<<<< HEAD
     show: function () {
       acf.show(this.$el);
     },
 
-=======
-
-    show: function () {
-      acf.show(this.$el);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  hide
      *
@@ -1761,17 +1145,10 @@
      *  @param	type $var Description. Default.
      *  @return	type Description.
      */
-<<<<<<< HEAD
     hide: function () {
       acf.hide(this.$el);
     },
 
-=======
-
-    hide: function () {
-      acf.hide(this.$el);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      *  proxy
      *
@@ -1783,7 +1160,6 @@
      *  @param	function callback
      *  @return	function
      */
-<<<<<<< HEAD
     proxy: function (callback) {
       return $.proxy(callback, this);
     }
@@ -1792,20 +1168,6 @@
   Model.extend = extend; // Global model storage
 
   acf.models = {};
-=======
-
-    proxy: function (callback) {
-      return $.proxy(callback, this);
-    }
-  });
-
-  // Set up inheritance for the model
-  Model.extend = extend;
-
-  // Global model storage
-  acf.models = {};
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.getInstance
    *
@@ -1821,10 +1183,6 @@
   acf.getInstance = function ($el) {
     return $el.data('acf');
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.getInstances
    *
@@ -1837,10 +1195,7 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.getInstances = function ($el) {
     var instances = [];
     $el.each(function () {
@@ -1880,19 +1235,12 @@
     },
     initialize: function () {
       // render
-<<<<<<< HEAD
       this.render(); // show
 
-=======
-      this.render();
-
-      // show
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.show();
     },
     render: function () {
       // class
-<<<<<<< HEAD
       this.type(this.get('type')); // text
 
       this.html('<p>' + this.get('text') + '</p>'); // close
@@ -1905,49 +1253,22 @@
 
       var timeout = this.get('timeout');
 
-=======
-      this.type(this.get('type'));
-
-      // text
-      this.html('<p>' + this.get('text') + '</p>');
-
-      // close
-      if (this.get('dismiss')) {
-        this.$el.append('<a href="#" class="acf-notice-dismiss acf-icon -cancel small"></a>');
-        this.$el.addClass('-dismiss');
-      }
-
-      // timeout
-      var timeout = this.get('timeout');
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (timeout) {
         this.away(timeout);
       }
     },
     update: function (props) {
       // update
-<<<<<<< HEAD
       $.extend(this.data, props); // re-initialize
 
       this.initialize(); // refresh events
 
-=======
-      $.extend(this.data, props);
-
-      // re-initialize
-      this.initialize();
-
-      // refresh events
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.removeEvents();
       this.addEvents();
     },
     show: function () {
       var $target = this.get('target');
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if ($target) {
         $target.prepend(this.$el);
       }
@@ -1963,7 +1284,6 @@
     type: function (type) {
       // remove prev type
       var prevType = this.get('type');
-<<<<<<< HEAD
 
       if (prevType) {
         this.$el.removeClass('-' + prevType);
@@ -1972,16 +1292,6 @@
 
       this.$el.addClass('-' + type); // backwards compatibility
 
-=======
-      if (prevType) {
-        this.$el.removeClass('-' + prevType);
-      }
-
-      // add new type
-      this.$el.addClass('-' + type);
-
-      // backwards compatibility
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (type == 'error') {
         this.$el.addClass('acf-error-message');
       }
@@ -1998,43 +1308,26 @@
       this.remove();
     }
   });
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.newNotice = function (props) {
     // ensure object
     if (typeof props !== 'object') {
       props = {
         text: props
       };
-<<<<<<< HEAD
     } // instantiate
 
 
     return new Notice(props);
   };
 
-=======
-    }
-
-    // instantiate
-    return new Notice(props);
-  };
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   var noticeManager = new acf.Model({
     wait: 'prepare',
     priority: 1,
     initialize: function () {
       // vars
-<<<<<<< HEAD
       var $notice = $('.acf-admin-notice'); // move to avoid WP flicker
 
-=======
-      var $notice = $('.acf-admin-notice');
-
-      // move to avoid WP flicker
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if ($notice.length) {
         $('h1:first').after($notice);
       }
@@ -2118,7 +1411,6 @@
       var content = this.get('content');
       var loading = this.get('loading');
       var width = this.get('width');
-<<<<<<< HEAD
       var height = this.get('height'); // Update.
 
       this.title(title);
@@ -2137,34 +1429,13 @@
       acf.doAction('append', this.$el);
     },
 
-=======
-      var height = this.get('height');
-
-      // Update.
-      this.title(title);
-      this.content(content);
-      if (width) {
-        this.$('.acf-popup-box').css('width', width);
-      }
-      if (height) {
-        this.$('.acf-popup-box').css('min-height', height);
-      }
-      this.loading(loading);
-
-      // Trigger action.
-      acf.doAction('append', this.$el);
-    },
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Places focus within the popup.
      */
     focus: function () {
       this.$el.find('.acf-icon').first().trigger('focus');
     },
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Locks focus within the popup.
      *
@@ -2172,17 +1443,11 @@
      */
     lockFocusToPopup: function (locked) {
       let inertElement = $('#wpwrap');
-<<<<<<< HEAD
 
       if (!inertElement.length) {
         return;
       }
 
-=======
-      if (!inertElement.length) {
-        return;
-      }
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       inertElement[0].inert = locked;
       inertElement.attr('aria-hidden', locked);
     },
@@ -2212,10 +1477,7 @@
       e.preventDefault();
       this.close();
     },
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Closes the popup when the escape key is pressed.
      *
@@ -2226,10 +1488,7 @@
         this.close();
       }
     },
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Returns focus to the element that opened the popup
      * if it still exists in the DOM.
@@ -2240,10 +1499,6 @@
       }
     }
   });
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  newPopup
    *
@@ -2276,7 +1531,6 @@
       props = {
         text: props
       };
-<<<<<<< HEAD
     } // confirmRemove
 
 
@@ -2286,29 +1540,11 @@
       return new TooltipConfirm(props); // confirm
     } else if (props.confirm !== undefined) {
       return new TooltipConfirm(props); // default
-=======
-    }
-
-    // confirmRemove
-    if (props.confirmRemove !== undefined) {
-      props.textConfirm = acf.__('Remove');
-      props.textCancel = acf.__('Cancel');
-      return new TooltipConfirm(props);
-
-      // confirm
-    } else if (props.confirm !== undefined) {
-      return new TooltipConfirm(props);
-
-      // default
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     } else {
       return new Tooltip(props);
     }
   };
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   var Tooltip = acf.Model.extend({
     data: {
       text: '',
@@ -2324,7 +1560,6 @@
     },
     initialize: function () {
       // render
-<<<<<<< HEAD
       this.render(); // append
 
       this.show(); // position
@@ -2333,18 +1568,6 @@
 
       var timeout = this.get('timeout');
 
-=======
-      this.render();
-
-      // append
-      this.show();
-
-      // position
-      this.position();
-
-      // timeout
-      var timeout = this.get('timeout');
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (timeout) {
         setTimeout($.proxy(this.fade, this), timeout);
       }
@@ -2364,14 +1587,8 @@
     },
     fade: function () {
       // add class
-<<<<<<< HEAD
       this.$el.addClass('acf-fade-up'); // remove
 
-=======
-      this.$el.addClass('acf-fade-up');
-
-      // remove
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.setTimeout(function () {
         this.remove();
       }, 250);
@@ -2383,7 +1600,6 @@
       // vars
       var $tooltip = this.$el;
       var $target = this.get('target');
-<<<<<<< HEAD
       if (!$target) return; // Reset position.
 
       $tooltip.removeClass('right left bottom top').css({
@@ -2422,57 +1638,6 @@
       } // update css
 
 
-=======
-      if (!$target) return;
-
-      // Reset position.
-      $tooltip.removeClass('right left bottom top').css({
-        top: 0,
-        left: 0
-      });
-
-      // Declare tollerance to edge of screen.
-      var tolerance = 10;
-
-      // Find target position.
-      var targetWidth = $target.outerWidth();
-      var targetHeight = $target.outerHeight();
-      var targetTop = $target.offset().top;
-      var targetLeft = $target.offset().left;
-
-      // Find tooltip position.
-      var tooltipWidth = $tooltip.outerWidth();
-      var tooltipHeight = $tooltip.outerHeight();
-      var tooltipTop = $tooltip.offset().top; // Should be 0, but WP media grid causes this to be 32 (toolbar padding).
-
-      // Assume default top alignment.
-      var top = targetTop - tooltipHeight - tooltipTop;
-      var left = targetLeft + targetWidth / 2 - tooltipWidth / 2;
-
-      // Check if too far left.
-      if (left < tolerance) {
-        $tooltip.addClass('right');
-        left = targetLeft + targetWidth;
-        top = targetTop + targetHeight / 2 - tooltipHeight / 2 - tooltipTop;
-
-        // Check if too far right.
-      } else if (left + tooltipWidth + tolerance > $(window).width()) {
-        $tooltip.addClass('left');
-        left = targetLeft - tooltipWidth;
-        top = targetTop + targetHeight / 2 - tooltipHeight / 2 - tooltipTop;
-
-        // Check if too far up.
-      } else if (top - $(window).scrollTop() < tolerance) {
-        $tooltip.addClass('bottom');
-        top = targetTop + targetHeight - tooltipTop;
-
-        // No colision with edges.
-      } else {
-        $tooltip.addClass('top');
-      }
-
-      // update css
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       $tooltip.css({
         top: top,
         left: left
@@ -2496,7 +1661,6 @@
     },
     addEvents: function () {
       // add events
-<<<<<<< HEAD
       acf.Model.prototype.addEvents.apply(this); // vars
 
       var $document = $(document);
@@ -2508,50 +1672,23 @@
       }); // add target 'confirm' click event
       // - allow setting to control this feature
 
-=======
-      acf.Model.prototype.addEvents.apply(this);
-
-      // vars
-      var $document = $(document);
-      var $target = this.get('target');
-
-      // add global 'cancel' click event
-      // - use timeout to avoid the current 'click' event triggering the onCancel function
-      this.setTimeout(function () {
-        this.on($document, 'click', 'onCancel');
-      });
-
-      // add target 'confirm' click event
-      // - allow setting to control this feature
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (this.get('targetConfirm')) {
         this.on($target, 'click', 'onConfirm');
       }
     },
     removeEvents: function () {
       // remove events
-<<<<<<< HEAD
       acf.Model.prototype.removeEvents.apply(this); // vars
 
       var $document = $(document);
       var $target = this.get('target'); // remove custom events
 
-=======
-      acf.Model.prototype.removeEvents.apply(this);
-
-      // vars
-      var $document = $(document);
-      var $target = this.get('target');
-
-      // remove custom events
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.off($document, 'click');
       this.off($target, 'click');
     },
     render: function () {
       // defaults
       var text = this.get('text') || acf.__('Are you sure?');
-<<<<<<< HEAD
 
       var textConfirm = this.get('textConfirm') || acf.__('Yes');
 
@@ -2562,46 +1699,22 @@
 
       this.html(html); // class
 
-=======
-      var textConfirm = this.get('textConfirm') || acf.__('Yes');
-      var textCancel = this.get('textCancel') || acf.__('No');
-
-      // html
-      var html = [text, '<a href="#" data-event="confirm">' + textConfirm + '</a>', '<a href="#" data-event="cancel">' + textCancel + '</a>'].join(' ');
-
-      // html
-      this.html(html);
-
-      // class
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.$el.addClass('-confirm');
     },
     onCancel: function (e, $el) {
       // prevent default
       e.preventDefault();
-<<<<<<< HEAD
       e.stopImmediatePropagation(); // callback
 
       var callback = this.get('cancel');
       var context = this.get('context') || this;
       callback.apply(context, arguments); //remove
 
-=======
-      e.stopImmediatePropagation();
-
-      // callback
-      var callback = this.get('cancel');
-      var context = this.get('context') || this;
-      callback.apply(context, arguments);
-
-      //remove
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.remove();
     },
     onConfirm: function (e, $el) {
       // Prevent event from propagating completely to allow "targetConfirm" to be clicked.
       e.preventDefault();
-<<<<<<< HEAD
       e.stopImmediatePropagation(); // callback
 
       var callback = this.get('confirm');
@@ -2614,24 +1727,6 @@
 
   acf.models.Tooltip = Tooltip;
   acf.models.TooltipConfirm = TooltipConfirm;
-=======
-      e.stopImmediatePropagation();
-
-      // callback
-      var callback = this.get('confirm');
-      var context = this.get('context') || this;
-      callback.apply(context, arguments);
-
-      //remove
-      this.remove();
-    }
-  });
-
-  // storage
-  acf.models.Tooltip = Tooltip;
-  acf.models.TooltipConfirm = TooltipConfirm;
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  tooltipManager
    *
@@ -2656,7 +1751,6 @@
     },
     showTitle: function (e, $el) {
       // vars
-<<<<<<< HEAD
       var title = $el.attr('title'); // bail early if no title
 
       if (!title) {
@@ -2666,30 +1760,11 @@
 
       $el.attr('title', ''); // create
 
-=======
-      var title = $el.attr('title');
-
-      // bail early if no title
-      if (!title) {
-        return;
-      }
-
-      // clear title to avoid default browser tooltip
-      $el.attr('title', '');
-
-      // create
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (!this.tooltip) {
         this.tooltip = acf.newTooltip({
           text: title,
           target: $el
-<<<<<<< HEAD
         }); // update
-=======
-        });
-
-        // update
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       } else {
         this.tooltip.update({
           text: title,
@@ -2699,14 +1774,8 @@
     },
     hideTitle: function (e, $el) {
       // hide tooltip
-<<<<<<< HEAD
       this.tooltip.hide(); // restore title
 
-=======
-      this.tooltip.hide();
-
-      // restore title
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       $el.attr('title', this.tooltip.get('text'));
     },
     onKeyUp: function (e, $el) {
@@ -2737,7 +1806,6 @@
    *  @param	type $var Description. Default.
    *  @return	type Description.
    */
-<<<<<<< HEAD
   // The global acf object
   var acf = {}; // Set as a browser global
 
@@ -2745,18 +1813,6 @@
   /** @var object Data sent from PHP */
 
   acf.data = {};
-=======
-
-  // The global acf object
-  var acf = {};
-
-  // Set as a browser global
-  window.acf = acf;
-
-  /** @var object Data sent from PHP */
-  acf.data = {};
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  get
    *
@@ -2772,10 +1828,6 @@
   acf.get = function (name) {
     return this.data[name] || null;
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  has
    *
@@ -2788,17 +1840,10 @@
    *  @return	boolean
    */
 
-<<<<<<< HEAD
 
   acf.has = function (name) {
     return this.get(name) !== null;
   };
-=======
-  acf.has = function (name) {
-    return this.get(name) !== null;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  set
    *
@@ -2812,18 +1857,11 @@
    *  @return	this
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.set = function (name, value) {
     this.data[name] = value;
     return this;
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  uniqueId
    *
@@ -2836,21 +1874,13 @@
    *  @return	string
    */
 
-<<<<<<< HEAD
 
   var idCounter = 0;
 
-=======
-  var idCounter = 0;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.uniqueId = function (prefix) {
     var id = ++idCounter + '';
     return prefix ? prefix + id : id;
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.uniqueArray
    *
@@ -2864,23 +1894,14 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.uniqueArray = function (array) {
     function onlyUnique(value, index, self) {
       return self.indexOf(value) === index;
     }
-<<<<<<< HEAD
 
     return array.filter(onlyUnique);
   };
-=======
-    return array.filter(onlyUnique);
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  uniqid
    *
@@ -2894,13 +1915,9 @@
    *  @return	string
    */
 
-<<<<<<< HEAD
 
   var uniqidSeed = '';
 
-=======
-  var uniqidSeed = '';
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.uniqid = function (prefix, moreEntropy) {
     //  discuss at: http://locutus.io/php/uniqid/
     // original by: Kevin van Zonneveld (http://kvz.io)
@@ -2918,44 +1935,29 @@
     if (typeof prefix === 'undefined') {
       prefix = '';
     }
-<<<<<<< HEAD
 
     var retId;
 
     var formatSeed = function (seed, reqWidth) {
       seed = parseInt(seed, 10).toString(16); // to hex str
 
-=======
-    var retId;
-    var formatSeed = function (seed, reqWidth) {
-      seed = parseInt(seed, 10).toString(16); // to hex str
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (reqWidth < seed.length) {
         // so long we split
         return seed.slice(seed.length - reqWidth);
       }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (reqWidth > seed.length) {
         // so short we pad
         return Array(1 + (reqWidth - seed.length)).join('0') + seed;
       }
-<<<<<<< HEAD
 
       return seed;
     };
 
-=======
-      return seed;
-    };
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (!uniqidSeed) {
       // init seed with big random int
       uniqidSeed = Math.floor(Math.random() * 0x75bcd15);
     }
-<<<<<<< HEAD
 
     uniqidSeed++;
     retId = prefix; // start with prefix, add current milliseconds hex string
@@ -2963,25 +1965,13 @@
     retId += formatSeed(parseInt(new Date().getTime() / 1000, 10), 8);
     retId += formatSeed(uniqidSeed, 5); // add seed hex string
 
-=======
-    uniqidSeed++;
-    retId = prefix; // start with prefix, add current milliseconds hex string
-    retId += formatSeed(parseInt(new Date().getTime() / 1000, 10), 8);
-    retId += formatSeed(uniqidSeed, 5); // add seed hex string
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (moreEntropy) {
       // for more entropy we add a float lower to 10
       retId += (Math.random() * 10).toFixed(8).toString();
     }
-<<<<<<< HEAD
 
     return retId;
   };
-=======
-    return retId;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  strReplace
    *
@@ -2996,17 +1986,10 @@
    *  @return	string
    */
 
-<<<<<<< HEAD
 
   acf.strReplace = function (search, replace, subject) {
     return subject.split(search).join(replace);
   };
-=======
-  acf.strReplace = function (search, replace, subject) {
-    return subject.split(search).join(replace);
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  strCamelCase
    *
@@ -3020,10 +2003,7 @@
    *  @return	string
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.strCamelCase = function (str) {
     var matches = str.match(/([a-zA-Z0-9]+)/g);
     return matches ? matches.map(function (s, i) {
@@ -3031,10 +2011,6 @@
       return (i === 0 ? c.toLowerCase() : c.toUpperCase()) + s.slice(1);
     }).join('') : '';
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  strPascalCase
    *
@@ -3048,18 +2024,11 @@
    *  @return	string
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.strPascalCase = function (str) {
     var camel = acf.strCamelCase(str);
     return camel.charAt(0).toUpperCase() + camel.slice(1);
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.strSlugify
    *
@@ -3072,17 +2041,11 @@
    *  @return	string
    */
 
-<<<<<<< HEAD
 
   acf.strSlugify = function (str) {
     return acf.strReplace('_', '-', str.toLowerCase());
   };
 
-=======
-  acf.strSlugify = function (str) {
-    return acf.strReplace('_', '-', str.toLowerCase());
-  };
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.strSanitize = function (str) {
     // chars (https://jsperf.com/replace-foreign-characters)
     var map = {
@@ -3316,7 +2279,6 @@
       '}': '',
       '(': '',
       ')': ''
-<<<<<<< HEAD
     }; // vars
 
     var nonWord = /\W/g;
@@ -3332,26 +2294,6 @@
 
     return str;
   };
-=======
-    };
-
-    // vars
-    var nonWord = /\W/g;
-    var mapping = function (c) {
-      return map[c] !== undefined ? map[c] : c;
-    };
-
-    // replace
-    str = str.replace(nonWord, mapping);
-
-    // lowercase
-    str = str.toLowerCase();
-
-    // return
-    return str;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.strMatch
    *
@@ -3364,26 +2306,16 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.strMatch = function (s1, s2) {
     // vars
     var val = 0;
     var min = Math.min(s1.length, s2.length); // loop
 
-=======
-  acf.strMatch = function (s1, s2) {
-    // vars
-    var val = 0;
-    var min = Math.min(s1.length, s2.length);
-
-    // loop
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     for (var i = 0; i < min; i++) {
       if (s1[i] !== s2[i]) {
         break;
       }
-<<<<<<< HEAD
 
       val++;
     } // return
@@ -3391,15 +2323,6 @@
 
     return val;
   };
-=======
-      val++;
-    }
-
-    // return
-    return val;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Escapes HTML entities from a string.
    *
@@ -3409,11 +2332,8 @@
    * @param	string string The input string.
    * @return	string
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.strEscape = function (string) {
     var htmlEscapes = {
       '&': '&amp;',
@@ -3425,13 +2345,7 @@
     return ('' + string).replace(/[&<>"']/g, function (chr) {
       return htmlEscapes[chr];
     });
-<<<<<<< HEAD
   }; // Tests.
-=======
-  };
-
-  // Tests.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   //console.log( acf.strEscape('Test 1') );
   //console.log( acf.strEscape('Test & 1') );
   //console.log( acf.strEscape('Test\'s &amp; 1') );
@@ -3446,11 +2360,8 @@
    * @param	string string The input string.
    * @return	string
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.strUnescape = function (string) {
     var htmlUnescapes = {
       '&amp;': '&',
@@ -3462,13 +2373,7 @@
     return ('' + string).replace(/&amp;|&lt;|&gt;|&quot;|&#39;/g, function (entity) {
       return htmlUnescapes[entity];
     });
-<<<<<<< HEAD
   }; // Tests.
-=======
-  };
-
-  // Tests.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   //console.log( acf.strUnescape( acf.strEscape('Test 1') ) );
   //console.log( acf.strUnescape( acf.strEscape('Test & 1') ) );
   //console.log( acf.strUnescape( acf.strEscape('Test\'s &amp; 1') ) );
@@ -3483,14 +2388,9 @@
    * @param	string string The input string.
    * @return	string
    */
-<<<<<<< HEAD
 
 
   acf.escAttr = acf.strEscape;
-=======
-  acf.escAttr = acf.strEscape;
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Encodes <script> tags for safe HTML output.
    *
@@ -3500,21 +2400,12 @@
    * @param	string string The input string.
    * @return	string
    */
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.escHtml = function (string) {
     return ('' + string).replace(/<script|<\/script/g, function (html) {
       return acf.strEscape(html);
     });
-<<<<<<< HEAD
   }; // Tests.
-=======
-  };
-
-  // Tests.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   //console.log( acf.escHtml('<script>js</script>') );
   //console.log( acf.escHtml( acf.strEscape('<script>js</script>') ) );
   //console.log( acf.escHtml( '<script>js1</script><script>js2</script>' ) );
@@ -3531,17 +2422,10 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.decode = function (string) {
     return $('<textarea/>').html(string).text();
   };
-=======
-  acf.decode = function (string) {
-    return $('<textarea/>').html(string).text();
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  parseArgs
    *
@@ -3555,19 +2439,12 @@
    *  @return	object
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.parseArgs = function (args, defaults) {
     if (typeof args !== 'object') args = {};
     if (typeof defaults !== 'object') defaults = {};
     return $.extend({}, defaults, args);
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  __
    *
@@ -3580,7 +2457,6 @@
    *  @return	string Translated text.
    */
 
-<<<<<<< HEAD
 
   if (window.acfL10n == undefined) {
     acfL10n = {};
@@ -3589,15 +2465,6 @@
   acf.__ = function (text) {
     return acfL10n[text] || text;
   };
-=======
-  if (window.acfL10n == undefined) {
-    acfL10n = {};
-  }
-  acf.__ = function (text) {
-    return acfL10n[text] || text;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  _x
    *
@@ -3611,17 +2478,10 @@
    *  @return	string Translated text.
    */
 
-<<<<<<< HEAD
 
   acf._x = function (text, context) {
     return acfL10n[text + '.' + context] || acfL10n[text] || text;
   };
-=======
-  acf._x = function (text, context) {
-    return acfL10n[text + '.' + context] || acfL10n[text] || text;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  _n
    *
@@ -3636,10 +2496,7 @@
    *  @return	string Translated text.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf._n = function (single, plural, number) {
     if (number == 1) {
       return acf.__(single);
@@ -3647,7 +2504,6 @@
       return acf.__(plural);
     }
   };
-<<<<<<< HEAD
 
   acf.isArray = function (a) {
     return Array.isArray(a);
@@ -3656,15 +2512,6 @@
   acf.isObject = function (a) {
     return typeof a === 'object';
   };
-=======
-  acf.isArray = function (a) {
-    return Array.isArray(a);
-  };
-  acf.isObject = function (a) {
-    return typeof a === 'object';
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  serialize
    *
@@ -3677,7 +2524,6 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   var buildObject = function (obj, name, value) {
     // replace [] with placeholder
@@ -3700,80 +2546,30 @@
           ref[key] = value;
         } // path
 
-=======
-  var buildObject = function (obj, name, value) {
-    // replace [] with placeholder
-    name = name.replace('[]', '[%%index%%]');
-
-    // vars
-    var keys = name.match(/([^\[\]])+/g);
-    if (!keys) return;
-    var length = keys.length;
-    var ref = obj;
-
-    // loop
-    for (var i = 0; i < length; i++) {
-      // vars
-      var key = String(keys[i]);
-
-      // value
-      if (i == length - 1) {
-        // %%index%%
-        if (key === '%%index%%') {
-          ref.push(value);
-
-          // default
-        } else {
-          ref[key] = value;
-        }
-
-        // path
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       } else {
         // array
         if (keys[i + 1] === '%%index%%') {
           if (!acf.isArray(ref[key])) {
             ref[key] = [];
-<<<<<<< HEAD
           } // object
 
-=======
-          }
-
-          // object
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         } else {
           if (!acf.isObject(ref[key])) {
             ref[key] = {};
           }
-<<<<<<< HEAD
         } // crawl
 
 
-=======
-        }
-
-        // crawl
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         ref = ref[key];
       }
     }
   };
-<<<<<<< HEAD
 
   acf.serialize = function ($el, prefix) {
     // vars
     var obj = {};
     var inputs = acf.serializeArray($el); // prefix
 
-=======
-  acf.serialize = function ($el, prefix) {
-    // vars
-    var obj = {};
-    var inputs = acf.serializeArray($el);
-
-    // prefix
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (prefix !== undefined) {
       // filter and modify
       inputs = inputs.filter(function (item) {
@@ -3782,7 +2578,6 @@
         item.name = item.name.slice(prefix.length);
         return item;
       });
-<<<<<<< HEAD
     } // loop
 
 
@@ -3793,19 +2588,6 @@
 
     return obj;
   };
-=======
-    }
-
-    // loop
-    for (var i = 0; i < inputs.length; i++) {
-      buildObject(obj, inputs[i].name, inputs[i].value);
-    }
-
-    // return
-    return obj;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.serializeArray
    *
@@ -3818,17 +2600,10 @@
    *  @return	array
    */
 
-<<<<<<< HEAD
 
   acf.serializeArray = function ($el) {
     return $el.find('select, textarea, input').serializeArray();
   };
-=======
-  acf.serializeArray = function ($el) {
-    return $el.find('select, textarea, input').serializeArray();
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.serializeForAjax
    *
@@ -3840,7 +2615,6 @@
    *  @param	jQUery $el The element or form to serialize.
    *  @return	object
    */
-<<<<<<< HEAD
 
 
   acf.serializeForAjax = function ($el) {
@@ -3850,22 +2624,10 @@
 
     var inputs = acf.serializeArray($el); // Loop over inputs and build data.
 
-=======
-  acf.serializeForAjax = function ($el) {
-    // vars
-    var data = {};
-    var index = {};
-
-    // Serialize inputs.
-    var inputs = acf.serializeArray($el);
-
-    // Loop over inputs and build data.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     inputs.map(function (item) {
       // Append to array.
       if (item.name.slice(-2) === '[]') {
         data[item.name] = data[item.name] || [];
-<<<<<<< HEAD
         data[item.name].push(item.value); // Append
       } else {
         data[item.name] = item.value;
@@ -3874,19 +2636,6 @@
 
     return data;
   };
-=======
-        data[item.name].push(item.value);
-        // Append
-      } else {
-        data[item.name] = item.value;
-      }
-    });
-
-    // return
-    return data;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  addAction
    *
@@ -3905,19 +2654,12 @@
   }
   */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.addAction = function (action, callback, priority, context) {
     //action = prefixAction(action);
     acf.hooks.addAction.apply(this, arguments);
     return this;
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  removeAction
    *
@@ -3930,19 +2672,12 @@
    *  @return	this
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.removeAction = function (action, callback) {
     //action = prefixAction(action);
     acf.hooks.removeAction.apply(this, arguments);
     return this;
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  doAction
    *
@@ -3955,14 +2690,9 @@
    *  @return	this
    */
 
-<<<<<<< HEAD
 
   var actionHistory = {}; //var currentAction = false;
 
-=======
-  var actionHistory = {};
-  //var currentAction = false;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.doAction = function (action) {
     //action = prefixAction(action);
     //currentAction = action;
@@ -3971,10 +2701,6 @@
     actionHistory[action] = 0;
     return this;
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  doingAction
    *
@@ -3987,18 +2713,11 @@
    *  @return	this
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.doingAction = function (action) {
     //action = prefixAction(action);
     return actionHistory[action] === 1;
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  didAction
    *
@@ -4011,18 +2730,11 @@
    *  @return	this
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.didAction = function (action) {
     //action = prefixAction(action);
     return actionHistory[action] !== undefined;
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  currentAction
    *
@@ -4035,25 +2747,16 @@
    *  @return	this
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.currentAction = function () {
     for (var k in actionHistory) {
       if (actionHistory[k]) {
         return k;
       }
     }
-<<<<<<< HEAD
 
     return false;
   };
-=======
-    return false;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  addFilter
    *
@@ -4066,19 +2769,12 @@
    *  @return	this
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.addFilter = function (action) {
     //action = prefixAction(action);
     acf.hooks.addFilter.apply(this, arguments);
     return this;
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  removeFilter
    *
@@ -4091,19 +2787,12 @@
    *  @return	this
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.removeFilter = function (action) {
     //action = prefixAction(action);
     acf.hooks.removeFilter.apply(this, arguments);
     return this;
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  applyFilters
    *
@@ -4116,18 +2805,11 @@
    *  @return	this
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.applyFilters = function (action) {
     //action = prefixAction(action);
     return acf.hooks.applyFilters.apply(this, arguments);
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  getArgs
    *
@@ -4140,17 +2822,10 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.arrayArgs = function (args) {
     return Array.prototype.slice.call(args);
   };
-=======
-  acf.arrayArgs = function (args) {
-    return Array.prototype.slice.call(args);
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  extendArgs
    *
@@ -4172,25 +2847,15 @@
   	return Array.prototype.push.apply( args, arguments );
   };
   */
-<<<<<<< HEAD
   // Preferences
   // - use try/catch to avoid JS error if cookies are disabled on front-end form
 
 
-=======
-
-  // Preferences
-  // - use try/catch to avoid JS error if cookies are disabled on front-end form
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   try {
     var preferences = JSON.parse(localStorage.getItem('acf')) || {};
   } catch (e) {
     var preferences = {};
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  getPreferenceName
    *
@@ -4204,23 +2869,14 @@
    *  @return	string
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   var getPreferenceName = function (name) {
     if (name.substr(0, 5) === 'this.') {
       name = name.substr(5) + '-' + acf.get('post_id');
     }
-<<<<<<< HEAD
 
     return name;
   };
-=======
-    return name;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.getPreference
    *
@@ -4233,18 +2889,11 @@
    *  @return	mixed
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.getPreference = function (name) {
     name = getPreferenceName(name);
     return preferences[name] || null;
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.setPreference
    *
@@ -4258,29 +2907,18 @@
    *  @return	n/a
    */
 
-<<<<<<< HEAD
 
   acf.setPreference = function (name, value) {
     name = getPreferenceName(name);
 
-=======
-  acf.setPreference = function (name, value) {
-    name = getPreferenceName(name);
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (value === null) {
       delete preferences[name];
     } else {
       preferences[name] = value;
     }
-<<<<<<< HEAD
 
     localStorage.setItem('acf', JSON.stringify(preferences));
   };
-=======
-    localStorage.setItem('acf', JSON.stringify(preferences));
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.removePreference
    *
@@ -4293,17 +2931,10 @@
    *  @return	n/a
    */
 
-<<<<<<< HEAD
 
   acf.removePreference = function (name) {
     acf.setPreference(name, null);
   };
-=======
-  acf.removePreference = function (name) {
-    acf.setPreference(name, null);
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  remove
    *
@@ -4316,56 +2947,30 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.remove = function (props) {
     // allow jQuery
     if (props instanceof jQuery) {
       props = {
         target: props
       };
-<<<<<<< HEAD
     } // defaults
 
 
-=======
-    }
-
-    // defaults
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     props = acf.parseArgs(props, {
       target: false,
       endHeight: 0,
       complete: function () {}
-<<<<<<< HEAD
     }); // action
 
     acf.doAction('remove', props.target); // tr
 
     if (props.target.is('tr')) {
       removeTr(props); // div
-=======
-    });
-
-    // action
-    acf.doAction('remove', props.target);
-
-    // tr
-    if (props.target.is('tr')) {
-      removeTr(props);
-
-      // div
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     } else {
       removeDiv(props);
     }
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  removeDiv
    *
@@ -4378,10 +2983,7 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   var removeDiv = function (props) {
     // vars
     var $el = props.target;
@@ -4390,56 +2992,31 @@
     var margin = $el.css('margin');
     var outerHeight = $el.outerHeight(true);
     var style = $el.attr('style') + ''; // needed to copy
-<<<<<<< HEAD
     // wrap
 
     $el.wrap('<div class="acf-temp-remove" style="height:' + outerHeight + 'px"></div>');
     var $wrap = $el.parent(); // set pos
 
-=======
-
-    // wrap
-    $el.wrap('<div class="acf-temp-remove" style="height:' + outerHeight + 'px"></div>');
-    var $wrap = $el.parent();
-
-    // set pos
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     $el.css({
       height: height,
       width: width,
       margin: margin,
       position: 'absolute'
-<<<<<<< HEAD
     }); // fade wrap
 
-=======
-    });
-
-    // fade wrap
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     setTimeout(function () {
       $wrap.css({
         opacity: 0,
         height: props.endHeight
       });
-<<<<<<< HEAD
     }, 50); // remove
 
-=======
-    }, 50);
-
-    // remove
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     setTimeout(function () {
       $el.attr('style', style);
       $wrap.remove();
       props.complete();
     }, 301);
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  removeTr
    *
@@ -4452,15 +3029,11 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   var removeTr = function (props) {
     // vars
     var $tr = props.target;
     var height = $tr.height();
-<<<<<<< HEAD
     var children = $tr.children().length; // create dummy td
 
     var $td = $('<td class="acf-temp-remove" style="padding:0; height:' + height + 'px" colspan="' + children + '"></td>'); // fade away tr
@@ -4480,42 +3053,11 @@
       });
     }, 300); // remove
 
-=======
-    var children = $tr.children().length;
-
-    // create dummy td
-    var $td = $('<td class="acf-temp-remove" style="padding:0; height:' + height + 'px" colspan="' + children + '"></td>');
-
-    // fade away tr
-    $tr.addClass('acf-remove-element');
-
-    // update HTML after fade animation
-    setTimeout(function () {
-      $tr.html($td);
-    }, 251);
-
-    // allow .acf-temp-remove to exist before changing CSS
-    setTimeout(function () {
-      // remove class
-      $tr.removeClass('acf-remove-element');
-
-      // collapse
-      $td.css({
-        height: props.endHeight
-      });
-    }, 300);
-
-    // remove
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     setTimeout(function () {
       $tr.remove();
       props.complete();
     }, 451);
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  duplicate
    *
@@ -4528,25 +3070,16 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.duplicate = function (args) {
     // allow jQuery
     if (args instanceof jQuery) {
       args = {
         target: args
       };
-<<<<<<< HEAD
     } // defaults
 
 
-=======
-    }
-
-    // defaults
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     args = acf.parseArgs(args, {
       target: false,
       search: '',
@@ -4557,7 +3090,6 @@
       append: function ($el, $el2) {
         $el.after($el2);
       }
-<<<<<<< HEAD
     }); // compatibility
 
     args.target = args.target || args.$el; // vars
@@ -4574,30 +3106,6 @@
 
     var $el2 = $el.clone(); // rename
 
-=======
-    });
-
-    // compatibility
-    args.target = args.target || args.$el;
-
-    // vars
-    var $el = args.target;
-
-    // search
-    args.search = args.search || $el.attr('data-id');
-    args.replace = args.replace || acf.uniqid();
-
-    // before
-    // - allow acf to modify DOM
-    // - fixes bug where select field option is not selected
-    args.before($el);
-    acf.doAction('before_duplicate', $el);
-
-    // clone
-    var $el2 = $el.clone();
-
-    // rename
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (args.rename) {
       acf.rename({
         target: $el2,
@@ -4605,7 +3113,6 @@
         replace: args.replace,
         replacer: typeof args.rename === 'function' ? args.rename : null
       });
-<<<<<<< HEAD
     } // remove classes
 
 
@@ -4617,22 +3124,6 @@
     acf.doAction('after_duplicate', $el, $el2); // append
 
     args.append($el, $el2);
-=======
-    }
-
-    // remove classes
-    $el2.removeClass('acf-clone');
-    $el2.find('.ui-sortable').removeClass('ui-sortable');
-
-    // after
-    // - allow acf to modify DOM
-    args.after($el, $el2);
-    acf.doAction('after_duplicate', $el, $el2);
-
-    // append
-    args.append($el, $el2);
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     /**
      * Fires after an element has been duplicated and appended to the DOM.
      *
@@ -4642,7 +3133,6 @@
      * @param	jQuery $el The original element.
      * @param	jQuery $el2 The duplicated element.
      */
-<<<<<<< HEAD
 
     acf.doAction('duplicate', $el, $el2); // append
 
@@ -4650,17 +3140,6 @@
 
     return $el2;
   };
-=======
-    acf.doAction('duplicate', $el, $el2);
-
-    // append
-    acf.doAction('append', $el2);
-
-    // return
-    return $el2;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  rename
    *
@@ -4673,32 +3152,22 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.rename = function (args) {
     // Allow jQuery param.
     if (args instanceof jQuery) {
       args = {
         target: args
       };
-<<<<<<< HEAD
     } // Apply default args.
 
 
-=======
-    }
-
-    // Apply default args.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     args = acf.parseArgs(args, {
       target: false,
       destructive: false,
       search: '',
       replace: '',
       replacer: null
-<<<<<<< HEAD
     }); // Extract args.
 
     var $el = args.target; // Provide backup for empty args.
@@ -4711,73 +3180,33 @@
       args.replace = acf.uniqid('acf');
     }
 
-=======
-    });
-
-    // Extract args.
-    var $el = args.target;
-
-    // Provide backup for empty args.
-    if (!args.search) {
-      args.search = $el.attr('data-id');
-    }
-    if (!args.replace) {
-      args.replace = acf.uniqid('acf');
-    }
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (!args.replacer) {
       args.replacer = function (name, value, search, replace) {
         return value.replace(search, replace);
       };
-<<<<<<< HEAD
     } // Callback function for jQuery replacing.
 
 
-=======
-    }
-
-    // Callback function for jQuery replacing.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     var withReplacer = function (name) {
       return function (i, value) {
         return args.replacer(name, value, args.search, args.replace);
       };
-<<<<<<< HEAD
     }; // Destructive Replace.
 
 
     if (args.destructive) {
       var html = acf.strReplace(args.search, args.replace, $el.outerHTML());
       $el.replaceWith(html); // Standard Replace.
-=======
-    };
-
-    // Destructive Replace.
-    if (args.destructive) {
-      var html = acf.strReplace(args.search, args.replace, $el.outerHTML());
-      $el.replaceWith(html);
-
-      // Standard Replace.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     } else {
       $el.attr('data-id', args.replace);
       $el.find('[id*="' + args.search + '"]').attr('id', withReplacer('id'));
       $el.find('[for*="' + args.search + '"]').attr('for', withReplacer('for'));
       $el.find('[name*="' + args.search + '"]').attr('name', withReplacer('name'));
-<<<<<<< HEAD
     } // return
 
 
     return $el;
   };
-=======
-    }
-
-    // return
-    return $el;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.prepareForAjax
    *
@@ -4790,7 +3219,6 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.prepareForAjax = function (data) {
     // required
@@ -4806,25 +3234,6 @@
 
     return data;
   };
-=======
-  acf.prepareForAjax = function (data) {
-    // required
-    data.nonce = acf.get('nonce');
-    data.post_id = acf.get('post_id');
-
-    // language
-    if (acf.has('language')) {
-      data.lang = acf.get('language');
-    }
-
-    // filter for 3rd party customization
-    data = acf.applyFilters('prepare_for_ajax', data);
-
-    // return
-    return data;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.startButtonLoading
    *
@@ -4837,26 +3246,16 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.startButtonLoading = function ($el) {
     $el.prop('disabled', true);
     $el.after(' <i class="acf-loading"></i>');
   };
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.stopButtonLoading = function ($el) {
     $el.prop('disabled', false);
     $el.next('.acf-loading').remove();
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.showLoading
    *
@@ -4869,7 +3268,6 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.showLoading = function ($el) {
     $el.append('<div class="acf-loading-overlay"><i class="acf-loading"></i></div>');
@@ -4878,15 +3276,6 @@
   acf.hideLoading = function ($el) {
     $el.children('.acf-loading-overlay').remove();
   };
-=======
-  acf.showLoading = function ($el) {
-    $el.append('<div class="acf-loading-overlay"><i class="acf-loading"></i></div>');
-  };
-  acf.hideLoading = function ($el) {
-    $el.children('.acf-loading-overlay').remove();
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.updateUserSetting
    *
@@ -4899,10 +3288,7 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.updateUserSetting = function (name, value) {
     var ajaxData = {
       action: 'acf/ajax/user_setting',
@@ -4916,10 +3302,6 @@
       dataType: 'html'
     });
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.val
    *
@@ -4932,7 +3314,6 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.val = function ($input, value, silent) {
     // vars
@@ -4958,35 +3339,6 @@
 
     return true;
   };
-=======
-  acf.val = function ($input, value, silent) {
-    // vars
-    var prevValue = $input.val();
-
-    // bail if no change
-    if (value === prevValue) {
-      return false;
-    }
-
-    // update value
-    $input.val(value);
-
-    // prevent select elements displaying blank value if option doesn't exist
-    if ($input.is('select') && $input.val() === null) {
-      $input.val(prevValue);
-      return false;
-    }
-
-    // update with trigger
-    if (silent !== true) {
-      $input.trigger('change');
-    }
-
-    // return
-    return true;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.show
    *
@@ -4999,15 +3351,11 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.show = function ($el, lockKey) {
     // unlock
     if (lockKey) {
       acf.unlock($el, 'hidden', lockKey);
-<<<<<<< HEAD
     } // bail early if $el is still locked
 
 
@@ -5020,30 +3368,10 @@
     if ($el.hasClass('acf-hidden')) {
       $el.removeClass('acf-hidden');
       return true; // $el is visible, return false due to no change in visibility
-=======
-    }
-
-    // bail early if $el is still locked
-    if (acf.isLocked($el, 'hidden')) {
-      //console.log( 'still locked', getLocks( $el, 'hidden' ));
-      return false;
-    }
-
-    // $el is hidden, remove class and return true due to change in visibility
-    if ($el.hasClass('acf-hidden')) {
-      $el.removeClass('acf-hidden');
-      return true;
-
-      // $el is visible, return false due to no change in visibility
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     } else {
       return false;
     }
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.hide
    *
@@ -5056,38 +3384,21 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.hide = function ($el, lockKey) {
     // lock
     if (lockKey) {
       acf.lock($el, 'hidden', lockKey);
-<<<<<<< HEAD
     } // $el is hidden, return false due to no change in visibility
 
 
     if ($el.hasClass('acf-hidden')) {
       return false; // $el is visible, add class and return true due to change in visibility
-=======
-    }
-
-    // $el is hidden, return false due to no change in visibility
-    if ($el.hasClass('acf-hidden')) {
-      return false;
-
-      // $el is visible, add class and return true due to change in visibility
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     } else {
       $el.addClass('acf-hidden');
       return true;
     }
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.isHidden
    *
@@ -5100,17 +3411,10 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.isHidden = function ($el) {
     return $el.hasClass('acf-hidden');
   };
-=======
-  acf.isHidden = function ($el) {
-    return $el.hasClass('acf-hidden');
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.isVisible
    *
@@ -5123,17 +3427,10 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.isVisible = function ($el) {
     return !acf.isHidden($el);
   };
-=======
-  acf.isVisible = function ($el) {
-    return !acf.isHidden($el);
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  enable
    *
@@ -5146,15 +3443,11 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   var enable = function ($el, lockKey) {
     // check class. Allow .acf-disabled to overrule all JS
     if ($el.hasClass('acf-disabled')) {
       return false;
-<<<<<<< HEAD
     } // unlock
 
 
@@ -5171,34 +3464,10 @@
     if ($el.prop('disabled')) {
       $el.prop('disabled', false);
       return true; // $el is enabled, return false due to no change
-=======
-    }
-
-    // unlock
-    if (lockKey) {
-      acf.unlock($el, 'disabled', lockKey);
-    }
-
-    // bail early if $el is still locked
-    if (acf.isLocked($el, 'disabled')) {
-      return false;
-    }
-
-    // $el is disabled, remove prop and return true due to change
-    if ($el.prop('disabled')) {
-      $el.prop('disabled', false);
-      return true;
-
-      // $el is enabled, return false due to no change
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     } else {
       return false;
     }
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.enable
    *
@@ -5211,15 +3480,11 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.enable = function ($el, lockKey) {
     // enable single input
     if ($el.attr('name')) {
       return enable($el, lockKey);
-<<<<<<< HEAD
     } // find and enable child inputs
     // return true if any inputs have changed
 
@@ -5228,25 +3493,12 @@
     $el.find('[name]').each(function () {
       var result = enable($(this), lockKey);
 
-=======
-    }
-
-    // find and enable child inputs
-    // return true if any inputs have changed
-    var results = false;
-    $el.find('[name]').each(function () {
-      var result = enable($(this), lockKey);
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (result) {
         results = true;
       }
     });
     return results;
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  disable
    *
@@ -5259,38 +3511,21 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   var disable = function ($el, lockKey) {
     // lock
     if (lockKey) {
       acf.lock($el, 'disabled', lockKey);
-<<<<<<< HEAD
     } // $el is disabled, return false due to no change
 
 
     if ($el.prop('disabled')) {
       return false; // $el is enabled, add prop and return true due to change
-=======
-    }
-
-    // $el is disabled, return false due to no change
-    if ($el.prop('disabled')) {
-      return false;
-
-      // $el is enabled, add prop and return true due to change
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     } else {
       $el.prop('disabled', true);
       return true;
     }
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.disable
    *
@@ -5303,15 +3538,11 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.disable = function ($el, lockKey) {
     // disable single input
     if ($el.attr('name')) {
       return disable($el, lockKey);
-<<<<<<< HEAD
     } // find and enable child inputs
     // return true if any inputs have changed
 
@@ -5320,25 +3551,12 @@
     $el.find('[name]').each(function () {
       var result = disable($(this), lockKey);
 
-=======
-    }
-
-    // find and enable child inputs
-    // return true if any inputs have changed
-    var results = false;
-    $el.find('[name]').each(function () {
-      var result = disable($(this), lockKey);
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (result) {
         results = true;
       }
     });
     return results;
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.isset
    *
@@ -5351,32 +3569,20 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.isset = function (obj
   /*, level1, level2, ... */
   ) {
-=======
-  acf.isset = function (obj /*, level1, level2, ... */) {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     for (var i = 1; i < arguments.length; i++) {
       if (!obj || !obj.hasOwnProperty(arguments[i])) {
         return false;
       }
-<<<<<<< HEAD
 
       obj = obj[arguments[i]];
     }
 
     return true;
   };
-=======
-      obj = obj[arguments[i]];
-    }
-    return true;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.isget
    *
@@ -5389,32 +3595,20 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.isget = function (obj
   /*, level1, level2, ... */
   ) {
-=======
-  acf.isget = function (obj /*, level1, level2, ... */) {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     for (var i = 1; i < arguments.length; i++) {
       if (!obj || !obj.hasOwnProperty(arguments[i])) {
         return null;
       }
-<<<<<<< HEAD
 
       obj = obj[arguments[i]];
     }
 
     return obj;
   };
-=======
-      obj = obj[arguments[i]];
-    }
-    return obj;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.getFileInputData
    *
@@ -5427,7 +3621,6 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.getFileInputData = function ($input, callback) {
     // vars
@@ -5449,48 +3642,18 @@
       data.size = file.size;
       data.type = file.type; // image
 
-=======
-  acf.getFileInputData = function ($input, callback) {
-    // vars
-    var value = $input.val();
-
-    // bail early if no value
-    if (!value) {
-      return false;
-    }
-
-    // data
-    var data = {
-      url: value
-    };
-
-    // modern browsers
-    var file = $input[0].files.length ? acf.isget($input[0].files, 0) : false;
-    if (file) {
-      // update data
-      data.size = file.size;
-      data.type = file.type;
-
-      // image
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (file.type.indexOf('image') > -1) {
         // vars
         var windowURL = window.URL || window.webkitURL;
         var img = new Image();
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         img.onload = function () {
           // update
           data.width = this.width;
           data.height = this.height;
           callback(data);
         };
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         img.src = windowURL.createObjectURL(file);
       } else {
         callback(data);
@@ -5499,10 +3662,6 @@
       callback(data);
     }
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.isAjaxSuccess
    *
@@ -5515,17 +3674,10 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.isAjaxSuccess = function (json) {
     return json && json.success;
   };
-=======
-  acf.isAjaxSuccess = function (json) {
-    return json && json.success;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.getAjaxMessage
    *
@@ -5538,17 +3690,10 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.getAjaxMessage = function (json) {
     return acf.isget(json, 'data', 'message');
   };
-=======
-  acf.getAjaxMessage = function (json) {
-    return acf.isget(json, 'data', 'message');
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.getAjaxError
    *
@@ -5561,17 +3706,10 @@
    *  @return	type Description.
    */
 
-<<<<<<< HEAD
 
   acf.getAjaxError = function (json) {
     return acf.isget(json, 'data', 'error');
   };
-=======
-  acf.getAjaxError = function (json) {
-    return acf.isget(json, 'data', 'error');
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns the error message from an XHR object.
    *
@@ -5581,40 +3719,25 @@
    * @param	object xhr The XHR object.
    * @return	(string)
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.getXhrError = function (xhr) {
     if (xhr.responseJSON) {
       // Responses via `return new WP_Error();`
       if (xhr.responseJSON.message) {
         return xhr.responseJSON.message;
-<<<<<<< HEAD
       } // Responses via `wp_send_json_error();`.
 
 
-=======
-      }
-
-      // Responses via `wp_send_json_error();`.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (xhr.responseJSON.data && xhr.responseJSON.data.error) {
         return xhr.responseJSON.data.error;
       }
     } else if (xhr.statusText) {
       return xhr.statusText;
     }
-<<<<<<< HEAD
 
     return '';
   };
-=======
-    return '';
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.renderSelect
    *
@@ -5628,7 +3751,6 @@
    *  @return	void
    */
 
-<<<<<<< HEAD
 
   acf.renderSelect = function ($select, choices) {
     // vars
@@ -5666,53 +3788,6 @@
 
     return $select.val();
   };
-=======
-  acf.renderSelect = function ($select, choices) {
-    // vars
-    var value = $select.val();
-    var values = [];
-
-    // callback
-    var crawl = function (items) {
-      // vars
-      var itemsHtml = '';
-
-      // loop
-      items.map(function (item) {
-        // vars
-        var text = item.text || item.label || '';
-        var id = item.id || item.value || '';
-
-        // append
-        values.push(id);
-
-        //  optgroup
-        if (item.children) {
-          itemsHtml += '<optgroup label="' + acf.escAttr(text) + '">' + crawl(item.children) + '</optgroup>';
-
-          // option
-        } else {
-          itemsHtml += '<option value="' + acf.escAttr(id) + '"' + (item.disabled ? ' disabled="disabled"' : '') + '>' + acf.strEscape(text) + '</option>';
-        }
-      });
-
-      // return
-      return itemsHtml;
-    };
-
-    // update HTML
-    $select.html(crawl(choices));
-
-    // update value
-    if (values.indexOf(value) > -1) {
-      $select.val(value);
-    }
-
-    // return selected value
-    return $select.val();
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.lock
    *
@@ -5727,7 +3802,6 @@
    *  @return	void
    */
 
-<<<<<<< HEAD
 
   var getLocks = function ($el, type) {
     return $el.data('acf-lock-' + type) || [];
@@ -5741,26 +3815,11 @@
     var locks = getLocks($el, type);
     var i = locks.indexOf(key);
 
-=======
-  var getLocks = function ($el, type) {
-    return $el.data('acf-lock-' + type) || [];
-  };
-  var setLocks = function ($el, type, locks) {
-    $el.data('acf-lock-' + type, locks);
-  };
-  acf.lock = function ($el, type, key) {
-    var locks = getLocks($el, type);
-    var i = locks.indexOf(key);
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (i < 0) {
       locks.push(key);
       setLocks($el, type, locks);
     }
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.unlock
    *
@@ -5775,7 +3834,6 @@
    *  @return	void
    */
 
-<<<<<<< HEAD
 
   acf.unlock = function ($el, type, key) {
     var locks = getLocks($el, type);
@@ -5789,20 +3847,6 @@
 
     return locks.length === 0;
   };
-=======
-  acf.unlock = function ($el, type, key) {
-    var locks = getLocks($el, type);
-    var i = locks.indexOf(key);
-    if (i > -1) {
-      locks.splice(i, 1);
-      setLocks($el, type, locks);
-    }
-
-    // return true if is unlocked (no locks)
-    return locks.length === 0;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.isLocked
    *
@@ -5816,17 +3860,10 @@
    *  @return	void
    */
 
-<<<<<<< HEAD
 
   acf.isLocked = function ($el, type) {
     return getLocks($el, type).length > 0;
   };
-=======
-  acf.isLocked = function ($el, type) {
-    return getLocks($el, type).length > 0;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.isGutenberg
    *
@@ -5838,18 +3875,11 @@
    *  @param	vois
    *  @return	bool
    */
-<<<<<<< HEAD
 
 
   acf.isGutenberg = function () {
     return !!(window.wp && wp.data && wp.data.select && wp.data.select('core/editor'));
   };
-=======
-  acf.isGutenberg = function () {
-    return !!(window.wp && wp.data && wp.data.select && wp.data.select('core/editor'));
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  acf.objectToArray
    *
@@ -5861,20 +3891,13 @@
    *  @param	object obj The object of items.
    *  @return	array
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.objectToArray = function (obj) {
     return Object.keys(obj).map(function (key) {
       return obj[key];
     });
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * acf.debounce
    *
@@ -5886,35 +3909,22 @@
    * @param	function callback The callback function.
    * @return	int wait The number of milliseconds to wait.
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.debounce = function (callback, wait) {
     var timeout;
     return function () {
       var context = this;
       var args = arguments;
-<<<<<<< HEAD
 
       var later = function () {
         callback.apply(context, args);
       };
 
-=======
-      var later = function () {
-        callback.apply(context, args);
-      };
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       clearTimeout(timeout);
       timeout = setTimeout(later, wait);
     };
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * acf.throttle
    *
@@ -5926,11 +3936,8 @@
    * @param	function callback The callback function.
    * @return	int wait The number of milliseconds to wait.
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.throttle = function (callback, limit) {
     var busy = false;
     return function () {
@@ -5942,10 +3949,6 @@
       callback.apply(this, arguments);
     };
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * acf.isInView
    *
@@ -5957,26 +3960,16 @@
    * @param	elem el The dom element to inspect.
    * @return	bool
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.isInView = function (el) {
     if (el instanceof jQuery) {
       el = el[0];
     }
-<<<<<<< HEAD
 
     var rect = el.getBoundingClientRect();
     return rect.top !== rect.bottom && rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
   };
-=======
-    var rect = el.getBoundingClientRect();
-    return rect.top !== rect.bottom && rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * acf.onceInView
    *
@@ -5988,7 +3981,6 @@
    * @param	dom el The dom element to inspect.
    * @param	function callback The callback function.
    */
-<<<<<<< HEAD
 
 
   acf.onceInView = function () {
@@ -5996,14 +3988,6 @@
     var items = [];
     var id = 0; // Define check function.
 
-=======
-  acf.onceInView = function () {
-    // Define list.
-    var items = [];
-    var id = 0;
-
-    // Define check function.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     var check = function () {
       items.forEach(function (item) {
         if (acf.isInView(item.el)) {
@@ -6011,52 +3995,30 @@
           pop(item.id);
         }
       });
-<<<<<<< HEAD
     }; // And create a debounced version.
 
 
     var debounced = acf.debounce(check, 300); // Define add function.
 
-=======
-    };
-
-    // And create a debounced version.
-    var debounced = acf.debounce(check, 300);
-
-    // Define add function.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     var push = function (el, callback) {
       // Add event listener.
       if (!items.length) {
         $(window).on('scroll resize', debounced).on('acfrefresh orientationchange', check);
-<<<<<<< HEAD
       } // Append to list.
 
 
-=======
-      }
-
-      // Append to list.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       items.push({
         id: id++,
         el: el,
         callback: callback
       });
-<<<<<<< HEAD
     }; // Define remove function.
 
 
-=======
-    };
-
-    // Define remove function.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     var pop = function (id) {
       // Remove from list.
       items = items.filter(function (item) {
         return item.id !== id;
-<<<<<<< HEAD
       }); // Clean up listener.
 
       if (!items.length) {
@@ -6069,22 +4031,6 @@
       // Allow jQuery object.
       if (el instanceof jQuery) el = el[0]; // Execute callback if already in view or add to watch list.
 
-=======
-      });
-
-      // Clean up listener.
-      if (!items.length) {
-        $(window).off('scroll resize', debounced).off('acfrefresh orientationchange', check);
-      }
-    };
-
-    // Define returned function.
-    return function (el, callback) {
-      // Allow jQuery object.
-      if (el instanceof jQuery) el = el[0];
-
-      // Execute callback if already in view or add to watch list.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (acf.isInView(el)) {
         callback.apply(this);
       } else {
@@ -6092,10 +4038,6 @@
       }
     };
   }();
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * acf.once
    *
@@ -6107,28 +4049,18 @@
    * @param	function func The function to restrict.
    * @return	function
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.once = function (func) {
     var i = 0;
     return function () {
       if (i++ > 0) {
         return func = undefined;
       }
-<<<<<<< HEAD
 
       return func.apply(this, arguments);
     };
   };
-=======
-      return func.apply(this, arguments);
-    };
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Focuses attention to a specific element.
    *
@@ -6138,7 +4070,6 @@
    * @param	jQuery $el The jQuery element to focus.
    * @return	void
    */
-<<<<<<< HEAD
 
 
   acf.focusAttention = function ($el) {
@@ -6148,30 +4079,14 @@
 
     var scrollTime = 500;
 
-=======
-  acf.focusAttention = function ($el) {
-    var wait = 1000;
-
-    // Apply class to focus attention.
-    $el.addClass('acf-attention -focused');
-
-    // Scroll to element if needed.
-    var scrollTime = 500;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (!acf.isInView($el)) {
       $('body, html').animate({
         scrollTop: $el.offset().top - $(window).height() / 2
       }, scrollTime);
       wait += scrollTime;
-<<<<<<< HEAD
     } // Remove class after $wait amount of time.
 
 
-=======
-    }
-
-    // Remove class after $wait amount of time.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     var fadeTime = 250;
     setTimeout(function () {
       $el.removeClass('-focused');
@@ -6180,10 +4095,6 @@
       }, fadeTime);
     }, wait);
   };
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Description
    *
@@ -6193,29 +4104,17 @@
    * @param	type Var Description.
    * @return	type Description.
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   acf.onFocus = function ($el, callback) {
     // Only run once per element.
     // if( $el.data('acf.onFocus') ) {
     // 	return false;
     // }
-<<<<<<< HEAD
     // Vars.
     var ignoreBlur = false;
     var focus = false; // Functions.
 
-=======
-
-    // Vars.
-    var ignoreBlur = false;
-    var focus = false;
-
-    // Functions.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     var onFocus = function () {
       ignoreBlur = true;
       setTimeout(function () {
@@ -6223,16 +4122,12 @@
       }, 1);
       setFocus(true);
     };
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     var onBlur = function () {
       if (!ignoreBlur) {
         setFocus(false);
       }
     };
-<<<<<<< HEAD
 
     var addEvents = function () {
       $(document).on('click', onBlur); //$el.on('acfBlur', onBlur);
@@ -6246,32 +4141,16 @@
       $el.off('blur', 'input, select, textarea', onBlur);
     };
 
-=======
-    var addEvents = function () {
-      $(document).on('click', onBlur);
-      //$el.on('acfBlur', onBlur);
-      $el.on('blur', 'input, select, textarea', onBlur);
-    };
-    var removeEvents = function () {
-      $(document).off('click', onBlur);
-      //$el.off('acfBlur', onBlur);
-      $el.off('blur', 'input, select, textarea', onBlur);
-    };
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     var setFocus = function (value) {
       if (focus === value) {
         return;
       }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (value) {
         addEvents();
       } else {
         removeEvents();
       }
-<<<<<<< HEAD
 
       focus = value;
       callback(value);
@@ -6282,19 +4161,6 @@
 
     $el.on('focus', 'input, select, textarea', onFocus); //$el.data('acf.onFocus', true);
   };
-=======
-      focus = value;
-      callback(value);
-    };
-
-    // Add events and set data.
-    $el.on('click', onFocus);
-    //$el.on('acfFocus', onFocus);
-    $el.on('focus', 'input, select, textarea', onFocus);
-    //$el.data('acf.onFocus', true);
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /*
    *  exists
    *
@@ -6308,17 +4174,10 @@
    *  @return	(boolean)
    */
 
-<<<<<<< HEAD
 
   $.fn.exists = function () {
     return $(this).length > 0;
   };
-=======
-  $.fn.exists = function () {
-    return $(this).length > 0;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /*
    *  outerHTML
    *
@@ -6332,17 +4191,10 @@
    *  @return	(string)
    */
 
-<<<<<<< HEAD
 
   $.fn.outerHTML = function () {
     return $(this).get(0).outerHTML;
   };
-=======
-  $.fn.outerHTML = function () {
-    return $(this).get(0).outerHTML;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /*
    *  indexOf
    *
@@ -6356,19 +4208,12 @@
    *  @return	n/a
    */
 
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   if (!Array.prototype.indexOf) {
     Array.prototype.indexOf = function (val) {
       return $.inArray(val, this);
     };
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns true if value is a number or a numeric string.
    *
@@ -6379,18 +4224,11 @@
    * @param	mixed n The variable being evaluated.
    * @return	bool.
    */
-<<<<<<< HEAD
 
 
   acf.isNumeric = function (n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
   };
-=======
-  acf.isNumeric = function (n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Triggers a "refresh" action used by various Components to redraw the DOM.
    *
@@ -6400,7 +4238,6 @@
    * @param	void
    * @return	void
    */
-<<<<<<< HEAD
 
 
   acf.refresh = acf.debounce(function () {
@@ -6408,14 +4245,6 @@
     acf.doAction('refresh');
   }, 0); // Set up actions from events
 
-=======
-  acf.refresh = acf.debounce(function () {
-    $(window).trigger('acfrefresh');
-    acf.doAction('refresh');
-  }, 0);
-
-  // Set up actions from events
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   $(document).ready(function () {
     acf.doAction('ready');
   });

@@ -35,7 +35,6 @@ function the_brow_beast_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'the_brow_beast_pingback_header' );
-<<<<<<< HEAD
 
 //Custom Post Types (CPT)
 
@@ -89,5 +88,3 @@ function custom_post_type() {
 
 	add_action( 'init', 'custom_post_type', 0 );
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123

@@ -71,13 +71,8 @@ class ACF_Repeater_Table {
 			$this->field['pagination'] = false;
 		}
 
-<<<<<<< HEAD
 		// We don't yet support pagination in frontend forms.
 		if ( ! is_admin() ) {
-=======
-		// We don't yet support pagination in frontend forms or inside blocks.
-		if ( ! is_admin() || acf_get_data( 'acf_inside_rest_call' ) || doing_action( 'wp_ajax_acf/ajax/fetch-block' ) ) {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			$this->field['pagination'] = false;
 		}
 
@@ -228,11 +223,7 @@ class ACF_Repeater_Table {
 					// Define attrs.
 					$attrs = array(
 						'class'     => 'acf-th',
-<<<<<<< HEAD
 						'data-name' => $sub_field['name'],
-=======
-						'data-name' => $sub_field['_name'],
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 						'data-type' => $sub_field['type'],
 						'data-key'  => $sub_field['key'],
 					);

@@ -141,11 +141,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 		function ajax_update_attachment() {
 
 			// validate nonce
-<<<<<<< HEAD
 			if ( ! wp_verify_nonce( $_POST['nonce'], 'acf_nonce' ) ) {
-=======
-			if ( ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'acf_nonce' ) ) {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 				wp_send_json_error();
 
@@ -159,11 +155,7 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			}
 
 			// loop over attachments
-<<<<<<< HEAD
 			foreach ( $_POST['attachments'] as $id => $changes ) {
-=======
-			foreach ( $_POST['attachments'] as $id => $changes ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized by WP core when saved.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 				if ( ! current_user_can( 'edit_post', $id ) ) {
 					wp_send_json_error();
@@ -636,21 +628,12 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-<<<<<<< HEAD
 					'label'        => __( 'Minimum', 'acf' ),
 					'instructions' => __( 'Restrict which images can be uploaded', 'acf' ),
 					'type'         => 'text',
 					'name'         => 'min_width',
 					'prepend'      => __( 'Width', 'acf' ),
 					'append'       => 'px',
-=======
-					'label'   => __( 'Minimum', 'acf' ),
-					'hint'    => __( 'Restrict which images can be uploaded', 'acf' ),
-					'type'    => 'text',
-					'name'    => 'min_width',
-					'prepend' => __( 'Width', 'acf' ),
-					'append'  => 'px',
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 				)
 			);
 
@@ -681,21 +664,12 @@ if ( ! class_exists( 'acf_field_gallery' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
-<<<<<<< HEAD
 					'label'        => __( 'Maximum', 'acf' ),
 					'instructions' => __( 'Restrict which images can be uploaded', 'acf' ),
 					'type'         => 'text',
 					'name'         => 'max_width',
 					'prepend'      => __( 'Width', 'acf' ),
 					'append'       => 'px',
-=======
-					'label'   => __( 'Maximum', 'acf' ),
-					'hint'    => __( 'Restrict which images can be uploaded', 'acf' ),
-					'type'    => 'text',
-					'name'    => 'max_width',
-					'prepend' => __( 'Width', 'acf' ),
-					'append'  => 'px',
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 				)
 			);
 

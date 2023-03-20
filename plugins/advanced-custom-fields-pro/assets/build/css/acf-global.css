@@ -944,11 +944,7 @@ html[dir=rtl] #acf-popup .acf-popup-box .title .acf-icon {
 }
 @media screen and (max-width: 640px) {
   #acf-upgrade-notice .col-content,
-<<<<<<< HEAD
 #acf-upgrade-notice .col-actions {
-=======
-  #acf-upgrade-notice .col-actions {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     float: none;
     padding-left: 90px;
     width: auto;
@@ -1207,11 +1203,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
     margin: 0;
   }
   .acf-postbox-columns .acf-postbox-main,
-<<<<<<< HEAD
 .acf-postbox-columns .acf-postbox-side {
-=======
-  .acf-postbox-columns .acf-postbox-side {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     float: none;
     width: auto;
     margin: 0;
@@ -1583,11 +1575,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 *---------------------------------------------------------------------------------------------*/
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
   .acf-loading,
-<<<<<<< HEAD
 .acf-spinner {
-=======
-  .acf-spinner {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     background-image: url(../../images/spinner@2x.gif);
     background-size: 20px 20px;
   }
@@ -2017,11 +2005,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 .post-type-acf-field-group .notice.notice-error:after,
 .post-type-acf-field-group #lost-connection-notice:after {
-<<<<<<< HEAD
   background-color: #DA5A39;
-=======
-  background-color: #D13737;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 }
 
 /*---------------------------------------------------------------------------------------------
@@ -2311,14 +2295,6 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   height: 20px;
   background-color: red;
 }
-<<<<<<< HEAD
-=======
-.post-type-acf-field-group.rtl select {
-  padding-right: 12px;
-  padding-left: 40px;
-  background-position: left 10px top 50%;
-}
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 .post-type-acf-field-group input[type=radio],
 .post-type-acf-field-group input[type=checkbox] {
   box-sizing: border-box;
@@ -2367,14 +2343,6 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   background-color: #F9FAFB;
   border-color: #D0D5DD;
 }
-<<<<<<< HEAD
-=======
-.post-type-acf-field-group.rtl input[type=radio]:checked:before, .post-type-acf-field-group.rtl input[type=radio]:focus-visible:before,
-.post-type-acf-field-group.rtl input[type=checkbox]:checked:before,
-.post-type-acf-field-group.rtl input[type=checkbox]:focus-visible:before {
-  left: 1px;
-}
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 .post-type-acf-field-group input[type=radio]:checked:before, .post-type-acf-field-group input[type=radio]:focus:before {
   background-image: url("../../images/field-states/radio-active.svg");
 }
@@ -2436,22 +2404,12 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 .post-type-acf-field-group .acf-field-true-false {
   display: flex;
-<<<<<<< HEAD
   align-items: center;
 }
 .post-type-acf-field-group .acf-field-true-false .acf-label {
   order: 2;
   display: inline-flex;
   align-items: center;
-=======
-  align-items: flex-start;
-}
-.post-type-acf-field-group .acf-field-true-false .acf-label {
-  order: 2;
-  display: block;
-  align-items: center;
-  margin-top: 2px;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   margin-bottom: 0;
   margin-left: 12px;
 }
@@ -2461,14 +2419,6 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 .post-type-acf-field-group .acf-field-true-false .acf-label .acf-tip {
   margin-left: 12px;
 }
-<<<<<<< HEAD
-=======
-.post-type-acf-field-group .acf-field-true-false .acf-label .description {
-  display: block;
-  margin-top: 2px;
-  margin-left: 0;
-}
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 .post-type-acf-field-group.rtl .acf-field-true-false .acf-label {
   margin-right: 12px;
   margin-left: 0;
@@ -2614,12 +2564,6 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 .post-type-acf-field-group .acf-label label {
   margin-bottom: 0;
 }
-<<<<<<< HEAD
-=======
-.post-type-acf-field-group .acf-label .description {
-  margin-top: 2px;
-}
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 .post-type-acf-field-group .acf-field-setting-name .acf-tip {
   position: absolute;
   top: 0;
@@ -2681,11 +2625,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 @media screen and (max-width: 880px) {
   .acf-admin-field-groups .wp-list-table th.check-column,
-<<<<<<< HEAD
 .acf-admin-field-groups .wp-list-table td.check-column {
-=======
-  .acf-admin-field-groups .wp-list-table td.check-column {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     vertical-align: top;
     padding-right: 2px;
     padding-left: 10px;
@@ -2708,22 +2648,14 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 @media screen and (max-width: 880px) {
   .acf-admin-field-groups .wp-list-table thead th, .acf-admin-field-groups .wp-list-table thead td,
-<<<<<<< HEAD
 .acf-admin-field-groups .wp-list-table tfoot th, .acf-admin-field-groups .wp-list-table tfoot td {
-=======
-  .acf-admin-field-groups .wp-list-table tfoot th, .acf-admin-field-groups .wp-list-table tfoot td {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     padding-right: 16px;
     padding-left: 8px;
   }
 }
 @media screen and (max-width: 880px) {
   .acf-admin-field-groups .wp-list-table thead th.check-column, .acf-admin-field-groups .wp-list-table thead td.check-column,
-<<<<<<< HEAD
 .acf-admin-field-groups .wp-list-table tfoot th.check-column, .acf-admin-field-groups .wp-list-table tfoot td.check-column {
-=======
-  .acf-admin-field-groups .wp-list-table tfoot th.check-column, .acf-admin-field-groups .wp-list-table tfoot td.check-column {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     vertical-align: middle;
   }
 }
@@ -2743,11 +2675,7 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 }
 @media screen and (max-width: 880px) {
   .acf-admin-field-groups .wp-list-table tbody th,
-<<<<<<< HEAD
 .acf-admin-field-groups .wp-list-table tbody td {
-=======
-  .acf-admin-field-groups .wp-list-table tbody td {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     padding-right: 16px;
     padding-left: 8px;
   }
@@ -3142,13 +3070,8 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 *---------------------------------------------------------------------------------------------*/
 @media screen and (max-width: 880px) {
   .post-type-acf-field-group .widefat th input[type=checkbox],
-<<<<<<< HEAD
 .post-type-acf-field-group .widefat thead td input[type=checkbox],
 .post-type-acf-field-group .widefat tfoot td input[type=checkbox] {
-=======
-  .post-type-acf-field-group .widefat thead td input[type=checkbox],
-  .post-type-acf-field-group .widefat tfoot td input[type=checkbox] {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     margin-bottom: 0;
   }
 }
@@ -3354,33 +3277,13 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
     flex-wrap: wrap;
   }
   .acf-headerbar .acf-headerbar-content .acf-headerbar-title,
-<<<<<<< HEAD
 .acf-headerbar .acf-headerbar-content .acf-title-wrap {
-=======
-  .acf-headerbar .acf-headerbar-content .acf-title-wrap {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     flex: 1 1 100%;
   }
   .acf-headerbar .acf-headerbar-content .acf-title-wrap {
     margin-top: 8px;
   }
 }
-<<<<<<< HEAD
-=======
-.acf-headerbar .acf-input-error {
-  border: 1px rgba(209, 55, 55, 0.5) solid !important;
-  box-shadow: 0px 0px 0px 3px rgba(209, 55, 55, 0.12), 0px 0px 0px rgba(255, 54, 54, 0.25) !important;
-  background-image: url("../../images/icons/icon-warning-alt-red.svg");
-  background-position: right 10px top 50%;
-  background-size: 20px;
-  background-repeat: no-repeat;
-}
-.acf-headerbar .acf-input-error:focus {
-  outline: none !important;
-  border: 1px rgba(209, 55, 55, 0.8) solid !important;
-  box-shadow: 0px 0px 0px 3px rgba(209, 55, 55, 0.16), 0px 0px 0px rgba(255, 54, 54, 0.25) !important;
-}
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 .acf-headerbar .acf-headerbar-title-field {
   min-width: 320px;
 }
@@ -3395,15 +3298,6 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 .acf-headerbar .acf-headerbar-actions .acf-btn {
   margin-left: 8px;
 }
-<<<<<<< HEAD
-=======
-.acf-headerbar .acf-headerbar-actions .disabled {
-  background-color: #F2F4F7;
-  color: #98A2B3 !important;
-  border: 1px #D0D5DD solid;
-  cursor: default;
-}
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 /*---------------------------------------------------------------------------------------------
 *
@@ -3570,15 +3464,9 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
 *
 *---------------------------------------------------------------------------------------------*/
 .acf-btn.acf-delete-field-group:hover {
-<<<<<<< HEAD
   background-color: #fdf8f6;
   border-color: #DA5A39 !important;
   color: #DA5A39 !important;
-=======
-  background-color: #fbeded;
-  border-color: #D13737 !important;
-  color: #D13737 !important;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 }
 
 /*--------------------------------------------------------------------------------------------
@@ -3668,17 +3556,6 @@ html[dir=rtl] .acf-table > tbody > tr > td.order + td {
   -webkit-mask-image: url("../../images/field-type-icons/icon-field-image.svg");
   mask-image: url("../../images/field-type-icons/icon-field-image.svg");
 }
-<<<<<<< HEAD
-=======
-.post-type-acf-field-group i.acf-icon-warning {
-  -webkit-mask-image: url("../../images/icons/icon-warning-alt.svg");
-  mask-image: url("../../images/icons/icon-warning-alt.svg");
-}
-.post-type-acf-field-group i.acf-icon-warning-red {
-  -webkit-mask-image: url("../../images/icons/icon-warning-alt-red.svg");
-  mask-image: url("../../images/icons/icon-warning-alt-red.svg");
-}
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 .post-type-acf-field-group .post-type-acf-field-group .post-state {
   font-weight: normal;
 }
@@ -4429,11 +4306,7 @@ h3.acf-sub-field-list-title:before {
     align-items: flex-start;
   }
   #acf-field-group-pro-features .acf-field-group-pro-features-wrapper .acf-field-group-pro-features-content,
-<<<<<<< HEAD
 #acf-field-group-pro-features .acf-field-group-pro-features-wrapper .acf-field-group-pro-features-actions {
-=======
-  #acf-field-group-pro-features .acf-field-group-pro-features-wrapper .acf-field-group-pro-features-actions {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     flex: 0 1 100%;
   }
 }

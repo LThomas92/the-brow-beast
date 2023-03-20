@@ -452,13 +452,6 @@ if ( ! class_exists( 'acf_field_file' ) ) :
 		 * @return bool|WP_Error
 		 */
 		public function validate_rest_value( $valid, $value, $field ) {
-<<<<<<< HEAD
-=======
-			if ( is_null( $value ) && empty( $field['required'] ) ) {
-				return $valid;
-			}
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			/**
 			 * A bit of a hack, but we use `wp_prepare_attachment_for_js()` here
 			 * since it returns all the data we need to validate the file, and we use this anyways

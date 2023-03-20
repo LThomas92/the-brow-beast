@@ -13,7 +13,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "./node_modules/react/index.js");
 
 
-<<<<<<< HEAD
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
@@ -21,11 +20,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
 
-=======
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 (($, undefined) => {
   // Dependencies.
   const {
@@ -53,7 +47,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
   } = wp.data;
   const {
     createHigherOrderComponent
-<<<<<<< HEAD
   } = wp.compose; // Potentially experimental dependencies.
 
   const BlockAlignmentMatrixToolbar = wp.blockEditor.__experimentalBlockAlignmentMatrixToolbar || wp.blockEditor.BlockAlignmentMatrixToolbar; // Gutenberg v10.x begins transition from Toolbar components to Control components.
@@ -61,30 +54,14 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
   const BlockAlignmentMatrixControl = wp.blockEditor.__experimentalBlockAlignmentMatrixControl || wp.blockEditor.BlockAlignmentMatrixControl;
   const BlockFullHeightAlignmentControl = wp.blockEditor.__experimentalBlockFullHeightAligmentControl || wp.blockEditor.__experimentalBlockFullHeightAlignmentControl || wp.blockEditor.BlockFullHeightAlignmentControl;
   const useInnerBlocksProps = wp.blockEditor.__experimentalUseInnerBlocksProps || wp.blockEditor.useInnerBlocksProps;
-=======
-  } = wp.compose;
-
-  // Potentially experimental dependencies.
-  const BlockAlignmentMatrixToolbar = wp.blockEditor.__experimentalBlockAlignmentMatrixToolbar || wp.blockEditor.BlockAlignmentMatrixToolbar;
-  // Gutenberg v10.x begins transition from Toolbar components to Control components.
-  const BlockAlignmentMatrixControl = wp.blockEditor.__experimentalBlockAlignmentMatrixControl || wp.blockEditor.BlockAlignmentMatrixControl;
-  const BlockFullHeightAlignmentControl = wp.blockEditor.__experimentalBlockFullHeightAligmentControl || wp.blockEditor.__experimentalBlockFullHeightAlignmentControl || wp.blockEditor.BlockFullHeightAlignmentControl;
-  const useInnerBlocksProps = wp.blockEditor.__experimentalUseInnerBlocksProps || wp.blockEditor.useInnerBlocksProps;
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Storage for registered block types.
    *
    * @since 5.8.0
    * @var object
    */
-<<<<<<< HEAD
 
   const blockTypes = {};
-=======
-  const blockTypes = {};
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns a block type for the given name.
    *
@@ -94,17 +71,10 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	string name The block name.
    * @return	(object|false)
    */
-<<<<<<< HEAD
 
   function getBlockType(name) {
     return blockTypes[name] || false;
   }
-=======
-  function getBlockType(name) {
-    return blockTypes[name] || false;
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns a block version for a given block name
    *
@@ -114,19 +84,12 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param string name The block name
    * @return int
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function getBlockVersion(name) {
     const blockType = getBlockType(name);
     return blockType.acf_block_version || 1;
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns true if a block (identified by client ID) is nested in a query loop block.
    *
@@ -136,20 +99,13 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param {string} clientId A block client ID
    * @return boolean
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function isBlockInQueryLoop(clientId) {
     const parents = wp.data.select('core/block-editor').getBlockParents(clientId);
     const parentsData = wp.data.select('core/block-editor').getBlocksByClientId(parents);
     return parentsData.filter(block => block.name === 'core/query').length;
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns true if we're currently inside the WP 5.9+ site editor.
    *
@@ -158,18 +114,11 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    *
    * @return boolean
    */
-<<<<<<< HEAD
 
 
   function isSiteEditor() {
     return typeof pagenow === 'string' && pagenow === 'site-editor';
   }
-=======
-  function isSiteEditor() {
-    return typeof pagenow === 'string' && pagenow === 'site-editor';
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns true if the block editor is currently showing the desktop device type preview.
    *
@@ -181,7 +130,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    *
    * @return boolean
    */
-<<<<<<< HEAD
 
 
   function isDesktopPreviewDeviceType() {
@@ -189,15 +137,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
 
     if (!editPostStore) return true; // Check if function exists (experimental or not) and return true if it's Desktop, or doesn't exist.
 
-=======
-  function isDesktopPreviewDeviceType() {
-    const editPostStore = select('core/edit-post');
-
-    // Return true if the edit post store isn't available (such as in the widget editor)
-    if (!editPostStore) return true;
-
-    // Check if function exists (experimental or not) and return true if it's Desktop, or doesn't exist.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (editPostStore.__experimentalGetPreviewDeviceType) {
       return 'Desktop' === editPostStore.__experimentalGetPreviewDeviceType();
     } else if (editPostStore.getPreviewDeviceType) {
@@ -206,10 +145,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       return true;
     }
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns true if the block editor is currently in template edit mode.
    *
@@ -218,7 +153,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    *
    * @return boolean
    */
-<<<<<<< HEAD
 
 
   function isEditingTemplate() {
@@ -229,19 +163,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
     if (!editPostStore.isEditingTemplate) return false;
     return editPostStore.isEditingTemplate();
   }
-=======
-  function isEditingTemplate() {
-    const editPostStore = select('core/edit-post');
-
-    // Return false if the edit post store isn't available (such as in the widget editor)
-    if (!editPostStore) return false;
-
-    // Return false if the function doesn't exist
-    if (!editPostStore.isEditingTemplate) return false;
-    return editPostStore.isEditingTemplate();
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns true if we're currently inside an iFramed non-desktop device preview type (WP5.9+)
    *
@@ -250,18 +171,11 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    *
    * @return boolean
    */
-<<<<<<< HEAD
 
 
   function isiFramedMobileDevicePreview() {
     return $('iframe[name=editor-canvas]').length && !isDesktopPreviewDeviceType();
   }
-=======
-  function isiFramedMobileDevicePreview() {
-    return $('iframe[name=editor-canvas]').length && !isDesktopPreviewDeviceType();
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Registers a block type.
    *
@@ -271,7 +185,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	object blockType The block type settings localized from PHP.
    * @return	object The result from wp.blocks.registerBlockType().
    */
-<<<<<<< HEAD
 
 
   function registerBlockType(blockType) {
@@ -302,42 +215,12 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
     } // Check category exists and fallback to "common".
 
 
-=======
-  function registerBlockType(blockType) {
-    // Bail early if is excluded post_type.
-    const allowedTypes = blockType.post_types || [];
-    if (allowedTypes.length) {
-      // Always allow block to appear on "Edit reusable Block" screen.
-      allowedTypes.push('wp_block');
-
-      // Check post type.
-      const postType = acf.get('postType');
-      if (!allowedTypes.includes(postType)) {
-        return false;
-      }
-    }
-
-    // Handle svg HTML.
-    if (typeof blockType.icon === 'string' && blockType.icon.substr(0, 4) === '<svg') {
-      const iconHTML = blockType.icon;
-      blockType.icon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Div, null, iconHTML);
-    }
-
-    // Remove icon if empty to allow for default "block".
-    // Avoids JS error preventing block from being registered.
-    if (!blockType.icon) {
-      delete blockType.icon;
-    }
-
-    // Check category exists and fallback to "common".
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     const category = wp.blocks.getCategories().filter(_ref => {
       let {
         slug
       } = _ref;
       return slug === blockType.category;
     }).pop();
-<<<<<<< HEAD
 
     if (!category) {
       //console.warn( `The block "${blockType.name}" is registered with an unknown category "${blockType.category}".` );
@@ -345,48 +228,26 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
     } // Merge in block settings before local additions.
 
 
-=======
-    if (!category) {
-      //console.warn( `The block "${blockType.name}" is registered with an unknown category "${blockType.category}".` );
-      blockType.category = 'common';
-    }
-
-    // Merge in block settings before local additions.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     blockType = acf.parseArgs(blockType, {
       title: '',
       name: '',
       category: '',
       api_version: 2,
       acf_block_version: 1
-<<<<<<< HEAD
     }); // Remove all empty attribute defaults from PHP values to allow serialisation.
     // https://github.com/WordPress/gutenberg/issues/7342
 
-=======
-    });
-
-    // Remove all empty attribute defaults from PHP values to allow serialisation.
-    // https://github.com/WordPress/gutenberg/issues/7342
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     for (const key in blockType.attributes) {
       if (blockType.attributes[key].default.length === 0) {
         delete blockType.attributes[key].default;
       }
-<<<<<<< HEAD
     } // Apply anchor supports to avoid block editor default writing to ID.
 
 
-=======
-    }
-
-    // Apply anchor supports to avoid block editor default writing to ID.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (blockType.supports.anchor) {
       blockType.attributes.anchor = {
         type: 'string'
       };
-<<<<<<< HEAD
     } // Append edit and save functions.
 
 
@@ -422,63 +283,15 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
     // Required for < WP5.9
     // See https://github.com/WordPress/gutenberg/issues/15240
 
-=======
-    }
-
-    // Append edit and save functions.
-    let ThisBlockEdit = BlockEdit;
-    let ThisBlockSave = BlockSave;
-
-    // Apply alignText functionality.
-    if (blockType.supports.alignText || blockType.supports.align_text) {
-      blockType.attributes = addBackCompatAttribute(blockType.attributes, 'align_text', 'string');
-      ThisBlockEdit = withAlignTextComponent(ThisBlockEdit, blockType);
-    }
-
-    // Apply alignContent functionality.
-    if (blockType.supports.alignContent || blockType.supports.align_content) {
-      blockType.attributes = addBackCompatAttribute(blockType.attributes, 'align_content', 'string');
-      ThisBlockEdit = withAlignContentComponent(ThisBlockEdit, blockType);
-    }
-
-    // Apply fullHeight functionality.
-    if (blockType.supports.fullHeight || blockType.supports.full_height) {
-      blockType.attributes = addBackCompatAttribute(blockType.attributes, 'full_height', 'boolean');
-      ThisBlockEdit = withFullHeightComponent(ThisBlockEdit, blockType.blockType);
-    }
-
-    // Set edit and save functions.
-    blockType.edit = props => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(ThisBlockEdit, props);
-    blockType.save = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(ThisBlockSave, null);
-
-    // Add to storage.
-    blockTypes[blockType.name] = blockType;
-
-    // Register with WP.
-    const result = wp.blocks.registerBlockType(blockType.name, blockType);
-
-    // Fix bug in 'core/anchor/attribute' filter overwriting attribute.
-    // Required for < WP5.9
-    // See https://github.com/WordPress/gutenberg/issues/15240
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (result.attributes.anchor) {
       result.attributes.anchor = {
         type: 'string'
       };
-<<<<<<< HEAD
     } // Return result.
 
 
     return result;
   }
-=======
-    }
-
-    // Return result.
-    return result;
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns the wp.data.select() response with backwards compatibility.
    *
@@ -488,24 +301,15 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	string selector The selector name.
    * @return	mixed
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function select(selector) {
     if (selector === 'core/block-editor') {
       return wp.data.select('core/block-editor') || wp.data.select('core/editor');
     }
-<<<<<<< HEAD
 
     return wp.data.select(selector);
   }
-=======
-    return wp.data.select(selector);
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns the wp.data.dispatch() response with backwards compatibility.
    *
@@ -515,18 +319,11 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	string selector The selector name.
    * @return	mixed
    */
-<<<<<<< HEAD
 
 
   function dispatch(selector) {
     return wp.data.dispatch(selector);
   }
-=======
-  function dispatch(selector) {
-    return wp.data.dispatch(selector);
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns an array of all blocks for the given args.
    *
@@ -536,7 +333,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	{object} args An object of key=>value pairs used to filter results.
    * @return	array.
    */
-<<<<<<< HEAD
 
 
   function getBlocks(args) {
@@ -550,21 +346,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
 
     select('core/block-editor').getBlocks().forEach(recurseBlocks); // Loop over args and filter.
 
-=======
-  function getBlocks(args) {
-    let blocks = [];
-
-    // Local function to recurse through all child blocks and add to the blocks array.
-    const recurseBlocks = block => {
-      blocks.push(block);
-      select('core/block-editor').getBlocks(block.clientId).forEach(recurseBlocks);
-    };
-
-    // Trigger initial recursion for parent level blocks.
-    select('core/block-editor').getBlocks().forEach(recurseBlocks);
-
-    // Loop over args and filter.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     for (const k in args) {
       blocks = blocks.filter(_ref2 => {
         let {
@@ -572,46 +353,27 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
         } = _ref2;
         return attributes[k] === args[k];
       });
-<<<<<<< HEAD
     } // Return results.
 
 
     return blocks;
   }
-=======
-    }
-
-    // Return results.
-    return blocks;
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Storage for the AJAX queue.
    *
    * @const {array}
    */
-<<<<<<< HEAD
 
 
   const ajaxQueue = {};
-=======
-  const ajaxQueue = {};
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Storage for cached AJAX requests for block content.
    *
    * @since 5.12
    * @const {array}
    */
-<<<<<<< HEAD
 
   const fetchCache = {};
-=======
-  const fetchCache = {};
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Fetches a JSON result from the AJAX API.
    *
@@ -622,10 +384,7 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @query	object The query args used in AJAX callback.
    * @return	object The AJAX promise.
    */
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function fetchBlock(args) {
     const {
       attributes = {},
@@ -633,21 +392,14 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       query = {},
       clientId = null,
       delay = 0
-<<<<<<< HEAD
     } = args; // Build a unique queue ID from block data, including the clientId for edit forms.
 
-=======
-    } = args;
-
-    // Build a unique queue ID from block data, including the clientId for edit forms.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     const queueId = md5(JSON.stringify(_objectSpread(_objectSpread(_objectSpread({}, attributes), context), query)));
     const data = ajaxQueue[queueId] || {
       query: {},
       timeout: false,
       promise: $.Deferred(),
       started: false
-<<<<<<< HEAD
     }; // Append query args to storage.
 
     data.query = _objectSpread(_objectSpread({}, data.query), query);
@@ -657,18 +409,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
     data.timeout = setTimeout(() => {
       data.started = true;
 
-=======
-    };
-
-    // Append query args to storage.
-    data.query = _objectSpread(_objectSpread({}, data.query), query);
-    if (data.started) return data.promise;
-
-    // Set fresh timeout.
-    clearTimeout(data.timeout);
-    data.timeout = setTimeout(() => {
-      data.started = true;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (fetchCache[queueId]) {
         ajaxQueue[queueId] = null;
         data.promise.resolve.apply(fetchCache[queueId][0], fetchCache[queueId][1]);
@@ -695,24 +435,12 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
           data.promise.reject.apply(this, arguments);
         });
       }
-<<<<<<< HEAD
     }, delay); // Update storage.
 
     ajaxQueue[queueId] = data; // Return promise.
 
     return data.promise;
   }
-=======
-    }, delay);
-
-    // Update storage.
-    ajaxQueue[queueId] = data;
-
-    // Return promise.
-    return data.promise;
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns true if both object are the same.
    *
@@ -723,18 +451,11 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	object obj2
    * @return	bool
    */
-<<<<<<< HEAD
 
 
   function compareObjects(obj1, obj2) {
     return JSON.stringify(obj1) === JSON.stringify(obj2);
   }
-=======
-  function compareObjects(obj1, obj2) {
-    return JSON.stringify(obj1) === JSON.stringify(obj2);
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Converts HTML into a React element.
    *
@@ -745,7 +466,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	int acfBlockVersion The ACF block version number.
    * @return	object Result of React.createElement().
    */
-<<<<<<< HEAD
 
 
   acf.parseJSX = (html, acfBlockVersion) => {
@@ -755,16 +475,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
     html = html.replace(/<InnerBlocks([^>]+)?\/>/, '<InnerBlocks$1></InnerBlocks>');
     return parseNode($(html)[0], acfBlockVersion, 0).props.children;
   };
-=======
-  acf.parseJSX = (html, acfBlockVersion) => {
-    // Apply a temporary wrapper for the jQuery parse to prevent text nodes triggering errors.
-    html = '<div>' + html + '</div>';
-    // Correctly balance InnerBlocks tags for jQuery's initial parse.
-    html = html.replace(/<InnerBlocks([^>]+)?\/>/, '<InnerBlocks$1></InnerBlocks>');
-    return parseNode($(html)[0], acfBlockVersion, 0).props.children;
-  };
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Converts a DOM node into a React element.
    *
@@ -776,16 +486,12 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	int level The recursion level.
    * @return	object Result of React.createElement().
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function parseNode(node, acfBlockVersion) {
     let level = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
     // Get node name.
     const nodeName = parseNodeName(node.nodeName.toLowerCase(), acfBlockVersion);
-<<<<<<< HEAD
 
     if (!nodeName) {
       return null;
@@ -799,18 +505,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       nodeAttrs.ref = React.createRef();
     }
 
-=======
-    if (!nodeName) {
-      return null;
-    }
-
-    // Get node attributes in React friendly format.
-    const nodeAttrs = {};
-    if (level === 1 && nodeName !== 'ACFInnerBlocks') {
-      // Top level (after stripping away the container div), create a ref for passing through to ACF's JS API.
-      nodeAttrs.ref = React.createRef();
-    }
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     acf.arrayArgs(node.attributes).map(parseNodeAttr).forEach(_ref3 => {
       let {
         name,
@@ -818,47 +512,27 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       } = _ref3;
       nodeAttrs[name] = value;
     });
-<<<<<<< HEAD
 
     if ('ACFInnerBlocks' === nodeName) {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(ACFInnerBlocks, nodeAttrs);
     } // Define args for React.createElement().
 
 
-=======
-    if ('ACFInnerBlocks' === nodeName) {
-      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(ACFInnerBlocks, nodeAttrs);
-    }
-
-    // Define args for React.createElement().
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     const args = [nodeName, nodeAttrs];
     acf.arrayArgs(node.childNodes).forEach(child => {
       if (child instanceof Text) {
         const text = child.textContent;
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         if (text) {
           args.push(text);
         }
       } else {
         args.push(parseNode(child, acfBlockVersion, level + 1));
       }
-<<<<<<< HEAD
     }); // Return element.
 
     return React.createElement.apply(this, args);
   }
-=======
-    });
-
-    // Return element.
-    return React.createElement.apply(this, args);
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Converts a node or attribute name into it's JSX compliant name
    *
@@ -868,20 +542,13 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param    string name The node or attribute name.
    * @return  string
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function getJSXName(name) {
     const replacement = acf.isget(acf, 'jsxNameReplacements', name);
     if (replacement) return replacement;
     return name;
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Converts the given name into a React friendly name or component.
    *
@@ -892,18 +559,14 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	int acfBlockVersion The ACF block version number.
    * @return	mixed
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function parseNodeName(name, acfBlockVersion) {
     switch (name) {
       case 'innerblocks':
         if (acfBlockVersion < 2) {
           return InnerBlocks;
         }
-<<<<<<< HEAD
 
         return 'ACFInnerBlocks';
 
@@ -913,26 +576,13 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       case '#comment':
         return null;
 
-=======
-        return 'ACFInnerBlocks';
-      case 'script':
-        return Script;
-      case '#comment':
-        return null;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       default:
         // Replace names for JSX counterparts.
         name = getJSXName(name);
     }
-<<<<<<< HEAD
 
     return name;
   }
-=======
-    return name;
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Functional component for ACFInnerBlocks.
    *
@@ -941,11 +591,8 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param obj props element properties.
    * @return DOM element
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function ACFInnerBlocks(props) {
     const {
       className = 'acf-innerblocks-container'
@@ -955,10 +602,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
     }, props);
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", innerBlockProps, innerBlockProps.children);
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Converts the given attribute into a React friendly name and value object.
    *
@@ -968,35 +611,23 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	obj nodeAttr The node attribute.
    * @return	obj
    */
-<<<<<<< HEAD
 
 
   function parseNodeAttr(nodeAttr) {
     let name = nodeAttr.name;
     let value = nodeAttr.value;
 
-=======
-  function parseNodeAttr(nodeAttr) {
-    let name = nodeAttr.name;
-    let value = nodeAttr.value;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     switch (name) {
       // Class.
       case 'class':
         name = 'className';
         break;
-<<<<<<< HEAD
       // Style.
 
-=======
-
-      // Style.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       case 'style':
         const css = {};
         value.split(';').forEach(s => {
           const pos = s.indexOf(':');
-<<<<<<< HEAD
 
           if (pos > 0) {
             let ruleName = s.substr(0, pos).trim();
@@ -1006,33 +637,17 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
               ruleName = acf.strCamelCase(ruleName);
             }
 
-=======
-          if (pos > 0) {
-            let ruleName = s.substr(0, pos).trim();
-            const ruleValue = s.substr(pos + 1).trim();
-
-            // Rename core properties, but not CSS variables.
-            if (ruleName.charAt(0) !== '-') {
-              ruleName = acf.strCamelCase(ruleName);
-            }
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
             css[ruleName] = ruleValue;
           }
         });
         value = css;
         break;
-<<<<<<< HEAD
       // Default.
 
-=======
-
-      // Default.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       default:
         // No formatting needed for "data-x" attributes.
         if (name.indexOf('data-') === 0) {
           break;
-<<<<<<< HEAD
         } // Replace names for JSX counterparts.
 
 
@@ -1052,34 +667,11 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
         break;
     }
 
-=======
-        }
-
-        // Replace names for JSX counterparts.
-        name = getJSXName(name);
-
-        // Convert JSON values.
-        const c1 = value.charAt(0);
-        if (c1 === '[' || c1 === '{') {
-          value = JSON.parse(value);
-        }
-
-        // Convert bool values.
-        if (value === 'true' || value === 'false') {
-          value = value === 'true';
-        }
-        break;
-    }
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     return {
       name,
       value
     };
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Higher Order Component used to set default block attribute values.
    *
@@ -1092,7 +684,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	Component BlockListBlock The BlockListBlock Component.
    * @return	Component
    */
-<<<<<<< HEAD
 
 
   const withDefaultAttributes = createHigherOrderComponent(BlockListBlock => class WrappedBlockEdit extends Component {
@@ -1111,37 +702,12 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       } // Check and remove any empty string attributes to match PHP behaviour.
 
 
-=======
-  const withDefaultAttributes = createHigherOrderComponent(BlockListBlock => class WrappedBlockEdit extends Component {
-    constructor(props) {
-      super(props);
-
-      // Extract vars.
-      const {
-        name,
-        attributes
-      } = this.props;
-
-      // Only run on ACF Blocks.
-      const blockType = getBlockType(name);
-      if (!blockType) {
-        return;
-      }
-
-      // Check and remove any empty string attributes to match PHP behaviour.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       Object.keys(attributes).forEach(key => {
         if (attributes[key] === '') {
           delete attributes[key];
         }
-<<<<<<< HEAD
       }); // Backward compatibility attribute replacement.
 
-=======
-      });
-
-      // Backward compatibility attribute replacement.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       const upgrades = {
         full_height: 'fullHeight',
         align_content: 'alignContent',
@@ -1156,26 +722,17 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
             attributes[upgrades[key]] = blockType[key];
           }
         }
-<<<<<<< HEAD
 
         delete blockType[key];
         delete attributes[key];
       }); // Set default attributes for those undefined.
 
-=======
-        delete blockType[key];
-        delete attributes[key];
-      });
-
-      // Set default attributes for those undefined.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       for (let attribute in blockType.attributes) {
         if (attributes[attribute] === undefined && blockType[attribute] !== undefined) {
           attributes[attribute] = blockType[attribute];
         }
       }
     }
-<<<<<<< HEAD
 
     render() {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockListBlock, this.props);
@@ -1183,74 +740,44 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
 
   }, 'withDefaultAttributes');
   wp.hooks.addFilter('editor.BlockListBlock', 'acf/with-default-attributes', withDefaultAttributes);
-=======
-    render() {
-      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockListBlock, this.props);
-    }
-  }, 'withDefaultAttributes');
-  wp.hooks.addFilter('editor.BlockListBlock', 'acf/with-default-attributes', withDefaultAttributes);
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * The BlockSave functional component.
    *
    * @date	08/07/2020
    * @since	5.9.0
    */
-<<<<<<< HEAD
 
   function BlockSave() {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(InnerBlocks.Content, null);
   }
-=======
-  function BlockSave() {
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(InnerBlocks.Content, null);
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * The BlockEdit component.
    *
    * @date	19/2/19
    * @since	5.7.12
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   class BlockEdit extends Component {
     constructor(props) {
       super(props);
       this.setup();
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     setup() {
       const {
         name,
         attributes,
         clientId
       } = this.props;
-<<<<<<< HEAD
       const blockType = getBlockType(name); // Restrict current mode.
 
-=======
-      const blockType = getBlockType(name);
-
-      // Restrict current mode.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       function restrictMode(modes) {
         if (!modes.includes(attributes.mode)) {
           attributes.mode = modes[0];
         }
       }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (isBlockInQueryLoop(clientId) || isSiteEditor() || isiFramedMobileDevicePreview() || isEditingTemplate()) {
         restrictMode(['preview']);
       } else {
@@ -1258,27 +785,18 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
           case 'edit':
             restrictMode(['edit', 'preview']);
             break;
-<<<<<<< HEAD
 
           case 'preview':
             restrictMode(['preview', 'edit']);
             break;
 
-=======
-          case 'preview':
-            restrictMode(['preview', 'edit']);
-            break;
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
           default:
             restrictMode(['auto']);
             break;
         }
       }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     render() {
       const {
         name,
@@ -1291,7 +809,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       let {
         mode
       } = attributes;
-<<<<<<< HEAD
 
       if (forcePreview) {
         mode = 'preview';
@@ -1308,34 +825,13 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       const toggleText = mode === 'preview' ? acf.__('Switch to Edit') : acf.__('Switch to Preview');
       const toggleIcon = mode === 'preview' ? 'edit' : 'welcome-view-site';
 
-=======
-      if (forcePreview) {
-        mode = 'preview';
-      }
-
-      // Show toggle only for edit/preview modes and for blocks not in a query loop/FSE.
-      let showToggle = blockType.supports.mode;
-      if (mode === 'auto' || forcePreview) {
-        showToggle = false;
-      }
-
-      // Configure toggle variables.
-      const toggleText = mode === 'preview' ? acf.__('Switch to Edit') : acf.__('Switch to Preview');
-      const toggleIcon = mode === 'preview' ? 'edit' : 'welcome-view-site';
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       function toggleMode() {
         setAttributes({
           mode: mode === 'preview' ? 'edit' : 'preview'
         });
-<<<<<<< HEAD
       } // Return template.
 
 
-=======
-      }
-
-      // Return template.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockControls, null, showToggle && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(ToolbarGroup, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(ToolbarButton, {
         className: "components-icon-button components-toolbar__control",
         label: toggleText,
@@ -1345,24 +841,16 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
         className: "acf-block-component acf-block-panel"
       }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockForm, this.props))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockBody, this.props));
     }
-<<<<<<< HEAD
 
   }
-=======
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * The BlockBody functional component.
    *
    * @date	19/2/19
    * @since	5.7.12
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function _BlockBody(props) {
     const {
       attributes,
@@ -1374,18 +862,12 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
     } = attributes;
     let showForm = true;
     let additionalClasses = 'acf-block-component acf-block-body';
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (mode === 'auto' && !isSelected || mode === 'preview') {
       additionalClasses += ' acf-block-preview';
       showForm = false;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (getBlockVersion(name) > 1) {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", useBlockProps({
         className: additionalClasses
@@ -1395,7 +877,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
         className: "acf-block-component acf-block-body"
       }, showForm ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockForm, props) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockPreview, props)));
     }
-<<<<<<< HEAD
   } // Append blockIndex to component props.
 
 
@@ -1404,26 +885,12 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       clientId
     } = ownProps; // Use optional rootClientId to allow discoverability of child blocks.
 
-=======
-  }
-
-  // Append blockIndex to component props.
-  const BlockBody = withSelect((select, ownProps) => {
-    const {
-      clientId
-    } = ownProps;
-    // Use optional rootClientId to allow discoverability of child blocks.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     const rootClientId = select('core/block-editor').getBlockRootClientId(clientId);
     const index = select('core/block-editor').getBlockIndex(clientId, rootClientId);
     return {
       index
     };
   })(_BlockBody);
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * A react component to append HTMl.
    *
@@ -1433,10 +900,7 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	string children The html to insert.
    * @return	void
    */
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   class Div extends Component {
     render() {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
@@ -1445,13 +909,8 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
         }
       });
     }
-<<<<<<< HEAD
 
   }
-=======
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * A react Component for inline scripts.
    *
@@ -1464,18 +923,14 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	type Var Description.
    * @return	type Description.
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   class Script extends Component {
     render() {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
         ref: el => this.el = el
       });
     }
-<<<<<<< HEAD
 
     setHTML(html) {
       $(this.el).html(`<script>${html}</script>`);
@@ -1493,22 +948,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
 
 
   const store = {};
-=======
-    setHTML(html) {
-      $(this.el).html(`<script>${html}</script>`);
-    }
-    componentDidUpdate() {
-      this.setHTML(this.props.children);
-    }
-    componentDidMount() {
-      this.setHTML(this.props.children);
-    }
-  }
-
-  // Data storage for DynamicHTML components.
-  const store = {};
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * DynamicHTML Class.
    *
@@ -1520,7 +959,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	void
    * @return	void
    */
-<<<<<<< HEAD
 
   class DynamicHTML extends Component {
     constructor(props) {
@@ -1528,21 +966,10 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
 
       this.setRef = this.setRef.bind(this); // Define default props and call setup().
 
-=======
-  class DynamicHTML extends Component {
-    constructor(props) {
-      super(props);
-
-      // Bind callbacks.
-      this.setRef = this.setRef.bind(this);
-
-      // Define default props and call setup().
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.id = '';
       this.el = false;
       this.subscribed = true;
       this.renderMethod = 'jQuery';
-<<<<<<< HEAD
       this.setup(props); // Load state.
 
       this.loadState();
@@ -1554,24 +981,10 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
     fetch() {// Do nothing.
     }
 
-=======
-      this.setup(props);
-
-      // Load state.
-      this.loadState();
-    }
-    setup(props) {
-      // Do nothing.
-    }
-    fetch() {
-      // Do nothing.
-    }
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     maybePreload(blockId, clientId, form) {
       if (this.state.html === undefined && !isBlockInQueryLoop(this.props.clientId)) {
         const preloadedBlocks = acf.get('preloadedBlocks');
         const modeText = form ? 'form' : 'preview';
-<<<<<<< HEAD
 
         if (preloadedBlocks && preloadedBlocks[blockId]) {
           // Ensure we only preload the correct block state (form or preview).
@@ -1592,31 +1005,10 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       store[this.id] = _objectSpread(_objectSpread({}, this.state), state); // Update component state if subscribed.
       // - Allows AJAX callback to update store without modifying state of an unmounted component.
 
-=======
-        if (preloadedBlocks && preloadedBlocks[blockId]) {
-          // Ensure we only preload the correct block state (form or preview).
-          if (form && !preloadedBlocks[blockId].form || !form && preloadedBlocks[blockId].form) return false;
-
-          // Set HTML to the preloaded version.
-          return preloadedBlocks[blockId].html.replaceAll(blockId, clientId);
-        }
-      }
-      return false;
-    }
-    loadState() {
-      this.state = store[this.id] || {};
-    }
-    setState(state) {
-      store[this.id] = _objectSpread(_objectSpread({}, this.state), state);
-
-      // Update component state if subscribed.
-      // - Allows AJAX callback to update store without modifying state of an unmounted component.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (this.subscribed) {
         super.setState(state);
       }
     }
-<<<<<<< HEAD
 
     setHtml(html) {
       html = html ? html.trim() : ''; // Bail early if html has not changed.
@@ -1639,42 +1031,10 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
           state.ref = state.jsx.ref;
         }
 
-=======
-    setHtml(html) {
-      html = html ? html.trim() : '';
-
-      // Bail early if html has not changed.
-      if (html === this.state.html) {
-        return;
-      }
-
-      // Update state.
-      const state = {
-        html
-      };
-      if (this.renderMethod === 'jsx') {
-        state.jsx = acf.parseJSX(html, getBlockVersion(this.props.name));
-
-        // Handle templates which don't contain any valid JSX parsable elements.
-        if (!state.jsx) {
-          console.warn('Your ACF block template contains no valid HTML elements. Appending a empty div to prevent React JS errors.');
-          state.html += '<div></div>';
-          state.jsx = acf.parseJSX(state.html, getBlockVersion(this.props.name));
-        }
-
-        // If we've got an object (as an array) find the first valid React ref.
-        if (Array.isArray(state.jsx)) {
-          let refElement = state.jsx.find(element => React.isValidElement(element));
-          state.ref = refElement.ref;
-        } else {
-          state.ref = state.jsx.ref;
-        }
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         state.$el = $(this.el);
       } else {
         state.$el = $(html);
       }
-<<<<<<< HEAD
 
       this.setState(state);
     }
@@ -1683,13 +1043,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       this.el = el;
     }
 
-=======
-      this.setState(state);
-    }
-    setRef(el) {
-      this.el = el;
-    }
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     render() {
       // Render JSX.
       if (this.state.jsx) {
@@ -1702,23 +1055,14 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
             ref: this.setRef
           }, this.state.jsx);
         }
-<<<<<<< HEAD
       } // Return HTML.
 
 
-=======
-      }
-
-      // Return HTML.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
         ref: this.setRef
       }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Placeholder, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Spinner, null)));
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     shouldComponentUpdate(_ref4, _ref5) {
       let {
         index
@@ -1726,7 +1070,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       let {
         html
       } = _ref5;
-<<<<<<< HEAD
 
       if (index !== this.props.index) {
         this.componentWillMove();
@@ -1735,36 +1078,19 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       return html !== this.state.html;
     }
 
-=======
-      if (index !== this.props.index) {
-        this.componentWillMove();
-      }
-      return html !== this.state.html;
-    }
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     display(context) {
       // This method is called after setting new HTML and the Component render.
       // The jQuery render method simply needs to move $el into place.
       if (this.renderMethod === 'jQuery') {
         const $el = this.state.$el;
         const $prevParent = $el.parent();
-<<<<<<< HEAD
         const $thisParent = $(this.el); // Move $el into place.
 
         $thisParent.html($el); // Special case for reusable blocks.
-=======
-        const $thisParent = $(this.el);
-
-        // Move $el into place.
-        $thisParent.html($el);
-
-        // Special case for reusable blocks.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         // Multiple instances of the same reusable block share the same block id.
         // This causes all instances to share the same state (cool), which unfortunately
         // pulls $el back and forth between the last rendered reusable block.
         // This simple fix leaves a "clone" behind :)
-<<<<<<< HEAD
 
         if ($prevParent.length && $prevParent[0] !== $thisParent[0]) {
           $prevParent.html($el.clone());
@@ -1772,54 +1098,30 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       } // Call context specific method.
 
 
-=======
-        if ($prevParent.length && $prevParent[0] !== $thisParent[0]) {
-          $prevParent.html($el.clone());
-        }
-      }
-
-      // Call context specific method.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       switch (context) {
         case 'append':
           this.componentDidAppend();
           break;
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         case 'remount':
           this.componentDidRemount();
           break;
       }
     }
-<<<<<<< HEAD
 
     componentDidMount() {
       // Fetch on first load.
       if (this.state.html === undefined) {
         this.fetch(); // Or remount existing HTML.
-=======
-    componentDidMount() {
-      // Fetch on first load.
-      if (this.state.html === undefined) {
-        this.fetch();
-
-        // Or remount existing HTML.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       } else {
         this.display('remount');
       }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     componentDidUpdate(prevProps, prevState) {
       // HTML has changed.
       this.display('append');
     }
-<<<<<<< HEAD
 
     componentDidAppend() {
       acf.doAction('append', this.state.$el);
@@ -1833,50 +1135,24 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
 
     componentDidRemount() {
       this.subscribed = true; // Use setTimeout to avoid incorrect timing of events.
-=======
-    componentDidAppend() {
-      acf.doAction('append', this.state.$el);
-    }
-    componentWillUnmount() {
-      acf.doAction('unmount', this.state.$el);
-
-      // Unsubscribe this component from state.
-      this.subscribed = false;
-    }
-    componentDidRemount() {
-      this.subscribed = true;
-
-      // Use setTimeout to avoid incorrect timing of events.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       // React will unmount and mount components in DOM order.
       // This means a new component can be mounted before an old one is unmounted.
       // ACF shares $el across new/old components which is un-React-like.
       // This timout ensures that unmounting occurs before remounting.
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       setTimeout(() => {
         acf.doAction('remount', this.state.$el);
       });
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     componentWillMove() {
       acf.doAction('unmount', this.state.$el);
       setTimeout(() => {
         acf.doAction('remount', this.state.$el);
       });
     }
-<<<<<<< HEAD
 
   }
-=======
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * BlockForm Class.
    *
@@ -1888,11 +1164,8 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	string id the block id.
    * @return	void
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   class BlockForm extends DynamicHTML {
     setup(_ref6) {
       let {
@@ -1900,10 +1173,7 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       } = _ref6;
       this.id = `BlockForm-${clientId}`;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     fetch() {
       // Extract props.
       const {
@@ -1911,7 +1181,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
         context,
         clientId
       } = this.props;
-<<<<<<< HEAD
       const hash = createBlockAttributesHash(attributes, context); // Try preloaded data first.
 
       const preloaded = this.maybePreload(hash, clientId, true);
@@ -1922,18 +1191,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       } // Request AJAX and update HTML on complete.
 
 
-=======
-      const hash = createBlockAttributesHash(attributes, context);
-
-      // Try preloaded data first.
-      const preloaded = this.maybePreload(hash, clientId, true);
-      if (preloaded) {
-        this.setHtml(preloaded);
-        return;
-      }
-
-      // Request AJAX and update HTML on complete.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       fetchBlock({
         attributes,
         context,
@@ -1948,37 +1205,21 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
         this.setHtml(data.form.replaceAll(data.clientId, clientId));
       });
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     componentDidRemount() {
       super.componentDidRemount();
       const {
         $el
-<<<<<<< HEAD
       } = this.state; // Make sure our on append events are registered.
 
-=======
-      } = this.state;
-
-      // Make sure our on append events are registered.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if ($el.data('acf-events-added') !== true) {
         this.componentDidAppend();
       }
     }
-<<<<<<< HEAD
 
     componentDidAppend() {
       super.componentDidAppend(); // Extract props.
 
-=======
-    componentDidAppend() {
-      super.componentDidAppend();
-
-      // Extract props.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       const {
         attributes,
         setAttributes,
@@ -1987,21 +1228,12 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       const props = this.props;
       const {
         $el
-<<<<<<< HEAD
       } = this.state; // Callback for updating block data.
 
       function serializeData() {
         let silent = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
         const data = acf.serialize($el, `acf-${clientId}`);
 
-=======
-      } = this.state;
-
-      // Callback for updating block data.
-      function serializeData() {
-        let silent = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
-        const data = acf.serialize($el, `acf-${clientId}`);
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         if (silent) {
           attributes.data = data;
         } else {
@@ -2009,45 +1241,24 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
             data
           });
         }
-<<<<<<< HEAD
       } // Add events.
 
 
-=======
-      }
-
-      // Add events.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       let timeout = false;
       $el.on('change keyup', () => {
         clearTimeout(timeout);
         timeout = setTimeout(serializeData, 300);
-<<<<<<< HEAD
       }); // Log initialization for remount check on the persistent element.
 
       $el.data('acf-events-added', true); // Ensure newly added block is saved with data.
       // Do it silently to avoid triggering a preview render.
 
-=======
-      });
-
-      // Log initialization for remount check on the persistent element.
-      $el.data('acf-events-added', true);
-
-      // Ensure newly added block is saved with data.
-      // Do it silently to avoid triggering a preview render.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (!attributes.data) {
         serializeData(true);
       }
     }
-<<<<<<< HEAD
 
   }
-=======
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * BlockPreview Class.
    *
@@ -2059,11 +1270,8 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	string id the block id.
    * @return	void
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   class BlockPreview extends DynamicHTML {
     setup(_ref8) {
       let {
@@ -2072,29 +1280,17 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       } = _ref8;
       const blockType = getBlockType(name);
       const contextPostId = acf.isget(this.props, 'context', 'postId');
-<<<<<<< HEAD
       this.id = `BlockPreview-${clientId}`; // Apply the contextPostId to the ID if set to stop query loop ID duplication.
 
       if (contextPostId) {
         this.id = `BlockPreview-${clientId}-${contextPostId}`;
       }
 
-=======
-      this.id = `BlockPreview-${clientId}`;
-
-      // Apply the contextPostId to the ID if set to stop query loop ID duplication.
-      if (contextPostId) {
-        this.id = `BlockPreview-${clientId}-${contextPostId}`;
-      }
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (blockType.supports.jsx) {
         this.renderMethod = 'jsx';
       }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     fetch() {
       let args = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       const {
@@ -2105,47 +1301,26 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       } = args;
       const {
         name
-<<<<<<< HEAD
       } = this.props; // Remember attributes used to fetch HTML.
 
-=======
-      } = this.props;
-
-      // Remember attributes used to fetch HTML.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.setState({
         prevAttributes: attributes,
         prevContext: context
       });
-<<<<<<< HEAD
       const hash = createBlockAttributesHash(attributes, context); // Try preloaded data first.
 
       let preloaded = this.maybePreload(hash, clientId, false);
 
-=======
-      const hash = createBlockAttributesHash(attributes, context);
-
-      // Try preloaded data first.
-      let preloaded = this.maybePreload(hash, clientId, false);
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (preloaded) {
         if (getBlockVersion(name) == 1) {
           preloaded = '<div class="acf-block-preview">' + preloaded + '</div>';
         }
-<<<<<<< HEAD
 
         this.setHtml(preloaded);
         return;
       } // Request AJAX and update HTML on complete.
 
 
-=======
-        this.setHtml(preloaded);
-        return;
-      }
-
-      // Request AJAX and update HTML on complete.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       fetchBlock({
         attributes,
         context,
@@ -2159,7 +1334,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
           data
         } = _ref9;
         let replaceHtml = data.preview.replaceAll(data.clientId, clientId);
-<<<<<<< HEAD
 
         if (getBlockVersion(name) == 1) {
           replaceHtml = '<div class="acf-block-preview">' + replaceHtml + '</div>';
@@ -2169,19 +1343,10 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
       });
     }
 
-=======
-        if (getBlockVersion(name) == 1) {
-          replaceHtml = '<div class="acf-block-preview">' + replaceHtml + '</div>';
-        }
-        this.setHtml(replaceHtml);
-      });
-    }
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     componentDidAppend() {
       super.componentDidAppend();
       this.renderBlockPreviewEvent();
     }
-<<<<<<< HEAD
 
     shouldComponentUpdate(nextProps, nextState) {
       const nextAttributes = nextProps.attributes;
@@ -2198,38 +1363,16 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
           delay = 300;
         }
 
-=======
-    shouldComponentUpdate(nextProps, nextState) {
-      const nextAttributes = nextProps.attributes;
-      const thisAttributes = this.props.attributes;
-
-      // Update preview if block data has changed.
-      if (!compareObjects(nextAttributes, thisAttributes) || !compareObjects(nextProps.context, this.props.context)) {
-        let delay = 0;
-
-        // Delay fetch when editing className or anchor to simulate consistent logic to custom fields.
-        if (nextAttributes.className !== thisAttributes.className) {
-          delay = 300;
-        }
-        if (nextAttributes.anchor !== thisAttributes.anchor) {
-          delay = 300;
-        }
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         this.fetch({
           attributes: nextAttributes,
           context: nextProps.context,
           delay
         });
       }
-<<<<<<< HEAD
 
       return super.shouldComponentUpdate(nextProps, nextState);
     }
 
-=======
-      return super.shouldComponentUpdate(nextProps, nextState);
-    }
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     renderBlockPreviewEvent() {
       // Extract props.
       const {
@@ -2240,17 +1383,10 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
         $el,
         ref
       } = this.state;
-<<<<<<< HEAD
       var blockElement; // Generate action friendly type.
 
       const type = attributes.name.replace('acf/', '');
 
-=======
-      var blockElement;
-
-      // Generate action friendly type.
-      const type = attributes.name.replace('acf/', '');
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (ref && ref.current) {
         // We've got a react ref from a JSX container. Use the parent as the blockElement
         blockElement = $(ref.current).parent();
@@ -2258,7 +1394,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
         blockElement = $el;
       } else {
         blockElement = $el.parents('.acf-block-preview');
-<<<<<<< HEAD
       } // Do action.
 
 
@@ -2279,43 +1414,17 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
     }
 
   }
-=======
-      }
-
-      // Do action.
-      acf.doAction('render_block_preview', blockElement, attributes);
-      acf.doAction(`render_block_preview/type=${type}`, blockElement, attributes);
-    }
-    componentDidRemount() {
-      super.componentDidRemount();
-
-      // Update preview if data has changed since last render (changing from "edit" to "preview").
-      if (!compareObjects(this.state.prevAttributes, this.props.attributes) || !compareObjects(this.state.prevContext, this.props.context)) {
-        this.fetch();
-      }
-
-      // Fire the block preview event so blocks can reinit JS elements.
-      // React reusing DOM elements covers any potential race condition from the above fetch.
-      this.renderBlockPreviewEvent();
-    }
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Initializes ACF Blocks logic and registration.
    *
    * @since 5.9.0
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function initialize() {
     // Add support for WordPress versions before 5.2.
     if (!wp.blockEditor) {
       wp.blockEditor = wp.editor;
-<<<<<<< HEAD
     } // Register block types.
 
 
@@ -2329,21 +1438,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
 
 
   acf.addAction('prepare', initialize);
-=======
-    }
-
-    // Register block types.
-    const blockTypes = acf.get('blockTypes');
-    if (blockTypes) {
-      blockTypes.map(registerBlockType);
-    }
-  }
-
-  // Run the initialize callback during the "prepare" action.
-  // This ensures that all localized data is available and that blocks are registered before the WP editor has been instantiated.
-  acf.addAction('prepare', initialize);
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns a valid vertical alignment.
    *
@@ -2353,19 +1447,12 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	string align A vertical alignment.
    * @return	string
    */
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function validateVerticalAlignment(align) {
     const ALIGNMENTS = ['top', 'center', 'bottom'];
     const DEFAULT = 'top';
     return ALIGNMENTS.includes(align) ? align : DEFAULT;
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns a valid horizontal alignment.
    *
@@ -2375,20 +1462,13 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	string align A horizontal alignment.
    * @return	string
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function validateHorizontalAlignment(align) {
     const ALIGNMENTS = ['left', 'center', 'right'];
     const DEFAULT = acf.get('rtl') ? 'right' : 'left';
     return ALIGNMENTS.includes(align) ? align : DEFAULT;
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns a valid matrix alignment.
    *
@@ -2400,29 +1480,18 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	string align A matrix alignment.
    * @return	string
    */
-<<<<<<< HEAD
 
 
   function validateMatrixAlignment(align) {
     const DEFAULT = 'center center';
 
-=======
-  function validateMatrixAlignment(align) {
-    const DEFAULT = 'center center';
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (align) {
       const [y, x] = align.split(' ');
       return `${validateVerticalAlignment(y)} ${validateHorizontalAlignment(x)}`;
     }
-<<<<<<< HEAD
 
     return DEFAULT;
   }
-=======
-    return DEFAULT;
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * A higher order component adding alignContent editing functionality.
    *
@@ -2433,34 +1502,24 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	object blockType The block type settings.
    * @return	component
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function withAlignContentComponent(OriginalBlockEdit, blockType) {
     // Determine alignment vars
     let type = blockType.supports.align_content || blockType.supports.alignContent;
     let AlignmentComponent;
     let validateAlignment;
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     switch (type) {
       case 'matrix':
         AlignmentComponent = BlockAlignmentMatrixControl || BlockAlignmentMatrixToolbar;
         validateAlignment = validateMatrixAlignment;
         break;
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       default:
         AlignmentComponent = BlockVerticalAlignmentToolbar;
         validateAlignment = validateVerticalAlignment;
         break;
-<<<<<<< HEAD
     } // Ensure alignment component exists.
 
 
@@ -2472,20 +1531,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
 
     blockType.alignContent = validateAlignment(blockType.alignContent); // Return wrapped component.
 
-=======
-    }
-
-    // Ensure alignment component exists.
-    if (AlignmentComponent === undefined) {
-      console.warn(`The "${type}" alignment component was not found.`);
-      return OriginalBlockEdit;
-    }
-
-    // Ensure correct block attribute data is sent in intial preview AJAX request.
-    blockType.alignContent = validateAlignment(blockType.alignContent);
-
-    // Return wrapped component.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     return class WrappedBlockEdit extends Component {
       render() {
         const {
@@ -2495,19 +1540,13 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
         const {
           alignContent
         } = attributes;
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         function onChangeAlignContent(alignContent) {
           setAttributes({
             alignContent: validateAlignment(alignContent)
           });
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockControls, {
           group: "block"
         }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(AlignmentComponent, {
@@ -2516,15 +1555,9 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
           onChange: onChangeAlignContent
         })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(OriginalBlockEdit, this.props));
       }
-<<<<<<< HEAD
 
     };
   }
-=======
-    };
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * A higher order component adding alignText editing functionality.
    *
@@ -2535,7 +1568,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	object blockType The block type settings.
    * @return	component
    */
-<<<<<<< HEAD
 
 
   function withAlignTextComponent(OriginalBlockEdit, blockType) {
@@ -2543,15 +1575,6 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
 
     blockType.alignText = validateAlignment(blockType.alignText); // Return wrapped component.
 
-=======
-  function withAlignTextComponent(OriginalBlockEdit, blockType) {
-    const validateAlignment = validateHorizontalAlignment;
-
-    // Ensure correct block attribute data is sent in intial preview AJAX request.
-    blockType.alignText = validateAlignment(blockType.alignText);
-
-    // Return wrapped component.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     return class WrappedBlockEdit extends Component {
       render() {
         const {
@@ -2561,19 +1584,13 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
         const {
           alignText
         } = attributes;
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         function onChangeAlignText(alignText) {
           setAttributes({
             alignText: validateAlignment(alignText)
           });
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockControls, {
           group: "block"
         }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(AlignmentToolbar, {
@@ -2581,15 +1598,9 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
           onChange: onChangeAlignText
         })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(OriginalBlockEdit, this.props));
       }
-<<<<<<< HEAD
 
     };
   }
-=======
-    };
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * A higher order component adding full height support.
    *
@@ -2600,18 +1611,11 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	object blockType The block type settings.
    * @return	component
    */
-<<<<<<< HEAD
 
 
   function withFullHeightComponent(OriginalBlockEdit, blockType) {
     if (!BlockFullHeightAlignmentControl) return OriginalBlockEdit; // Return wrapped component.
 
-=======
-  function withFullHeightComponent(OriginalBlockEdit, blockType) {
-    if (!BlockFullHeightAlignmentControl) return OriginalBlockEdit;
-
-    // Return wrapped component.
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     return class WrappedBlockEdit extends Component {
       render() {
         const {
@@ -2621,19 +1625,13 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
         const {
           fullHeight
         } = attributes;
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         function onToggleFullHeight(fullHeight) {
           setAttributes({
             fullHeight
           });
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockControls, {
           group: "block"
         }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockFullHeightAlignmentControl, {
@@ -2641,15 +1639,9 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
           onToggle: onToggleFullHeight
         })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(OriginalBlockEdit, this.props));
       }
-<<<<<<< HEAD
 
     };
   }
-=======
-    };
-  }
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Appends a backwards compatibility attribute for conversion.
    *
@@ -2658,21 +1650,14 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param	object attributes The block type attributes.
    * @return	object
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function addBackCompatAttribute(attributes, new_attribute, type) {
     attributes[new_attribute] = {
       type: type
     };
     return attributes;
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Create a block hash from attributes
    *
@@ -2682,11 +1667,8 @@ const md5 = __webpack_require__(/*! md5 */ "./node_modules/md5/md5.js");
    * @param object context The current block context object.
    * @return string
    */
-<<<<<<< HEAD
 
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function createBlockAttributesHash(attributes, context) {
     attributes['_acf_context'] = context;
     return md5(JSON.stringify(Object.keys(attributes).sort().reduce((acc, currValue) => {
@@ -5845,10 +4827,7 @@ function _defineProperty(obj, key, value) {
   } else {
     obj[key] = value;
   }
-<<<<<<< HEAD
 
-=======
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   return obj;
 }
 

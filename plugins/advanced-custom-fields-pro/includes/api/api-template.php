@@ -289,11 +289,7 @@ function get_field_objects( $post_id = false, $format_value = true, $load_value 
 	foreach ( $meta as $key => $value ) {
 
 		// bail if reference key does not exist
-<<<<<<< HEAD
 		if ( ! isset( $meta[ "_$key" ] ) ) {
-=======
-		if ( ! isset( $meta[ "_$key" ] ) || ( ! is_string( $meta[ "_$key" ] ) && ! is_numeric( $meta[ "_$key" ] ) ) ) {
->>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			continue;
 		}
 
