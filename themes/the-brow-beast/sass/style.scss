@@ -8,9 +8,11 @@
 @import "pages/home";
 @import "pages/about";
 @import "pages/services";
+@import "pages/hours-of-operations";
 
 body {
   background-color: $offWhite;
+  position: relative;
 }
 
 * {
@@ -50,4 +52,20 @@ $bezier: cubic-bezier(0.64, 0.04, 0.35, 1);
 
 .container-margins {
   @include container-margins;
+ }
+
+ .dark-bg {
+  transition: all 300ms ease-in;
+  visibility: hidden;
+ }
+
+ .show-dark-bg {
+  background-color: rgba($black, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  visibility: visible;
  }

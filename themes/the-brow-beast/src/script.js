@@ -7,12 +7,24 @@ let blockTriggerHeight = $(window).height() * 0.33;
 $( document ).ready(function() {
   $('.c-page-services__service').each(function() {
     $(this).find('.c-page-services__more-info').click(function() {
-     var moreInfo = $(this).find('.c-page-services__more-info-text');
-     console.log(moreInfo);
-     $(moreInfo).addClass('sumfin');
+    $(this).siblings('.c-page-services__more-info-text').removeClass('hide-popup');
+    $(this).siblings('.c-page-services__more-info-text').addClass('show-more-info-popup');
+    $('.dark-bg').addClass('show-dark-bg');
     });
 });
 
+$('.c-page-services__more-info-close').click(function() {
+  $('.c-page-services__more-info-text').removeClass('show-more-info-popup');
+  $('.dark-bg').removeClass('show-dark-bg');
+});
+
+$('.hamburger-menu').click(function() {
+  $('.mobile-menu-overlay').addClass('mobile-overlay-show');
+});
+
+$('.mobile-menu-overlay__close').click(function() {
+  $('.mobile-menu-overlay').removeClass('mobile-overlay-show');
+});
 
   //slick js
   $('.c-homepage-slider__slides').slick({

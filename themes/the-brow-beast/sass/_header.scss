@@ -25,6 +25,9 @@
             display: flex;
             justify-content: space-between;
             list-style-type: none;
+            @media only screen and (max-width: $mobile_max) {
+                display: none;
+            }
         li {
             padding-right: 2.5rem;
             a {
@@ -41,5 +44,77 @@
         width: 30px;
         height: 1.5rem;
         cursor: pointer;
+        @media only screen and (max-width: $mobile_max) {
+            display: none;
+        }
     }
+}
+
+.hamburger-menu {
+    cursor: pointer;
+    display: none;
+    @media only screen and (max-width: $mobile_max) {
+        display: block;
+    }
+}
+
+.mobile-menu-overlay {
+    background-color: $brown;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    display: block;
+    opacity: 0;
+    transition: all 300ms ease-in;
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+    }
+    &__logo {
+        height: 7rem;
+    }
+    &__close {
+        cursor: pointer; 
+    }
+    ul {
+        list-style-type: none;
+        text-align: center;
+        margin-top: 4rem;
+        li a {
+            font-family: $italiana;
+            font-size: 3rem;
+            font-weight: 300;
+            text-decoration: none;
+            color: $white;
+            display: block;
+            padding-bottom: 2rem;
+        }
+    }
+    &__footer {
+        border-top: 2.5px solid $white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    &__social-media-items {
+        display: flex;
+        justify-content: center
+    }
+    &__social-media-item {
+        &:first-child {
+            margin-right: 2.5rem;
+        }
+    }
+}
+
+.mobile-overlay-show {
+    opacity: 1;
+    z-index: 2000;
 }

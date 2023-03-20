@@ -11,6 +11,7 @@
 
 ?>
 <!doctype html>
+<div class="dark-bg"></div>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -85,4 +86,44 @@ l-844 0 0 1665 0 1665 863 0 c524 0 897 -4 952 -10z"/>
 			?>
 		</nav><!-- #site-navigation -->
 		<img class="search-icon" src="<?php echo get_template_directory_uri(); ?>/img/search.svg" alt="Search Icon"/>
+		<img src="<?php echo get_template_directory_uri(); ?>/img/hamburger-menu.svg" alt="Hamburger Menu Icon" class="hamburger-menu">
 	</header><!-- #masthead -->
+
+	<div class="mobile-menu-overlay">
+		<div class="mobile-menu-overlay__header">
+			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="The Brow Beast Logo" class="mobile-menu-overlay__logo"/>
+			<img class="mobile-menu-overlay__close" src="<?php echo get_template_directory_uri(); ?>/img/close-white.svg" alt="Close Icon">
+		</div>
+	<?php
+			wp_nav_menu(
+				array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-menu',
+				)
+			);
+			?>
+
+			<div class="mobile-menu-overlay__footer">
+			<?php if( have_rows('mobile_menu_social_media', 'option') ): ?>
+			<ul class="mobile-menu-overlay__social-media-items">
+    <?php while( have_rows('mobile_menu_social_media', 'option') ) : the_row();
+        $socialMediaIcon = get_sub_field('mobile_menu_social_media_icon');
+		$socialMediaLink = get_sub_field('mobile_menu_social_media_link');
+		?>
+		<li class="mobile-menu-overlay__social-media-item">
+			<a target="_blank" class="mobile-menu-overlay__sm-icon" href="<?php echo $socialMediaLink; ?>">
+			<img src="<?php echo $socialMediaIcon['url']; ?> " alt="<?php echo $socialMediaIcon['alt']; ?>">
+			</a>
+		</li>
+
+    <?php // End loop.
+    endwhile; ?>
+	</ul>
+
+<?php // No value.
+else :
+    // Do something...
+endif; ?>
+			</div>
+	</div>
+

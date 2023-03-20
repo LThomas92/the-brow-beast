@@ -1,0 +1,91 @@
+{
+    "key": "group_64189ffa9ad16",
+    "title": "Pages: Hours of Operations",
+    "fields": [
+        {
+            "key": "field_64189ffa0a5dd",
+            "label": "Hours of Operations",
+            "name": "hours_of_operations",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Add Hours of Operations for each day.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "table",
+            "pagination": 0,
+            "min": 0,
+            "max": 0,
+            "collapsed": "",
+            "button_label": "Add Hour",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_6418a0ad0a5e1",
+                    "label": "Days",
+                    "name": "days",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_64189ffa0a5dd"
+                },
+                {
+                    "key": "field_6418a0330a5de",
+                    "label": "Hours",
+                    "name": "hours",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_64189ffa0a5dd"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "59"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1679336170
+}

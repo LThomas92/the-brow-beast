@@ -13,7 +13,7 @@ $the_query = new WP_Query( $args ); ?>
     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
       $cat = get_the_category();
       $catName = $cat[0]->cat_name;
-      $catLink = get_category_link($cat->term_id);
+      $catLink = get_category_link($cat[0]->cat_ID);
       $thumbnail_id = get_post_thumbnail_id( $post->ID );
       $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
       $serviceDuration = get_field('service_duration_&_price', $post->ID);
@@ -30,15 +30,18 @@ $the_query = new WP_Query( $args ); ?>
             <div class="c-page-services__service-meta">
             <a class="c-page-services__service-cat" href="<?php echo esc_url($catLink); ?>" class="c-page-services__cat"><?php echo $catName; ?></a>
             <a class="c-page-services__more-info">More Info</a>
+            <?php if($serviceMoreInfo) { ?>
             <div class="c-page-services__more-info-text hide-popup">
               <?php echo $serviceMoreInfo; ?>
+              <img class="c-page-services__more-info-close" src="<?php echo get_template_directory_uri(); ?>/img/close.svg" alt="Close Icon">
             </div>
+            <?php } ?>
             </div>
           <h2 class="c-page-services__service-title"><?php the_title(); ?></h2>
           <p class="c-page-services__service-duration"><?php echo $serviceDuration; ?></p>
           <p class="c-page-services__service-desc"><?php echo $serivceDesc; ?></p>
           <div class="c-page-services__book-now-container">
-          <a class="c-page-services__book-now" href="<?php echo site_url('/services'); ?>">Book</a>
+          <a class="c-page-services__book-now" href="<?php echo site_url() . '/book-now'; ?>">Book</a>
           </div>
           </div>
         </li>
