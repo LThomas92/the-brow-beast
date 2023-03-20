@@ -12,6 +12,7 @@
 ?>
 
 	<footer id="colophon" class="site-footer">
+<<<<<<< HEAD
 		<div class="site-info container-margins">
 		
 		<div class="site-footer__left-side">
@@ -117,6 +118,20 @@ l-844 0 0 1665 0 1665 863 0 c524 0 897 -4 952 -10z"/>
 		</div>
 		
 		
+=======
+		<div class="site-info">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'the-brow-beast' ) ); ?>">
+				<?php
+				/* translators: %s: CMS name, i.e. WordPress. */
+				printf( esc_html__( 'Proudly powered by %s', 'the-brow-beast' ), 'WordPress' );
+				?>
+			</a>
+			<span class="sep"> | </span>
+				<?php
+				/* translators: 1: Theme name, 2: Theme author. */
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'the-brow-beast' ), 'the-brow-beast', '<a href="http://underscores.me/">Underscores.me</a>' );
+				?>
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

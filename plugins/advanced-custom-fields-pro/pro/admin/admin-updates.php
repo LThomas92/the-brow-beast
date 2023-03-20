@@ -139,7 +139,11 @@ if ( ! class_exists( 'ACF_Admin_Updates' ) ) :
 		function load() {
 			// Check activate.
 			if ( acf_verify_nonce( 'activate_pro_license' ) ) {
+<<<<<<< HEAD
 				acf_pro_activate_license( $_POST['acf_pro_license'] );
+=======
+				acf_pro_activate_license( sanitize_text_field( $_POST['acf_pro_license'] ) );
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 				// Check deactivate.
 			} elseif ( acf_verify_nonce( 'deactivate_pro_license' ) ) {

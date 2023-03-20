@@ -344,20 +344,34 @@ if ( ! class_exists( 'acf_field_checkbox' ) ) :
 			acf_render_field_setting(
 				$field,
 				array(
+<<<<<<< HEAD
 					'label' => __( 'Choices', 'acf' ),
 					'hint'  => __( 'Enter each choice on a new line.', 'acf' ) . '<br />' . __( 'For more control, you may specify both a value and label like this:', 'acf' ) . '<br /><span class="acf-field-setting-example">' . __( 'red : Red', 'acf' ) . '</span>',
 					'type'  => 'textarea',
 					'name'  => 'choices',
+=======
+					'label'        => __( 'Choices', 'acf' ),
+					'instructions' => __( 'Enter each choice on a new line.', 'acf' ) . '<br />' . __( 'For more control, you may specify both a value and label like this:', 'acf' ) . '<br /><span class="acf-field-setting-example">' . __( 'red : Red', 'acf' ) . '</span>',
+					'type'         => 'textarea',
+					'name'         => 'choices',
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 				)
 			);
 
 			acf_render_field_setting(
 				$field,
 				array(
+<<<<<<< HEAD
 					'label' => __( 'Default Value', 'acf' ),
 					'hint'  => __( 'Enter each default value on a new line', 'acf' ),
 					'type'  => 'textarea',
 					'name'  => 'default_value',
+=======
+					'label'        => __( 'Default Value', 'acf' ),
+					'instructions' => __( 'Enter each default value on a new line', 'acf' ),
+					'type'         => 'textarea',
+					'name'         => 'default_value',
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 				)
 			);
 

@@ -15,6 +15,10 @@ acf_register_store( 'block-cache' );
 // Register block.json support handlers.
 add_filter( 'block_type_metadata', 'acf_add_block_namespace' );
 add_filter( 'block_type_metadata_settings', 'acf_handle_json_block_registration', 99, 2 );
+<<<<<<< HEAD
+=======
+add_action( 'acf_block_render_template', 'acf_block_render_template', 10, 6 );
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 /**
  * Prefix block names for ACF blocks registered through block.json
@@ -453,7 +457,11 @@ function acf_prepare_block( $block ) {
  */
 function acf_add_back_compat_attributes( $block ) {
 	foreach ( acf_get_block_back_compat_attribute_key_array() as $new => $old ) {
+<<<<<<< HEAD
 		if ( isset( $block[ $new ] ) ) {
+=======
+		if ( ! empty( $block[ $new ] ) || ( isset( $block[ $new ] ) && ! isset( $block[ $old ] ) ) ) {
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			$block[ $old ] = $block[ $new ];
 		}
 	}
@@ -567,11 +575,18 @@ function acf_rendered_block( $attributes, $content = '', $is_preview = false, $p
 		// Capture block render output.
 		acf_render_block( $attributes, $content, $is_preview, $post_id, $wp_block, $context );
 	}
+<<<<<<< HEAD
 
 	$html = ob_get_clean();
 
 	// Replace <InnerBlocks /> placeholder on front-end.
 	if ( ! $is_preview ) {
+=======
+	$html = ob_get_clean();
+
+	// Replace <InnerBlocks /> placeholder on front-end, or if we're rendering an ACF block inside another ACF block template.
+	if ( ! $is_preview || doing_action( 'acf_block_render_template' ) ) {
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 		// Escape "$" character to avoid "capture group" interpretation.
 		$content = str_replace( '$', '\$', $content );
 
@@ -598,6 +613,14 @@ function acf_rendered_block( $attributes, $content = '', $is_preview = false, $p
 		)
 	);
 
+<<<<<<< HEAD
+=======
+	// Prevent edit forms being output to rest endpoints.
+	if ( $form && acf_get_data( 'acf_inside_rest_call' ) && apply_filters( 'acf/blocks/prevent_edit_forms_on_rest_endpoints', true ) ) {
+		return '';
+	}
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 	return $html;
 }
 
@@ -642,6 +665,7 @@ function acf_render_block( $attributes, $content = '', $is_preview = false, $pos
 
 		// Or include template.
 	} elseif ( $block['render_template'] ) {
+<<<<<<< HEAD
 
 		// Locate template.
 		if ( isset( $block['path'] ) && file_exists( $block['path'] . '/' . $block['render_template'] ) ) {
@@ -656,6 +680,9 @@ function acf_render_block( $attributes, $content = '', $is_preview = false, $pos
 		if ( file_exists( $path ) ) {
 			include $path;
 		}
+=======
+		do_action( 'acf_block_render_template', $block, $content, $is_preview, $post_id, $wp_block, $context );
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 	}
 
 	// Reset postdata.
@@ -663,6 +690,32 @@ function acf_render_block( $attributes, $content = '', $is_preview = false, $pos
 }
 
 /**
+<<<<<<< HEAD
+=======
+ * Locate and include an ACF block's template.
+ *
+ * @since   6.0.4
+ *
+ * @param   array $block The block props.
+ */
+function acf_block_render_template( $block, $content, $is_preview, $post_id, $wp_block, $context ) {
+	// Locate template.
+	if ( isset( $block['path'] ) && file_exists( $block['path'] . '/' . $block['render_template'] ) ) {
+		$path = $block['path'] . '/' . $block['render_template'];
+	} elseif ( file_exists( $block['render_template'] ) ) {
+		$path = $block['render_template'];
+	} else {
+		$path = locate_template( $block['render_template'] );
+	}
+
+	// Include template.
+	if ( file_exists( $path ) ) {
+		include $path;
+	}
+}
+
+/**
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
  * Returns an array of all fields for the given block.
  *
  * @date    24/10/18
@@ -797,6 +850,7 @@ function acf_ajax_fetch_block() {
 	// Get request args.
 	$args = acf_request_args(
 		array(
+<<<<<<< HEAD
 			'block'    => false,
 			'post_id'  => 0,
 			'clientId' => null,
@@ -805,6 +859,17 @@ function acf_ajax_fetch_block() {
 		)
 	);
 
+=======
+			'post_id'  => 0,
+			'clientId' => null,
+			'query'    => array(),
+		)
+	);
+
+	$args['block']   = isset( $_REQUEST['block'] ) ? $_REQUEST['block'] : false; //phpcs:ignore -- requires auth; designed to contain unescaped html.
+	$args['context'] = isset( $_REQUEST['context'] ) ? $_REQUEST['context'] : array(); //phpcs:ignore -- requires auth; designed to contain unescaped html.
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 	$block       = $args['block'];
 	$query       = $args['query'];
 	$client_id   = $args['clientId'];
@@ -1088,6 +1153,10 @@ function acf_serialize_block_attributes( $block_attributes ) {
 function acf_set_after_rest_media_enqueue_reset_flag( $response ) {
 	global $wp_actions;
 
+<<<<<<< HEAD
+=======
+	acf_set_data( 'acf_inside_rest_call', true );
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 	acf_set_data( 'acf_should_reset_media_enqueue', empty( $wp_actions['wp_enqueue_media'] ) );
 	acf_set_data( 'acf_did_render_block_form', false );
 
@@ -1105,6 +1174,10 @@ add_filter( 'rest_request_before_callbacks', 'acf_set_after_rest_media_enqueue_r
  * @return  mixed
  */
 function acf_reset_media_enqueue_after_rest( $response ) {
+<<<<<<< HEAD
+=======
+	acf_set_data( 'acf_inside_rest_call', false );
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 	if ( acf_get_data( 'acf_should_reset_media_enqueue' ) && acf_get_data( 'acf_did_render_block_form' ) ) {
 		global $wp_actions;
 		//phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited -- no other option here as this works around a breaking WordPress change with REST preload scopes.

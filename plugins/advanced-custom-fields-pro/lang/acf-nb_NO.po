@@ -12,7 +12,11 @@
 # This file is distributed under the same license as Advanced Custom Fields.
 msgid ""
 msgstr ""
+<<<<<<< HEAD
 "PO-Revision-Date: 2022-10-17T14:24:48+00:00\n"
+=======
+"PO-Revision-Date: 2022-11-08T12:02:56+00:00\n"
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 "Report-Msgid-Bugs-To: http://support.advancedcustomfields.com\n"
 "Language: nb_NO\n"
 "MIME-Version: 1.0\n"
@@ -21,6 +25,28 @@ msgstr ""
 "X-Generator: gettext\n"
 "Project-Id-Version: Advanced Custom Fields\n"
 
+<<<<<<< HEAD
+=======
+#: includes/api/api-template.php:867
+msgid "[ACF shortcode value disabled for preview]"
+msgstr ""
+
+#: includes/admin/admin-field-group.php:671
+msgid "Close Modal"
+msgstr ""
+
+#: includes/admin/admin-field-group.php:162
+#: assets/build/js/acf-field-group.js:1186
+#: assets/build/js/acf-field-group.js:1463
+msgid "Field moved to other group"
+msgstr ""
+
+#: includes/admin/admin-field-group.php:161 assets/build/js/acf.js:1406
+#: assets/build/js/acf.js:1463
+msgid "Close modal"
+msgstr ""
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/fields/class-acf-field-tab.php:122
 msgid "Start a new group of tabs at this tab."
 msgstr "Begynn en ny grupe faner ved denne fanen."
@@ -29,7 +55,11 @@ msgstr "Begynn en ny grupe faner ved denne fanen."
 msgid "New Tab Group"
 msgstr "Ny fanegruppe"
 
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:446
+=======
+#: includes/fields/class-acf-field-select.php:450
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/fields/class-acf-field-true_false.php:197
 msgid "Use a stylized checkbox using select2"
 msgstr ""
@@ -176,16 +206,28 @@ msgstr "#"
 msgid "Add Field"
 msgstr "Legg til felt"
 
+<<<<<<< HEAD
 #: includes/admin/views/field-group-field.php:192
+=======
+#: includes/admin/views/field-group-field.php:191
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/admin/views/field-group-options.php:40
 msgid "Presentation"
 msgstr "Presentasjon"
 
+<<<<<<< HEAD
 #: includes/admin/views/field-group-field.php:160
 msgid "Validation"
 msgstr "Validering"
 
 #: includes/admin/views/field-group-field.php:94
+=======
+#: includes/admin/views/field-group-field.php:159
+msgid "Validation"
+msgstr "Validering"
+
+#: includes/admin/views/field-group-field.php:93
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "General"
 msgstr "Generelt"
 
@@ -232,12 +274,21 @@ msgid "Activate this item"
 msgstr "Aktiver dette elementet"
 
 #: includes/admin/admin-field-group.php:158
+<<<<<<< HEAD
 #: assets/build/js/acf-field-group.js:2174
 #: assets/build/js/acf-field-group.js:2582
 msgid "Move field group to trash?"
 msgstr "Flytte feltgruppe til papirkurven?"
 
 #: acf.php:447 includes/admin/admin-field-group.php:351
+=======
+#: assets/build/js/acf-field-group.js:2196
+#: assets/build/js/acf-field-group.js:2612
+msgid "Move field group to trash?"
+msgstr "Flytte feltgruppe til papirkurven?"
+
+#: acf.php:448 includes/admin/admin-field-group.php:353
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/admin/admin-field-groups.php:232
 msgctxt "post status"
 msgid "Inactive"
@@ -247,7 +298,11 @@ msgstr "Inaktiv"
 msgid "WP Engine"
 msgstr "WP Engine"
 
+<<<<<<< HEAD
 #: acf.php:505
+=======
+#: acf.php:506
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields should not be active at "
 "the same time. We've automatically deactivated Advanced Custom Fields PRO."
@@ -255,7 +310,11 @@ msgstr ""
 "Advanced Custom Fields og Advanced Custom Fields PRO bør ikke være aktiverte "
 "samtidig. Vi har automatisk deaktivert Advanced Custom Fields PRO."
 
+<<<<<<< HEAD
 #: acf.php:503
+=======
+#: acf.php:504
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid ""
 "Advanced Custom Fields and Advanced Custom Fields should not be active at "
 "the same time. We've automatically deactivated Advanced Custom Fields."
@@ -285,7 +344,11 @@ msgstr "%1$s må ha en gyldig bruker-ID."
 msgid "Invalid request."
 msgstr "Ugyldig forespørsel."
 
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:679
+=======
+#: includes/fields/class-acf-field-select.php:683
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "%1$s is not one of %2$s"
 msgstr "%1$s er ikke en av %2$s"
 
@@ -330,6 +393,7 @@ msgstr ""
 msgid "Hex String"
 msgstr ""
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:185
 #: assets/build/js/acf-field-group.js:754
 #: assets/build/js/acf-field-group.js:919
@@ -355,6 +419,33 @@ msgid "Repeater (Pro only)"
 msgstr "Gjentaker (kun Pro)"
 
 #: includes/admin/admin-field-group.php:351
+=======
+#: includes/admin/admin-field-group.php:187
+#: assets/build/js/acf-field-group.js:761
+#: assets/build/js/acf-field-group.js:928
+msgid "Gallery (Pro only)"
+msgstr "Galleri (kun Pro)"
+
+#: includes/admin/admin-field-group.php:186
+#: assets/build/js/acf-field-group.js:758
+#: assets/build/js/acf-field-group.js:918
+msgid "Clone (Pro only)"
+msgstr "Klone (kun Pro)"
+
+#: includes/admin/admin-field-group.php:185
+#: assets/build/js/acf-field-group.js:758
+#: assets/build/js/acf-field-group.js:915
+msgid "Flexible Content (Pro only)"
+msgstr "Fleksibelt innhold (kun Pro)"
+
+#: includes/admin/admin-field-group.php:184
+#: assets/build/js/acf-field-group.js:758
+#: assets/build/js/acf-field-group.js:912
+msgid "Repeater (Pro only)"
+msgstr "Gjentaker (kun Pro)"
+
+#: includes/admin/admin-field-group.php:353
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgctxt "post status"
 msgid "Active"
 msgstr "Aktiv"
@@ -563,8 +654,13 @@ msgstr "Ugyldig engangskode."
 msgid "Error loading field."
 msgstr "Feil ved lasting av felt."
 
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:2596 assets/build/js/acf-input.js:2657
 #: assets/build/js/acf-input.js:2904 assets/build/js/acf-input.js:2978
+=======
+#: assets/build/js/acf-input.js:2605 assets/build/js/acf-input.js:2666
+#: assets/build/js/acf-input.js:2913 assets/build/js/acf-input.js:2987
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Location not found: %s"
 msgstr "Posisjon ikke funnet: %s"
 
@@ -711,7 +807,11 @@ msgid "Show this field if"
 msgstr "Vis dette feltet hvis"
 
 #: includes/admin/views/field-group-field-conditional-logic.php:26
+<<<<<<< HEAD
 #: includes/admin/views/field-group-field.php:280
+=======
+#: includes/admin/views/field-group-field.php:279
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Conditional Logic"
 msgstr "Betinget logikk"
 
@@ -729,24 +829,40 @@ msgstr "Lokal JSON"
 msgid "Clone Field"
 msgstr "Klonefelt"
 
+<<<<<<< HEAD
 #: includes/admin/views/html-notice-upgrade.php:31
+=======
+#: includes/admin/views/html-notice-upgrade.php:30
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid ""
 "Please also check all premium add-ons (%s) are updated to the latest version."
 msgstr ""
 "Vennligst sjekk at alle premium-tillegg (%s) er oppdatert til siste versjon."
 
+<<<<<<< HEAD
 #: includes/admin/views/html-notice-upgrade.php:29
+=======
+#: includes/admin/views/html-notice-upgrade.php:28
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid ""
 "This version contains improvements to your database and requires an upgrade."
 msgstr ""
 "Denne versjonen inneholder forbedringer til din database, og krever en "
 "oppgradering."
 
+<<<<<<< HEAD
 #: includes/admin/views/html-notice-upgrade.php:29
 msgid "Thank you for updating to %1$s v%2$s!"
 msgstr "Takk for at du oppgraderer til %1$s v%2$s!"
 
 #: includes/admin/views/html-notice-upgrade.php:28
+=======
+#: includes/admin/views/html-notice-upgrade.php:28
+msgid "Thank you for updating to %1$s v%2$s!"
+msgstr "Takk for at du oppgraderer til %1$s v%2$s!"
+
+#: includes/admin/views/html-notice-upgrade.php:27
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Database Upgrade Required"
 msgstr "Oppdatering av database er påkrevd"
 
@@ -910,6 +1026,7 @@ msgstr "Nøkkel"
 msgid "Order"
 msgstr "Rekkefølge"
 
+<<<<<<< HEAD
 #: includes/admin/views/field-group-field.php:295
 msgid "Close Field"
 msgstr "Stengt felt"
@@ -959,6 +1076,57 @@ msgid "This is the name which will appear on the EDIT page"
 msgstr "Dette er navnet som vil vises på redigeringssiden"
 
 #: includes/admin/views/field-group-field.php:121
+=======
+#: includes/admin/views/field-group-field.php:294
+msgid "Close Field"
+msgstr "Stengt felt"
+
+#: includes/admin/views/field-group-field.php:235
+msgid "id"
+msgstr "id"
+
+#: includes/admin/views/field-group-field.php:219
+msgid "class"
+msgstr "klasse"
+
+#: includes/admin/views/field-group-field.php:256
+msgid "width"
+msgstr "bredde"
+
+#: includes/admin/views/field-group-field.php:250
+msgid "Wrapper Attributes"
+msgstr "Attributter for innpakning"
+
+#: includes/admin/views/field-group-field.php:171
+msgid "Required"
+msgstr "Obligatorisk"
+
+#: includes/admin/views/field-group-field.php:203
+msgid "Instructions for authors. Shown when submitting data"
+msgstr "Instruksjoner for forfattere. Vist ved innsending av data"
+
+#: includes/admin/views/field-group-field.php:202
+msgid "Instructions"
+msgstr "Instruksjoner"
+
+#: includes/admin/views/field-group-field.php:106
+msgid "Field Type"
+msgstr "Felttype"
+
+#: includes/admin/views/field-group-field.php:134
+msgid "Single word, no spaces. Underscores and dashes allowed"
+msgstr "Enkelt ord, ingen mellomrom. Understrekning og bindestreker tillatt"
+
+#: includes/admin/views/field-group-field.php:133
+msgid "Field Name"
+msgstr "Feltnavn"
+
+#: includes/admin/views/field-group-field.php:121
+msgid "This is the name which will appear on the EDIT page"
+msgstr "Dette er navnet som vil vises på redigeringssiden"
+
+#: includes/admin/views/field-group-field.php:120
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Field Label"
 msgstr "Feltetikett"
 
@@ -991,10 +1159,17 @@ msgstr "Rediger felt"
 msgid "Drag to reorder"
 msgstr "Dra for å endre rekkefølge"
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:166
 #: includes/admin/views/html-location-group.php:3
 #: assets/build/js/acf-field-group.js:1771
 #: assets/build/js/acf-field-group.js:2130
+=======
+#: includes/admin/admin-field-group.php:168
+#: includes/admin/views/html-location-group.php:3
+#: assets/build/js/acf-field-group.js:1793
+#: assets/build/js/acf-field-group.js:2160
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Show this field group if"
 msgstr "Vis denne feltgruppen hvis"
 
@@ -1027,7 +1202,11 @@ msgid "Upgrading data to version %s"
 msgstr "Oppgraderer data til versjon %s"
 
 #: includes/admin/views/html-admin-page-upgrade-network.php:121
+<<<<<<< HEAD
 #: includes/admin/views/html-notice-upgrade.php:45
+=======
+#: includes/admin/views/html-notice-upgrade.php:44
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid ""
 "It is strongly recommended that you backup your database before proceeding. "
 "Are you sure you wish to run the updater now?"
@@ -1244,6 +1423,7 @@ msgstr "Oppgrader database"
 msgid "Custom Fields"
 msgstr "Egendefinerte felt"
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:714
 msgid "Move Field"
 msgstr "Flytt felt"
@@ -1267,15 +1447,45 @@ msgid "Move Complete."
 msgstr "Flytting fullført."
 
 #: includes/admin/views/field-group-field.php:274
+=======
+#: includes/admin/admin-field-group.php:717
+msgid "Move Field"
+msgstr "Flytt felt"
+
+#: includes/admin/admin-field-group.php:706
+#: includes/admin/admin-field-group.php:710
+msgid "Please select the destination for this field"
+msgstr "Vennligst velg destinasjon for dette feltet"
+
+#. translators: Confirmation message once a field has been moved to a different
+#. field group.
+#: includes/admin/admin-field-group.php:667
+msgid "The %1$s field can now be found in the %2$s field group"
+msgstr "%1$s feltet kan nå bli funnet i feltgruppen %2$s"
+
+#: includes/admin/admin-field-group.php:664
+msgid "Move Complete."
+msgstr "Flytting fullført."
+
+#: includes/admin/views/field-group-field.php:273
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/admin/views/field-group-options.php:190
 msgid "Active"
 msgstr "Aktiv"
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:323
 msgid "Field Keys"
 msgstr "Feltnøkler"
 
 #: includes/admin/admin-field-group.php:222
+=======
+#: includes/admin/admin-field-group.php:325
+msgid "Field Keys"
+msgstr "Feltnøkler"
+
+#: includes/admin/admin-field-group.php:224
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/admin/tools/class-acf-admin-tool-export.php:286
 msgid "Settings"
 msgstr "Innstillinger"
@@ -1284,12 +1494,17 @@ msgstr "Innstillinger"
 msgid "Location"
 msgstr "Plassering"
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:167 assets/build/js/acf-input.js:963
+=======
+#: includes/admin/admin-field-group.php:169 assets/build/js/acf-input.js:963
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: assets/build/js/acf-input.js:1075
 msgid "Null"
 msgstr "Null"
 
 #: includes/acf-field-group-functions.php:846
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:164
 #: assets/build/js/acf-field-group.js:1035
 #: assets/build/js/acf-field-group.js:1285
@@ -1297,20 +1512,38 @@ msgid "copy"
 msgstr "kopi"
 
 #: includes/admin/admin-field-group.php:163
+=======
+#: includes/admin/admin-field-group.php:166
+#: assets/build/js/acf-field-group.js:1052
+#: assets/build/js/acf-field-group.js:1305
+msgid "copy"
+msgstr "kopi"
+
+#: includes/admin/admin-field-group.php:165
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: assets/build/js/acf-field-group.js:323
 #: assets/build/js/acf-field-group.js:389
 msgid "(this field)"
 msgstr "(dette feltet)"
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:161 assets/build/js/acf-input.js:900
+=======
+#: includes/admin/admin-field-group.php:163 assets/build/js/acf-input.js:900
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: assets/build/js/acf-input.js:924 assets/build/js/acf-input.js:1002
 #: assets/build/js/acf-input.js:1030
 msgid "Checked"
 msgstr "Avkrysset"
 
 #: includes/admin/admin-field-group.php:160
+<<<<<<< HEAD
 #: assets/build/js/acf-field-group.js:1116
 #: assets/build/js/acf-field-group.js:1383
+=======
+#: assets/build/js/acf-field-group.js:1133
+#: assets/build/js/acf-field-group.js:1403
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Move Custom Field"
 msgstr "Flytt egendefinert felt"
 
@@ -1321,20 +1554,35 @@ msgid "No toggle fields available"
 msgstr "Ingen vekslefelt er tilgjengelige"
 
 #: includes/admin/admin-field-group.php:157
+<<<<<<< HEAD
 #: assets/build/js/acf-field-group.js:2158
 #: assets/build/js/acf-field-group.js:2562
+=======
+#: assets/build/js/acf-field-group.js:2180
+#: assets/build/js/acf-field-group.js:2592
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Field group title is required"
 msgstr "Feltgruppetittel er obligatorisk"
 
 #: includes/admin/admin-field-group.php:156
+<<<<<<< HEAD
 #: assets/build/js/acf-field-group.js:1104
 #: assets/build/js/acf-field-group.js:1369
+=======
+#: assets/build/js/acf-field-group.js:1121
+#: assets/build/js/acf-field-group.js:1389
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "This field cannot be moved until its changes have been saved"
 msgstr "Dette feltet kan ikke flyttes før endringene har blitt lagret"
 
 #: includes/admin/admin-field-group.php:155
+<<<<<<< HEAD
 #: assets/build/js/acf-field-group.js:934
 #: assets/build/js/acf-field-group.js:1167
+=======
+#: assets/build/js/acf-field-group.js:951
+#: assets/build/js/acf-field-group.js:1187
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "The string \"field_\" may not be used at the start of a field name"
 msgstr "Strengen \"field_\" kan ikke brukes i starten på et feltnavn"
 
@@ -1443,62 +1691,107 @@ msgid "Title"
 msgstr "Tittel"
 
 #: includes/assets.php:371 includes/forms/form-comment.php:160
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:6894 assets/build/js/acf-input.js:7849
 msgid "Edit field group"
 msgstr "Rediger feltgruppe"
 
 #: includes/admin/admin-field-group.php:179 assets/build/js/acf-input.js:1102
+=======
+#: assets/build/js/acf-input.js:6903 assets/build/js/acf-input.js:7858
+msgid "Edit field group"
+msgstr "Rediger feltgruppe"
+
+#: includes/admin/admin-field-group.php:181 assets/build/js/acf-input.js:1102
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: assets/build/js/acf-input.js:1230
 msgid "Selection is less than"
 msgstr "Valget er mindre enn"
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:178 assets/build/js/acf-input.js:1084
+=======
+#: includes/admin/admin-field-group.php:180 assets/build/js/acf-input.js:1084
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: assets/build/js/acf-input.js:1202
 msgid "Selection is greater than"
 msgstr "Valget er større enn"
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:177 assets/build/js/acf-input.js:1051
+=======
+#: includes/admin/admin-field-group.php:179 assets/build/js/acf-input.js:1051
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: assets/build/js/acf-input.js:1170
 msgid "Value is less than"
 msgstr "Verdi er mindre enn"
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:176 assets/build/js/acf-input.js:1020
+=======
+#: includes/admin/admin-field-group.php:178 assets/build/js/acf-input.js:1020
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: assets/build/js/acf-input.js:1139
 msgid "Value is greater than"
 msgstr "Verdi er større enn"
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:175 assets/build/js/acf-input.js:871
+=======
+#: includes/admin/admin-field-group.php:177 assets/build/js/acf-input.js:871
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: assets/build/js/acf-input.js:960
 msgid "Value contains"
 msgstr "Verdi inneholder"
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:174 assets/build/js/acf-input.js:846
+=======
+#: includes/admin/admin-field-group.php:176 assets/build/js/acf-input.js:846
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: assets/build/js/acf-input.js:926
 msgid "Value matches pattern"
 msgstr "Verdi passer til mønster"
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:173 assets/build/js/acf-input.js:825
+=======
+#: includes/admin/admin-field-group.php:175 assets/build/js/acf-input.js:825
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: assets/build/js/acf-input.js:999 assets/build/js/acf-input.js:903
 #: assets/build/js/acf-input.js:1116
 msgid "Value is not equal to"
 msgstr "Verdi er ikke lik "
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:172 assets/build/js/acf-input.js:796
+=======
+#: includes/admin/admin-field-group.php:174 assets/build/js/acf-input.js:796
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: assets/build/js/acf-input.js:944 assets/build/js/acf-input.js:864
 #: assets/build/js/acf-input.js:1053
 msgid "Value is equal to"
 msgstr "Verdi er lik"
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:171 assets/build/js/acf-input.js:775
+=======
+#: includes/admin/admin-field-group.php:173 assets/build/js/acf-input.js:775
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: assets/build/js/acf-input.js:841
 msgid "Has no value"
 msgstr "Har ingen verdi"
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:170 assets/build/js/acf-input.js:744
+=======
+#: includes/admin/admin-field-group.php:172 assets/build/js/acf-input.js:744
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: assets/build/js/acf-input.js:783
 msgid "Has any value"
 msgstr "Har en verdi"
 
+<<<<<<< HEAD
 #: includes/assets.php:352 assets/build/js/acf.js:1489
 #: assets/build/js/acf.js:1550
 msgid "Cancel"
@@ -1516,10 +1809,30 @@ msgstr "%d felt krever oppmerksomhet"
 
 #: includes/assets.php:367 assets/build/js/acf-input.js:8821
 #: assets/build/js/acf-input.js:10141
+=======
+#: includes/assets.php:352 assets/build/js/acf.js:1539
+#: assets/build/js/acf.js:1604
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: includes/assets.php:348 assets/build/js/acf.js:1691
+#: assets/build/js/acf.js:1801
+msgid "Are you sure?"
+msgstr "Er du sikker?"
+
+#: includes/assets.php:368 assets/build/js/acf-input.js:8832
+#: assets/build/js/acf-input.js:10154
+msgid "%d fields require attention"
+msgstr "%d felt krever oppmerksomhet"
+
+#: includes/assets.php:367 assets/build/js/acf-input.js:8830
+#: assets/build/js/acf-input.js:10150
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "1 field requires attention"
 msgstr "1 felt krever oppmerksomhet"
 
 #: includes/assets.php:366 includes/validation.php:287
+<<<<<<< HEAD
 #: includes/validation.php:297 assets/build/js/acf-input.js:8814
 #: assets/build/js/acf-input.js:10136
 msgid "Validation failed"
@@ -1552,6 +1865,40 @@ msgstr "Lastet opp til dette innlegget"
 
 #: includes/media.php:50 assets/build/js/acf-input.js:6461
 #: assets/build/js/acf-input.js:7301
+=======
+#: includes/validation.php:297 assets/build/js/acf-input.js:8823
+#: assets/build/js/acf-input.js:10145
+msgid "Validation failed"
+msgstr "Validering feilet"
+
+#: includes/assets.php:365 assets/build/js/acf-input.js:8978
+#: assets/build/js/acf-input.js:10328
+msgid "Validation successful"
+msgstr "Validering vellykket"
+
+#: includes/media.php:54 assets/build/js/acf-input.js:6732
+#: assets/build/js/acf-input.js:7662
+msgid "Restricted"
+msgstr "Begrenset"
+
+#: includes/media.php:53 assets/build/js/acf-input.js:6562
+#: assets/build/js/acf-input.js:7426
+msgid "Collapse Details"
+msgstr "Trekk sammen detaljer"
+
+#: includes/media.php:52 assets/build/js/acf-input.js:6562
+#: assets/build/js/acf-input.js:7423
+msgid "Expand Details"
+msgstr "Utvid detaljer"
+
+#: includes/media.php:51 assets/build/js/acf-input.js:6434
+#: assets/build/js/acf-input.js:7271
+msgid "Uploaded to this post"
+msgstr "Lastet opp til dette innlegget"
+
+#: includes/media.php:50 assets/build/js/acf-input.js:6470
+#: assets/build/js/acf-input.js:7310
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgctxt "verb"
 msgid "Update"
 msgstr "Oppdater"
@@ -1561,8 +1908,13 @@ msgctxt "verb"
 msgid "Edit"
 msgstr "Rediger"
 
+<<<<<<< HEAD
 #: includes/assets.php:362 assets/build/js/acf-input.js:8591
 #: assets/build/js/acf-input.js:9907
+=======
+#: includes/assets.php:362 assets/build/js/acf-input.js:8600
+#: assets/build/js/acf-input.js:9916
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "The changes you made will be lost if you navigate away from this page"
 msgstr ""
 "Endringene du har gjort vil gå tapt om du navigerer bort fra denne siden."
@@ -1571,15 +1923,25 @@ msgstr ""
 msgid "File type must be %s."
 msgstr "Filtype må være %s."
 
+<<<<<<< HEAD
 #: includes/admin/admin-field-group.php:165
+=======
+#: includes/admin/admin-field-group.php:167
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/admin/views/field-group-field-conditional-logic.php:59
 #: includes/admin/views/field-group-field-conditional-logic.php:169
 #: includes/admin/views/field-group-locations.php:36
 #: includes/admin/views/html-location-group.php:3
 #: includes/api/api-helpers.php:3405 assets/build/js/acf-field-group.js:452
+<<<<<<< HEAD
 #: assets/build/js/acf-field-group.js:1804
 #: assets/build/js/acf-field-group.js:544
 #: assets/build/js/acf-field-group.js:2174
+=======
+#: assets/build/js/acf-field-group.js:1826
+#: assets/build/js/acf-field-group.js:544
+#: assets/build/js/acf-field-group.js:2204
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "or"
 msgstr "eller"
 
@@ -1627,10 +1989,17 @@ msgstr "Middels"
 msgid "Thumbnail"
 msgstr "Miniatyrbilde"
 
+<<<<<<< HEAD
 #: includes/acf-field-functions.php:849
 #: includes/admin/admin-field-group.php:162
 #: assets/build/js/acf-field-group.js:718
 #: assets/build/js/acf-field-group.js:857
+=======
+#: includes/acf-field-functions.php:850
+#: includes/admin/admin-field-group.php:164
+#: assets/build/js/acf-field-group.js:719
+#: assets/build/js/acf-field-group.js:859
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "(no label)"
 msgstr "(ingen etikett)"
 
@@ -1678,12 +2047,17 @@ msgstr "Arkiv"
 msgid "Page Link"
 msgstr "Sidelenke"
 
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-taxonomy.php:955
+=======
+#: includes/fields/class-acf-field-taxonomy.php:945
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/locations/class-acf-location-user-form.php:72
 msgid "Add"
 msgstr "Legg til "
 
 #: includes/admin/views/field-group-fields.php:42
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-taxonomy.php:920
 msgid "Name"
 msgstr "Navn"
@@ -1697,6 +2071,21 @@ msgid "%s already exists"
 msgstr "%s finnes allerede"
 
 #: includes/fields/class-acf-field-taxonomy.php:856
+=======
+#: includes/fields/class-acf-field-taxonomy.php:910
+msgid "Name"
+msgstr "Navn"
+
+#: includes/fields/class-acf-field-taxonomy.php:894
+msgid "%s added"
+msgstr "%s lagt til"
+
+#: includes/fields/class-acf-field-taxonomy.php:858
+msgid "%s already exists"
+msgstr "%s finnes allerede"
+
+#: includes/fields/class-acf-field-taxonomy.php:846
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "User unable to add new %s"
 msgstr "Bruker kan ikke legge til ny %s"
 
@@ -1857,18 +2246,30 @@ msgid "File name"
 msgstr "Filnavn"
 
 #: includes/fields/class-acf-field-file.php:60
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:2334 assets/build/js/acf-input.js:2603
+=======
+#: assets/build/js/acf-input.js:2343 assets/build/js/acf-input.js:2612
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Update File"
 msgstr "Oppdater fil"
 
 #: includes/fields/class-acf-field-file.php:59
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:2333 assets/build/js/acf-input.js:2602
+=======
+#: assets/build/js/acf-input.js:2342 assets/build/js/acf-input.js:2611
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Edit File"
 msgstr "Rediger fil"
 
 #: includes/admin/tools/class-acf-admin-tool-import.php:59
 #: includes/fields/class-acf-field-file.php:58
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:2308 assets/build/js/acf-input.js:2575
+=======
+#: assets/build/js/acf-input.js:2317 assets/build/js/acf-input.js:2584
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Select File"
 msgstr "Velg fil"
 
@@ -1880,21 +2281,37 @@ msgstr "Fil"
 msgid "Password"
 msgstr "Passord"
 
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:387
 msgid "Specify the value returned"
 msgstr "Angi returnert verdi"
 
 #: includes/fields/class-acf-field-select.php:456
+=======
+#: includes/fields/class-acf-field-select.php:391
+msgid "Specify the value returned"
+msgstr "Angi returnert verdi"
+
+#: includes/fields/class-acf-field-select.php:460
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Use AJAX to lazy load choices?"
 msgstr "Bruk ajax for lat lastingsvalg?"
 
 #: includes/fields/class-acf-field-checkbox.php:358
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:376
+=======
+#: includes/fields/class-acf-field-select.php:380
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Enter each default value on a new line"
 msgstr "Angi hver standardverdi på en ny linje"
 
 #: includes/fields/class-acf-field-select.php:255 includes/media.php:48
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:6335 assets/build/js/acf-input.js:7147
+=======
+#: assets/build/js/acf-input.js:6344 assets/build/js/acf-input.js:7156
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgctxt "verb"
 msgid "Select"
 msgstr "Velg"
@@ -2165,7 +2582,11 @@ msgstr "Område"
 #: includes/fields/class-acf-field-button-group.php:172
 #: includes/fields/class-acf-field-checkbox.php:375
 #: includes/fields/class-acf-field-radio.php:217
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:394
+=======
+#: includes/fields/class-acf-field-select.php:398
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Both (Array)"
 msgstr "Begge (rekke)"
 
@@ -2173,14 +2594,22 @@ msgstr "Begge (rekke)"
 #: includes/fields/class-acf-field-button-group.php:171
 #: includes/fields/class-acf-field-checkbox.php:374
 #: includes/fields/class-acf-field-radio.php:216
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:393
+=======
+#: includes/fields/class-acf-field-select.php:397
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Label"
 msgstr "Etikett"
 
 #: includes/fields/class-acf-field-button-group.php:170
 #: includes/fields/class-acf-field-checkbox.php:373
 #: includes/fields/class-acf-field-radio.php:215
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:392
+=======
+#: includes/fields/class-acf-field-select.php:396
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Value"
 msgstr "Verdi"
 
@@ -2199,14 +2628,22 @@ msgstr "Horisontal"
 #: includes/fields/class-acf-field-button-group.php:145
 #: includes/fields/class-acf-field-checkbox.php:348
 #: includes/fields/class-acf-field-radio.php:190
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:365
+=======
+#: includes/fields/class-acf-field-select.php:369
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "red : Red"
 msgstr "rød : Rød"
 
 #: includes/fields/class-acf-field-button-group.php:145
 #: includes/fields/class-acf-field-checkbox.php:348
 #: includes/fields/class-acf-field-radio.php:190
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:365
+=======
+#: includes/fields/class-acf-field-select.php:369
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "For more control, you may specify both a value and label like this:"
 msgstr ""
 "For mer kontroll, kan du spesifisere både en verdi og en etikett som dette:"
@@ -2214,14 +2651,22 @@ msgstr ""
 #: includes/fields/class-acf-field-button-group.php:145
 #: includes/fields/class-acf-field-checkbox.php:348
 #: includes/fields/class-acf-field-radio.php:190
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:365
+=======
+#: includes/fields/class-acf-field-select.php:369
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Enter each choice on a new line."
 msgstr "Tast inn hvert valg på en ny linje."
 
 #: includes/fields/class-acf-field-button-group.php:144
 #: includes/fields/class-acf-field-checkbox.php:347
 #: includes/fields/class-acf-field-radio.php:189
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:364
+=======
+#: includes/fields/class-acf-field-select.php:368
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Choices"
 msgstr "Valg"
 
@@ -2231,7 +2676,11 @@ msgstr "Knappegruppe"
 
 #: includes/fields/class-acf-field-page_link.php:488
 #: includes/fields/class-acf-field-post_object.php:404
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:402
+=======
+#: includes/fields/class-acf-field-select.php:406
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/fields/class-acf-field-user.php:83
 msgid "Select multiple values?"
 msgstr "Velge flere verdier?"
@@ -2240,14 +2689,20 @@ msgstr "Velge flere verdier?"
 #: includes/fields/class-acf-field-page_link.php:509
 #: includes/fields/class-acf-field-post_object.php:426
 #: includes/fields/class-acf-field-radio.php:235
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:424
 #: includes/fields/class-acf-field-taxonomy.php:796
+=======
+#: includes/fields/class-acf-field-select.php:428
+#: includes/fields/class-acf-field-taxonomy.php:786
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/fields/class-acf-field-user.php:104
 msgid "Allow Null?"
 msgstr "Tillat null?"
 
 #: includes/fields/class-acf-field-page_link.php:249
 #: includes/fields/class-acf-field-post_object.php:250
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-taxonomy.php:942
 msgid "Parent"
 msgstr "Forelder"
@@ -2281,6 +2736,41 @@ msgid "Visual & Text"
 msgstr "Visuell og tekst"
 
 #: includes/fields/class-acf-field-wysiwyg.php:367
+=======
+#: includes/fields/class-acf-field-taxonomy.php:932
+msgid "Parent"
+msgstr "Forelder"
+
+#: includes/fields/class-acf-field-wysiwyg.php:394
+msgid "TinyMCE will not be initialized until field is clicked"
+msgstr "TinyMCE vil ikke bli initialisert før dette feltet er klikket"
+
+#: includes/fields/class-acf-field-wysiwyg.php:393
+msgid "Delay initialization?"
+msgstr "Forsinke initialisering?"
+
+#: includes/fields/class-acf-field-wysiwyg.php:382
+msgid "Show Media Upload Buttons?"
+msgstr "Vis opplastingsknapper for mediefiler?"
+
+#: includes/fields/class-acf-field-wysiwyg.php:366
+msgid "Toolbar"
+msgstr "Verktøylinje"
+
+#: includes/fields/class-acf-field-wysiwyg.php:358
+msgid "Text Only"
+msgstr "Kun tekst"
+
+#: includes/fields/class-acf-field-wysiwyg.php:357
+msgid "Visual Only"
+msgstr "Kun visuell"
+
+#: includes/fields/class-acf-field-wysiwyg.php:356
+msgid "Visual & Text"
+msgstr "Visuell og tekst"
+
+#: includes/fields/class-acf-field-wysiwyg.php:351
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Tabs"
 msgstr "Faner"
 
@@ -2473,17 +2963,29 @@ msgid "Select post type"
 msgstr "Velg innholdstype"
 
 #: includes/fields/class-acf-field-relationship.php:65
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:3686 assets/build/js/acf-input.js:4168
+=======
+#: assets/build/js/acf-input.js:3695 assets/build/js/acf-input.js:4177
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "No matches found"
 msgstr "Ingen treff funnet"
 
 #: includes/fields/class-acf-field-relationship.php:64
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:3670 assets/build/js/acf-input.js:4147
+=======
+#: assets/build/js/acf-input.js:3679 assets/build/js/acf-input.js:4156
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Loading"
 msgstr "Laster"
 
 #: includes/fields/class-acf-field-relationship.php:63
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:3593 assets/build/js/acf-input.js:4051
+=======
+#: assets/build/js/acf-input.js:3602 assets/build/js/acf-input.js:4060
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Maximum values reached ( {max} values )"
 msgstr "Maksimal verdi nådd ( {max} verdier )"
 
@@ -2594,8 +3096,13 @@ msgstr "Intet bilde valgt"
 
 #: includes/assets.php:351 includes/fields/class-acf-field-file.php:159
 #: includes/fields/class-acf-field-image.php:139
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-link.php:142 assets/build/js/acf.js:1488
 #: assets/build/js/acf.js:1549
+=======
+#: includes/fields/class-acf-field-link.php:142 assets/build/js/acf.js:1538
+#: assets/build/js/acf.js:1603
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Remove"
 msgstr "Fjern"
 
@@ -2607,22 +3114,38 @@ msgid "Edit"
 msgstr "Rediger"
 
 #: includes/fields/class-acf-field-image.php:67 includes/media.php:55
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:6378 assets/build/js/acf-input.js:7201
+=======
+#: assets/build/js/acf-input.js:6387 assets/build/js/acf-input.js:7210
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "All images"
 msgstr "Alle bilder"
 
 #: includes/fields/class-acf-field-image.php:66
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:2997 assets/build/js/acf-input.js:3377
+=======
+#: assets/build/js/acf-input.js:3006 assets/build/js/acf-input.js:3386
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Update Image"
 msgstr "Oppdater bilde"
 
 #: includes/fields/class-acf-field-image.php:65
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:2996 assets/build/js/acf-input.js:3376
+=======
+#: assets/build/js/acf-input.js:3005 assets/build/js/acf-input.js:3385
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Edit Image"
 msgstr "Rediger bilde"
 
 #: includes/fields/class-acf-field-image.php:64
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:2974 assets/build/js/acf-input.js:3351
+=======
+#: assets/build/js/acf-input.js:2983 assets/build/js/acf-input.js:3360
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Select Image"
 msgstr "Velg bilde"
 
@@ -2740,7 +3263,11 @@ msgstr "Tekst vist når aktiv"
 msgid "On Text"
 msgstr "Tekst for på"
 
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:445
+=======
+#: includes/fields/class-acf-field-select.php:449
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/fields/class-acf-field-true_false.php:196
 msgid "Stylized UI"
 msgstr "Stilisert UI"
@@ -2752,7 +3279,11 @@ msgstr "Stilisert UI"
 #: includes/fields/class-acf-field-number.php:125
 #: includes/fields/class-acf-field-radio.php:199
 #: includes/fields/class-acf-field-range.php:161
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:375
+=======
+#: includes/fields/class-acf-field-select.php:379
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/fields/class-acf-field-text.php:94
 #: includes/fields/class-acf-field-textarea.php:100
 #: includes/fields/class-acf-field-true_false.php:144
@@ -2773,13 +3304,21 @@ msgstr "Melding"
 
 #: includes/assets.php:350 includes/fields/class-acf-field-true_false.php:83
 #: includes/fields/class-acf-field-true_false.php:184
+<<<<<<< HEAD
 #: assets/build/js/acf.js:1645 assets/build/js/acf.js:1749
+=======
+#: assets/build/js/acf.js:1695 assets/build/js/acf.js:1803
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "No"
 msgstr "Nei"
 
 #: includes/assets.php:349 includes/fields/class-acf-field-true_false.php:80
 #: includes/fields/class-acf-field-true_false.php:168
+<<<<<<< HEAD
 #: assets/build/js/acf.js:1643 assets/build/js/acf.js:1748
+=======
+#: assets/build/js/acf.js:1693 assets/build/js/acf.js:1802
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Yes"
 msgstr "Ja"
 
@@ -2865,7 +3404,11 @@ msgid "Search"
 msgstr "Søk"
 
 #: includes/fields/class-acf-field-google-map.php:60
+<<<<<<< HEAD
 #: assets/build/js/acf-input.js:2673 assets/build/js/acf-input.js:3004
+=======
+#: assets/build/js/acf-input.js:2682 assets/build/js/acf-input.js:3013
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Sorry, this browser does not support geolocation"
 msgstr "Beklager, denne nettleseren støtter ikke geolokalisering"
 
@@ -2885,7 +3428,11 @@ msgstr "Formatet returnert via malfunksjoner"
 #: includes/fields/class-acf-field-image.php:184
 #: includes/fields/class-acf-field-post_object.php:389
 #: includes/fields/class-acf-field-relationship.php:616
+<<<<<<< HEAD
 #: includes/fields/class-acf-field-select.php:386
+=======
+#: includes/fields/class-acf-field-select.php:390
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/fields/class-acf-field-time_picker.php:128
 #: includes/fields/class-acf-field-user.php:67
 msgid "Return Format"
@@ -2917,12 +3464,17 @@ msgid "Time Picker"
 msgstr "Tidsvelger"
 
 #. translators: counts for inactive field groups
+<<<<<<< HEAD
 #: acf.php:453
+=======
+#: acf.php:454
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Inactive <span class=\"count\">(%s)</span>"
 msgid_plural "Inactive <span class=\"count\">(%s)</span>"
 msgstr[0] "Inaktiv <span class=\"count\">(%s)</span>"
 msgstr[1] "Inaktive <span class=\"count\">(%s)</span>"
 
+<<<<<<< HEAD
 #: acf.php:412
 msgid "No Fields found in Trash"
 msgstr "Ingen felt funnet i papirkurven"
@@ -2956,11 +3508,47 @@ msgid "Field"
 msgstr "Felt"
 
 #: acf.php:403 includes/admin/admin-field-group.php:218
+=======
+#: acf.php:413
+msgid "No Fields found in Trash"
+msgstr "Ingen felt funnet i papirkurven"
+
+#: acf.php:412
+msgid "No Fields found"
+msgstr "Ingen felter funnet"
+
+#: acf.php:411
+msgid "Search Fields"
+msgstr "Søk felt"
+
+#: acf.php:410
+msgid "View Field"
+msgstr "Vis felt"
+
+#: acf.php:409 includes/admin/views/field-group-fields.php:104
+msgid "New Field"
+msgstr "Nytt felt"
+
+#: acf.php:408
+msgid "Edit Field"
+msgstr "Rediger felt"
+
+#: acf.php:407
+msgid "Add New Field"
+msgstr "Legg til nytt felt"
+
+#: acf.php:405
+msgid "Field"
+msgstr "Felt"
+
+#: acf.php:404 includes/admin/admin-field-group.php:220
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #: includes/admin/admin-field-groups.php:287
 #: includes/admin/views/field-group-fields.php:21
 msgid "Fields"
 msgstr "Felter"
 
+<<<<<<< HEAD
 #: acf.php:378
 msgid "No Field Groups found in Trash"
 msgstr "Ingen feltgrupper funnet i papirkurven"
@@ -2998,6 +3586,45 @@ msgid "Field Group"
 msgstr "Feltgruppe"
 
 #: acf.php:369 includes/admin/admin.php:50
+=======
+#: acf.php:379
+msgid "No Field Groups found in Trash"
+msgstr "Ingen feltgrupper funnet i papirkurven"
+
+#: acf.php:378
+msgid "No Field Groups found"
+msgstr "Ingen feltgrupper funnet"
+
+#: acf.php:377
+msgid "Search Field Groups"
+msgstr "Søk feltgrupper"
+
+#: acf.php:376
+msgid "View Field Group"
+msgstr "Vis feltgruppe"
+
+#: acf.php:375
+msgid "New Field Group"
+msgstr "Ny feltgruppe"
+
+#: acf.php:374
+msgid "Edit Field Group"
+msgstr "Rediger feltgruppe"
+
+#: acf.php:373
+msgid "Add New Field Group"
+msgstr "Legg til ny feltgruppe"
+
+#: acf.php:372 acf.php:406 includes/admin/admin.php:51
+msgid "Add New"
+msgstr "Legg til ny"
+
+#: acf.php:371
+msgid "Field Group"
+msgstr "Feltgruppe"
+
+#: acf.php:370 includes/admin/admin.php:50
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 msgid "Field Groups"
 msgstr "Feltgrupper"
 
@@ -3559,6 +4186,12 @@ msgstr "Oppgraderingsvarsel"
 #~ msgid "The %s field can now be found in the %s field group"
 #~ msgstr "%s feltet finnes nå i %s feltgruppen"
 
+<<<<<<< HEAD
+=======
+#~ msgid "Close Window"
+#~ msgstr "Lukk vinduet"
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 #, php-format
 #~ msgid "Field group duplicated. %s"
 #~ msgstr "Feltgruppe duplisert. %s"

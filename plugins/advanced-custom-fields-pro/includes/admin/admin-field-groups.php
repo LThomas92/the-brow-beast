@@ -578,7 +578,11 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 			// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Used for redirect notice.
 			// Display notice on success redirect.
 			if ( isset( $_GET['acfactivatecomplete'] ) ) {
+<<<<<<< HEAD
 				$ids = array_map( 'intval', explode( ',', $_GET['acfactivatecomplete'] ) );
+=======
+				$ids = array_map( 'intval', explode( ',', $_GET['acfactivatecomplete'] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized with intval().
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 				// phpcs:enable WordPress.Security.NonceVerification.Recommended
 				// Generate text.
 				$text = sprintf(
@@ -631,7 +635,11 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 			// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Used for redirect notice.
 			// Display notice on success redirect.
 			if ( isset( $_GET['acfdeactivatecomplete'] ) ) {
+<<<<<<< HEAD
 				$ids = array_map( 'intval', explode( ',', $_GET['acfdeactivatecomplete'] ) );
+=======
+				$ids = array_map( 'intval', explode( ',', $_GET['acfdeactivatecomplete'] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized with intval().
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 				// phpcs:enable WordPress.Security.NonceVerification.Recommended
 				// Generate text.
 				$text = sprintf(
@@ -689,7 +697,11 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 			// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Used for redirect notice.
 			// Display notice on success redirect.
 			if ( isset( $_GET['acfduplicatecomplete'] ) ) {
+<<<<<<< HEAD
 				$ids = array_map( 'intval', explode( ',', $_GET['acfduplicatecomplete'] ) );
+=======
+				$ids = array_map( 'intval', explode( ',', $_GET['acfduplicatecomplete'] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized with intval().
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 				// phpcs:enable WordPress.Security.NonceVerification.Recommended
 				// Generate text.
 				$text = sprintf(
@@ -747,7 +759,11 @@ if ( ! class_exists( 'ACF_Admin_Field_Groups' ) ) :
 			// phpcs:disable WordPress.Security.NonceVerification.Recommended
 			// Display notice on success redirect.
 			if ( isset( $_GET['acfsynccomplete'] ) ) {
+<<<<<<< HEAD
 				$ids = array_map( 'intval', explode( ',', $_GET['acfsynccomplete'] ) );
+=======
+				$ids = array_map( 'intval', explode( ',', $_GET['acfsynccomplete'] ) ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized with intval().
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 				// phpcs:enable WordPress.Security.NonceVerification.Recommended
 				// Generate text.
 				$text = sprintf(

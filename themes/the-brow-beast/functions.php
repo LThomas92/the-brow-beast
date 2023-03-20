@@ -195,6 +195,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 } 
 
+<<<<<<< HEAD
 add_filter( 'gform_confirmation_anchor', '__return_true' );
 
 if( function_exists('acf_add_options_page') ) {
@@ -202,3 +203,6 @@ if( function_exists('acf_add_options_page') ) {
     acf_add_options_page();
     
 }
+=======
+add_filter( 'gform_confirmation_anchor', '__return_true' );
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123

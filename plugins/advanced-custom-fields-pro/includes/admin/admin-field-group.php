@@ -406,7 +406,11 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 			if ( ! empty( $_POST['acf_fields'] ) ) {
 
 				// loop.
+<<<<<<< HEAD
 				foreach ( $_POST['acf_fields'] as $field ) {
+=======
+				foreach ( $_POST['acf_fields'] as $field ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized when saved.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 					if ( ! isset( $field['key'] ) ) {
 						continue;
@@ -435,10 +439,17 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 			}
 
 			// delete fields.
+<<<<<<< HEAD
 			if ( $_POST['_acf_delete_fields'] ) {
 
 				// clean.
 				$ids = explode( '|', $_POST['_acf_delete_fields'] );
+=======
+			if ( $_POST['_acf_delete_fields'] ) { // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized below.
+
+				// clean.
+				$ids = explode( '|', $_POST['_acf_delete_fields'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized below.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 				$ids = array_map( 'intval', $ids );
 
 				// loop.
@@ -456,13 +467,23 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 			}
 
 			// add args.
+<<<<<<< HEAD
 			$_POST['acf_field_group']['ID']    = $post_id;
+=======
+			$_POST['acf_field_group']['ID'] = $post_id;
+			// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized when saved.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			$_POST['acf_field_group']['title'] = $_POST['post_title'];
 
 			// save field group.
 			acf_update_field_group( $_POST['acf_field_group'] );
+<<<<<<< HEAD
 
 			// return.
+=======
+			// phpcs:enable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			return $post_id;
 		}
 
@@ -549,7 +570,11 @@ if ( ! class_exists( 'acf_admin_field_group' ) ) {
 			}
 
 			// validate rule.
+<<<<<<< HEAD
 			$rule = acf_validate_location_rule( $_POST['rule'] );
+=======
+			$rule = acf_validate_location_rule( acf_sanitize_request_args( $_POST['rule'] ) );
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 			// view.
 			acf_get_view(

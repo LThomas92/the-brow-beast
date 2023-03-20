@@ -13,11 +13,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "./node_modules/react/index.js");
 
 
+<<<<<<< HEAD
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
 
+=======
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 (function ($, undefined) {
   // Dependencies.
   const {
@@ -43,14 +48,23 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
   const {
     createHigherOrderComponent
   } = wp.compose;
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Storage for registered block types.
    *
    * @since 5.8.0
    * @var object
    */
+<<<<<<< HEAD
 
   const blockTypes = {};
+=======
+  const blockTypes = {};
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns a block type for the given name.
    *
@@ -60,10 +74,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	string name The block name.
    * @return	(object|false)
    */
+<<<<<<< HEAD
 
   function getBlockType(name) {
     return blockTypes[name] || false;
   }
+=======
+  function getBlockType(name) {
+    return blockTypes[name] || false;
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns true if a block exists for the given name.
    *
@@ -73,11 +94,18 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	string name The block name.
    * @return	bool
    */
+<<<<<<< HEAD
 
 
   function isBlockType(name) {
     return !!blockTypes[name];
   }
+=======
+  function isBlockType(name) {
+    return !!blockTypes[name];
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns true if the provided block is new.
    *
@@ -87,11 +115,18 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	object props The block props.
    * @return	bool
    */
+<<<<<<< HEAD
 
 
   function isNewBlock(props) {
     return !props.attributes.id;
   }
+=======
+  function isNewBlock(props) {
+    return !props.attributes.id;
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns true if the provided block is a duplicate:
    * True when there are is another block with the same "id", but a different "clientId".
@@ -102,11 +137,18 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	object props The block props.
    * @return	bool
    */
+<<<<<<< HEAD
 
 
   function isDuplicateBlock(props) {
     return getBlocks().filter(block => block.attributes.id === props.attributes.id).filter(block => block.clientId !== props.clientId).length;
   }
+=======
+  function isDuplicateBlock(props) {
+    return getBlocks().filter(block => block.attributes.id === props.attributes.id).filter(block => block.clientId !== props.clientId).length;
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Registers a block type.
    *
@@ -116,6 +158,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	object blockType The block type settings localized from PHP.
    * @return	object The result from wp.blocks.registerBlockType().
    */
+<<<<<<< HEAD
 
 
   function registerBlockType(blockType) {
@@ -156,6 +199,44 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     // See https://github.com/WordPress/gutenberg/issues/7342
 
 
+=======
+  function registerBlockType(blockType) {
+    // bail early if is excluded post_type.
+    var allowedTypes = blockType.post_types || [];
+    if (allowedTypes.length) {
+      // Always allow block to appear on "Edit reusable Block" screen.
+      allowedTypes.push('wp_block');
+
+      // Check post type.
+      var postType = acf.get('postType');
+      if (allowedTypes.indexOf(postType) === -1) {
+        return false;
+      }
+    }
+
+    // Handle svg HTML.
+    if (typeof blockType.icon === 'string' && blockType.icon.substr(0, 4) === '<svg') {
+      const iconHTML = blockType.icon;
+      blockType.icon = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Div, null, iconHTML);
+    }
+
+    // Remove icon if empty to allow for default "block".
+    // Avoids JS error preventing block from being registered.
+    if (!blockType.icon) {
+      delete blockType.icon;
+    }
+
+    // Check category exists and fallback to "common".
+    var category = wp.blocks.getCategories().filter(cat => cat.slug === blockType.category).pop();
+    if (!category) {
+      //console.warn( `The block "${blockType.name}" is registered with an unknown category "${blockType.category}".` );
+      blockType.category = 'common';
+    }
+
+    // Define block type attributes.
+    // Leave default undefined to allow WP to serialize attributes in HTML comments.
+    // See https://github.com/WordPress/gutenberg/issues/7342
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     let attributes = {
       id: {
         type: 'string'
@@ -172,6 +253,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       mode: {
         type: 'string'
       }
+<<<<<<< HEAD
     }; // Append edit and save functions.
 
     let ThisBlockEdit = BlockEdit;
@@ -189,6 +271,27 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     } // Merge in block settings.
 
 
+=======
+    };
+
+    // Append edit and save functions.
+    let ThisBlockEdit = BlockEdit;
+    let ThisBlockSave = BlockSave;
+
+    // Apply align_text functionality.
+    if (blockType.supports.align_text) {
+      attributes = withAlignTextAttributes(attributes);
+      ThisBlockEdit = withAlignTextComponent(ThisBlockEdit, blockType);
+    }
+
+    // Apply align_content functionality.
+    if (blockType.supports.align_content) {
+      attributes = withAlignContentAttributes(attributes);
+      ThisBlockEdit = withAlignContentComponent(ThisBlockEdit, blockType);
+    }
+
+    // Merge in block settings.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     blockType = acf.parseArgs(blockType, {
       title: '',
       name: '',
@@ -200,6 +303,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       save: function (props) {
         return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(ThisBlockSave, props);
       }
+<<<<<<< HEAD
     }); // Remove all attribute defaults from PHP values to allow serialisation.
     // https://github.com/WordPress/gutenberg/issues/7342
 
@@ -213,15 +317,42 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     var result = wp.blocks.registerBlockType(blockType.name, blockType); // Fix bug in 'core/anchor/attribute' filter overwriting attribute.
     // See https://github.com/WordPress/gutenberg/issues/15240
 
+=======
+    });
+
+    // Remove all attribute defaults from PHP values to allow serialisation.
+    // https://github.com/WordPress/gutenberg/issues/7342
+    for (const key in blockType.attributes) {
+      delete blockType.attributes[key].default;
+    }
+
+    // Add to storage.
+    blockTypes[blockType.name] = blockType;
+
+    // Register with WP.
+    var result = wp.blocks.registerBlockType(blockType.name, blockType);
+
+    // Fix bug in 'core/anchor/attribute' filter overwriting attribute.
+    // See https://github.com/WordPress/gutenberg/issues/15240
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (result.attributes.anchor) {
       result.attributes.anchor = {
         type: 'string'
       };
+<<<<<<< HEAD
     } // Return result.
 
 
     return result;
   }
+=======
+    }
+
+    // Return result.
+    return result;
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns the wp.data.select() response with backwards compatibility.
    *
@@ -231,15 +362,24 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	string selector The selector name.
    * @return	mixed
    */
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function select(selector) {
     if (selector === 'core/block-editor') {
       return wp.data.select('core/block-editor') || wp.data.select('core/editor');
     }
+<<<<<<< HEAD
 
     return wp.data.select(selector);
   }
+=======
+    return wp.data.select(selector);
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns the wp.data.dispatch() response with backwards compatibility.
    *
@@ -249,11 +389,18 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	string selector The selector name.
    * @return	mixed
    */
+<<<<<<< HEAD
 
 
   function dispatch(selector) {
     return wp.data.dispatch(selector);
   }
+=======
+  function dispatch(selector) {
+    return wp.data.dispatch(selector);
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns an array of all blocks for the given args.
    *
@@ -263,6 +410,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	object args An object of key=>value pairs used to filter results.
    * @return	array.
    */
+<<<<<<< HEAD
 
 
   function getBlocks(args) {
@@ -287,6 +435,31 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
   const ajaxQueue = {};
+=======
+  function getBlocks(args) {
+    // Get all blocks (avoid deprecated warning).
+    let blocks = select('core/block-editor').getBlocks();
+
+    // Append innerBlocks.
+    let i = 0;
+    while (i < blocks.length) {
+      blocks = blocks.concat(blocks[i].innerBlocks);
+      i++;
+    }
+
+    // Loop over args and filter.
+    for (var k in args) {
+      blocks = blocks.filter(block => block.attributes[k] === args[k]);
+    }
+
+    // Return results.
+    return blocks;
+  }
+
+  // Data storage for AJAX requests.
+  const ajaxQueue = {};
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Fetches a JSON result from the AJAX API.
    *
@@ -297,14 +470,23 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @query	object The query args used in AJAX callback.
    * @return	object The AJAX promise.
    */
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function fetchBlock(args) {
     const {
       attributes = {},
       query = {},
       delay = 0
+<<<<<<< HEAD
     } = args; // Use storage or default data.
 
+=======
+    } = args;
+
+    // Use storage or default data.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     const {
       id
     } = attributes;
@@ -312,10 +494,19 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       query: {},
       timeout: false,
       promise: $.Deferred()
+<<<<<<< HEAD
     }; // Append query args to storage.
 
     data.query = _objectSpread(_objectSpread({}, data.query), query); // Set fresh timeout.
 
+=======
+    };
+
+    // Append query args to storage.
+    data.query = _objectSpread(_objectSpread({}, data.query), query);
+
+    // Set fresh timeout.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     clearTimeout(data.timeout);
     data.timeout = setTimeout(function () {
       $.ajax({
@@ -336,12 +527,24 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       }).fail(function () {
         data.promise.reject.apply(this, arguments);
       });
+<<<<<<< HEAD
     }, delay); // Update storage.
 
     ajaxQueue[id] = data; // Return promise.
 
     return data.promise;
   }
+=======
+    }, delay);
+
+    // Update storage.
+    ajaxQueue[id] = data;
+
+    // Return promise.
+    return data.promise;
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns true if both object are the same.
    *
@@ -352,11 +555,18 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	object obj2
    * @return	bool
    */
+<<<<<<< HEAD
 
 
   function compareObjects(obj1, obj2) {
     return JSON.stringify(obj1) === JSON.stringify(obj2);
   }
+=======
+  function compareObjects(obj1, obj2) {
+    return JSON.stringify(obj1) === JSON.stringify(obj2);
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Converts HTML into a React element.
    *
@@ -366,11 +576,18 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	string html The HTML to convert.
    * @return	object Result of React.createElement().
    */
+<<<<<<< HEAD
 
 
   acf.parseJSX = function (html) {
     return parseNode($(html)[0]);
   };
+=======
+  acf.parseJSX = function (html) {
+    return parseNode($(html)[0]);
+  };
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Converts a DOM node into a React element.
    *
@@ -380,6 +597,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	DOM node The DOM node.
    * @return	object Result of React.createElement().
    */
+<<<<<<< HEAD
 
 
   function parseNode(node) {
@@ -396,21 +614,49 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       nodeAttrs[attr.name] = attr.value;
     }); // Define args for React.createElement().
 
+=======
+  function parseNode(node) {
+    // Get node name.
+    var nodeName = parseNodeName(node.nodeName.toLowerCase());
+    if (!nodeName) {
+      return null;
+    }
+
+    // Get node attributes in React friendly format.
+    var nodeAttrs = {};
+    acf.arrayArgs(node.attributes).map(parseNodeAttr).forEach(function (attr) {
+      nodeAttrs[attr.name] = attr.value;
+    });
+
+    // Define args for React.createElement().
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     var args = [nodeName, nodeAttrs];
     acf.arrayArgs(node.childNodes).forEach(function (child) {
       if (child instanceof Text) {
         var text = child.textContent;
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         if (text) {
           args.push(text);
         }
       } else {
         args.push(parseNode(child));
       }
+<<<<<<< HEAD
     }); // Return element.
 
     return React.createElement.apply(this, args);
   }
+=======
+    });
+
+    // Return element.
+    return React.createElement.apply(this, args);
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Converts a node or attribute name into it's JSX compliant name
    *
@@ -420,13 +666,20 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param    string name The node or attribute name.
    * @returns  string
    */
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function getJSXName(name) {
     var replacement = acf.isget(acf, 'jsxNameReplacements', name);
     if (replacement) return replacement;
     return name;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Converts the given name into a React friendly name or component.
    *
@@ -436,12 +689,16 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	string name The node name in lowercase.
    * @return	mixed
    */
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function parseNodeName(name) {
     switch (name) {
       case 'innerblocks':
         return InnerBlocks;
+<<<<<<< HEAD
 
       case 'script':
         return Script;
@@ -449,13 +706,25 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       case '#comment':
         return null;
 
+=======
+      case 'script':
+        return Script;
+      case '#comment':
+        return null;
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       default:
         // Replace names for JSX counterparts.
         name = getJSXName(name);
     }
+<<<<<<< HEAD
 
     return name;
   }
+=======
+    return name;
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Converts the given attribute into a React friendly name and value object.
    *
@@ -465,23 +734,35 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	obj nodeAttr The node attribute.
    * @return	obj
    */
+<<<<<<< HEAD
 
 
   function parseNodeAttr(nodeAttr) {
     var name = nodeAttr.name;
     var value = nodeAttr.value;
 
+=======
+  function parseNodeAttr(nodeAttr) {
+    var name = nodeAttr.name;
+    var value = nodeAttr.value;
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     switch (name) {
       // Class.
       case 'class':
         name = 'className';
         break;
+<<<<<<< HEAD
       // Style.
 
+=======
+
+      // Style.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       case 'style':
         var css = {};
         value.split(';').forEach(function (s) {
           var pos = s.indexOf(':');
+<<<<<<< HEAD
 
           if (pos > 0) {
             var ruleName = s.substr(0, pos).trim();
@@ -491,17 +772,33 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
               ruleName = acf.strCamelCase(ruleName);
             }
 
+=======
+          if (pos > 0) {
+            var ruleName = s.substr(0, pos).trim();
+            var ruleValue = s.substr(pos + 1).trim();
+
+            // Rename core properties, but not CSS variables.
+            if (ruleName.charAt(0) !== '-') {
+              ruleName = acf.strCamelCase(ruleName);
+            }
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
             css[ruleName] = ruleValue;
           }
         });
         value = css;
         break;
+<<<<<<< HEAD
       // Default.
 
+=======
+
+      // Default.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       default:
         // No formatting needed for "data-x" attributes.
         if (name.indexOf('data-') === 0) {
           break;
+<<<<<<< HEAD
         } // Replace names for JSX counterparts.
 
 
@@ -521,11 +818,34 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         break;
     }
 
+=======
+        }
+
+        // Replace names for JSX counterparts.
+        name = getJSXName(name);
+
+        // Convert JSON values.
+        var c1 = value.charAt(0);
+        if (c1 === '[' || c1 === '{') {
+          value = JSON.parse(value);
+        }
+
+        // Convert bool values.
+        if (value === 'true' || value === 'false') {
+          value = value === 'true';
+        }
+        break;
+    }
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     return {
       name: name,
       value: value
     };
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Higher Order Component used to set default block attribute values.
    *
@@ -538,6 +858,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	Component BlockListBlock The BlockListBlock Component.
    * @return	Component
    */
+<<<<<<< HEAD
 
 
   var withDefaultAttributes = createHigherOrderComponent(function (BlockListBlock) {
@@ -560,21 +881,51 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         if (isNewBlock(props)) {
           attributes.id = acf.uniqid('block_');
 
+=======
+  var withDefaultAttributes = createHigherOrderComponent(function (BlockListBlock) {
+    return class WrappedBlockEdit extends Component {
+      constructor(props) {
+        super(props);
+
+        // Extract vars.
+        const {
+          name,
+          attributes
+        } = this.props;
+
+        // Only run on ACF Blocks.
+        const blockType = getBlockType(name);
+        if (!blockType) {
+          return;
+        }
+
+        // Set unique ID and default attributes for newly added blocks.
+        if (isNewBlock(props)) {
+          attributes.id = acf.uniqid('block_');
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
           for (let attribute in blockType.attributes) {
             if (attributes[attribute] === undefined && blockType[attribute] !== undefined) {
               attributes[attribute] = blockType[attribute];
             }
           }
+<<<<<<< HEAD
 
           return;
         } // Generate new ID for duplicated blocks.
 
 
+=======
+          return;
+        }
+
+        // Generate new ID for duplicated blocks.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         if (isDuplicateBlock(props)) {
           attributes.id = acf.uniqid('block_');
           return;
         }
       }
+<<<<<<< HEAD
 
       render() {
         return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockListBlock, this.props);
@@ -583,58 +934,98 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     };
   }, 'withDefaultAttributes');
   wp.hooks.addFilter('editor.BlockListBlock', 'acf/with-default-attributes', withDefaultAttributes);
+=======
+      render() {
+        return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockListBlock, this.props);
+      }
+    };
+  }, 'withDefaultAttributes');
+  wp.hooks.addFilter('editor.BlockListBlock', 'acf/with-default-attributes', withDefaultAttributes);
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * The BlockSave functional component.
    *
    * @date	08/07/2020
    * @since	5.9.0
    */
+<<<<<<< HEAD
 
   function BlockSave() {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(InnerBlocks.Content, null);
   }
+=======
+  function BlockSave() {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(InnerBlocks.Content, null);
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * The BlockEdit component.
    *
    * @date	19/2/19
    * @since	5.7.12
    */
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   class BlockEdit extends Component {
     constructor(props) {
       super(props);
       this.setup();
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     setup() {
       const {
         name,
         attributes
       } = this.props;
+<<<<<<< HEAD
       const blockType = getBlockType(name); // Restrict current mode.
 
+=======
+      const blockType = getBlockType(name);
+
+      // Restrict current mode.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       function restrictMode(modes) {
         if (modes.indexOf(attributes.mode) === -1) {
           attributes.mode = modes[0];
         }
       }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       switch (blockType.mode) {
         case 'edit':
           restrictMode(['edit', 'preview']);
           break;
+<<<<<<< HEAD
 
         case 'preview':
           restrictMode(['preview', 'edit']);
           break;
 
+=======
+        case 'preview':
+          restrictMode(['preview', 'edit']);
+          break;
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         default:
           restrictMode(['auto']);
           break;
       }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     render() {
       const {
         name,
@@ -644,6 +1035,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       const {
         mode
       } = attributes;
+<<<<<<< HEAD
       const blockType = getBlockType(name); // Show toggle only for edit/preview modes.
 
       let showToggle = blockType.supports.mode;
@@ -656,13 +1048,32 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       const toggleText = mode === 'preview' ? acf.__('Switch to Edit') : acf.__('Switch to Preview');
       const toggleIcon = mode === 'preview' ? 'edit' : 'welcome-view-site';
 
+=======
+      const blockType = getBlockType(name);
+
+      // Show toggle only for edit/preview modes.
+      let showToggle = blockType.supports.mode;
+      if (mode === 'auto') {
+        showToggle = false;
+      }
+
+      // Configure toggle variables.
+      const toggleText = mode === 'preview' ? acf.__('Switch to Edit') : acf.__('Switch to Preview');
+      const toggleIcon = mode === 'preview' ? 'edit' : 'welcome-view-site';
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       function toggleMode() {
         setAttributes({
           mode: mode === 'preview' ? 'edit' : 'preview'
         });
+<<<<<<< HEAD
       } // Return template.
 
 
+=======
+      }
+
+      // Return template.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockControls, null, showToggle && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Toolbar, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(IconButton, {
         className: "components-icon-button components-toolbar__control",
         label: toggleText,
@@ -672,16 +1083,24 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         className: "acf-block-component acf-block-panel"
       }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockForm, this.props))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockBody, this.props));
     }
+<<<<<<< HEAD
 
   }
+=======
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * The BlockBody component.
    *
    * @date	19/2/19
    * @since	5.7.12
    */
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   class _BlockBody extends Component {
     render() {
       const {
@@ -695,6 +1114,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         className: "acf-block-component acf-block-body"
       }, mode === 'auto' && isSelected ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockForm, this.props) : mode === 'auto' && !isSelected ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockPreview, this.props) : mode === 'preview' ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockPreview, this.props) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockForm, this.props));
     }
+<<<<<<< HEAD
 
   } // Append blockIndex to component props.
 
@@ -704,12 +1124,26 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       clientId
     } = ownProps; // Use optional rootClientId to allow discoverability of child blocks.
 
+=======
+  }
+
+  // Append blockIndex to component props.
+  const BlockBody = withSelect(function (select, ownProps) {
+    const {
+      clientId
+    } = ownProps;
+    // Use optional rootClientId to allow discoverability of child blocks.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     const rootClientId = select('core/block-editor').getBlockRootClientId(clientId);
     const index = select('core/block-editor').getBlockIndex(clientId, rootClientId);
     return {
       index
     };
   })(_BlockBody);
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * A react component to append HTMl.
    *
@@ -719,7 +1153,10 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	string children The html to insert.
    * @return	void
    */
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   class Div extends Component {
     render() {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
@@ -728,8 +1165,13 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         }
       });
     }
+<<<<<<< HEAD
 
   }
+=======
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * A react Component for inline scripts.
    *
@@ -742,14 +1184,18 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	type Var Description.
    * @return	type Description.
    */
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   class Script extends Component {
     render() {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
         ref: el => this.el = el
       });
     }
+<<<<<<< HEAD
 
     setHTML(html) {
       $(this.el).html(`<script>${html}</script>`);
@@ -767,6 +1213,22 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
   const store = {};
+=======
+    setHTML(html) {
+      $(this.el).html(`<script>${html}</script>`);
+    }
+    componentDidUpdate() {
+      this.setHTML(this.props.children);
+    }
+    componentDidMount() {
+      this.setHTML(this.props.children);
+    }
+  }
+
+  // Data storage for DynamicHTML components.
+  const store = {};
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * DynamicHTML Class.
    *
@@ -778,6 +1240,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	void
    * @return	void
    */
+<<<<<<< HEAD
 
   class DynamicHTML extends Component {
     constructor(props) {
@@ -785,10 +1248,21 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
       this.setRef = this.setRef.bind(this); // Define default props and call setup().
 
+=======
+  class DynamicHTML extends Component {
+    constructor(props) {
+      super(props);
+
+      // Bind callbacks.
+      this.setRef = this.setRef.bind(this);
+
+      // Define default props and call setup().
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.id = '';
       this.el = false;
       this.subscribed = true;
       this.renderMethod = 'jQuery';
+<<<<<<< HEAD
       this.setup(props); // Load state.
 
       this.loadState();
@@ -808,10 +1282,32 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       store[this.id] = _objectSpread(_objectSpread({}, this.state), state); // Update component state if subscribed.
       // - Allows AJAX callback to update store without modifying state of an unmounted component.
 
+=======
+      this.setup(props);
+
+      // Load state.
+      this.loadState();
+    }
+    setup(props) {
+      // Do nothing.
+    }
+    fetch() {
+      // Do nothing.
+    }
+    loadState() {
+      this.state = store[this.id] || {};
+    }
+    setState(state) {
+      store[this.id] = _objectSpread(_objectSpread({}, this.state), state);
+
+      // Update component state if subscribed.
+      // - Allows AJAX callback to update store without modifying state of an unmounted component.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (this.subscribed) {
         super.setState(state);
       }
     }
+<<<<<<< HEAD
 
     setHtml(html) {
       html = html ? html.trim() : ''; // Bail early if html has not changed.
@@ -825,12 +1321,27 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         html: html
       };
 
+=======
+    setHtml(html) {
+      html = html ? html.trim() : '';
+
+      // Bail early if html has not changed.
+      if (html === this.state.html) {
+        return;
+      }
+
+      // Update state.
+      var state = {
+        html: html
+      };
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (this.renderMethod === 'jsx') {
         state.jsx = acf.parseJSX(html);
         state.$el = $(this.el);
       } else {
         state.$el = $(html);
       }
+<<<<<<< HEAD
 
       this.setState(state);
     }
@@ -839,41 +1350,72 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       this.el = el;
     }
 
+=======
+      this.setState(state);
+    }
+    setRef(el) {
+      this.el = el;
+    }
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     render() {
       // Render JSX.
       if (this.state.jsx) {
         return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
           ref: this.setRef
         }, this.state.jsx);
+<<<<<<< HEAD
       } // Return HTML.
 
 
+=======
+      }
+
+      // Return HTML.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
         ref: this.setRef
       }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Placeholder, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Spinner, null)));
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     shouldComponentUpdate(nextProps, nextState) {
       if (nextProps.index !== this.props.index) {
         this.componentWillMove();
       }
+<<<<<<< HEAD
 
       return nextState.html !== this.state.html;
     }
 
+=======
+      return nextState.html !== this.state.html;
+    }
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     display(context) {
       // This method is called after setting new HTML and the Component render.
       // The jQuery render method simply needs to move $el into place.
       if (this.renderMethod === 'jQuery') {
         var $el = this.state.$el;
         var $prevParent = $el.parent();
+<<<<<<< HEAD
         var $thisParent = $(this.el); // Move $el into place.
 
         $thisParent.html($el); // Special case for reusable blocks.
+=======
+        var $thisParent = $(this.el);
+
+        // Move $el into place.
+        $thisParent.html($el);
+
+        // Special case for reusable blocks.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         // Multiple instances of the same reusable block share the same block id.
         // This causes all instances to share the same state (cool), which unfortunately
         // pulls $el back and forth between the last rendered reusable block.
         // This simple fix leaves a "clone" behind :)
+<<<<<<< HEAD
 
         if ($prevParent.length && $prevParent[0] !== $thisParent[0]) {
           $prevParent.html($el.clone());
@@ -881,31 +1423,55 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       } // Call context specific method.
 
 
+=======
+        if ($prevParent.length && $prevParent[0] !== $thisParent[0]) {
+          $prevParent.html($el.clone());
+        }
+      }
+
+      // Call context specific method.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       switch (context) {
         case 'append':
           this.componentDidAppend();
           break;
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         case 'remount':
           this.componentDidRemount();
           break;
       }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     componentDidMount() {
       // Fetch on first load.
       if (this.state.html === undefined) {
         //console.log('componentDidMount', this.id);
+<<<<<<< HEAD
         this.fetch(); // Or remount existing HTML.
+=======
+        this.fetch();
+
+        // Or remount existing HTML.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       } else {
         this.display('remount');
       }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     componentDidUpdate(prevProps, prevState) {
       // HTML has changed.
       this.display('append');
     }
+<<<<<<< HEAD
 
     componentDidAppend() {
       acf.doAction('append', this.state.$el);
@@ -919,24 +1485,50 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
     componentDidRemount() {
       this.subscribed = true; // Use setTimeout to avoid incorrect timing of events.
+=======
+    componentDidAppend() {
+      acf.doAction('append', this.state.$el);
+    }
+    componentWillUnmount() {
+      acf.doAction('unmount', this.state.$el);
+
+      // Unsubscribe this component from state.
+      this.subscribed = false;
+    }
+    componentDidRemount() {
+      this.subscribed = true;
+
+      // Use setTimeout to avoid incorrect timing of events.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       // React will unmount and mount components in DOM order.
       // This means a new component can be mounted before an old one is unmounted.
       // ACF shares $el across new/old components which is un-React-like.
       // This timout ensures that unmounting occurs before remounting.
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       setTimeout(() => {
         acf.doAction('remount', this.state.$el);
       });
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     componentWillMove() {
       acf.doAction('unmount', this.state.$el);
       setTimeout(() => {
         acf.doAction('remount', this.state.$el);
       });
     }
+<<<<<<< HEAD
 
   }
+=======
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * BlockForm Class.
    *
@@ -948,19 +1540,31 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	string id the block id.
    * @return	void
    */
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   class BlockForm extends DynamicHTML {
     setup(props) {
       this.id = `BlockForm-${props.attributes.id}`;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     fetch() {
       // Extract props.
       const {
         attributes
+<<<<<<< HEAD
       } = this.props; // Request AJAX and update HTML on complete.
 
+=======
+      } = this.props;
+
+      // Request AJAX and update HTML on complete.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       fetchBlock({
         attributes: attributes,
         query: {
@@ -970,22 +1574,38 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         this.setHtml(json.data.form);
       });
     }
+<<<<<<< HEAD
 
     componentDidAppend() {
       super.componentDidAppend(); // Extract props.
 
+=======
+    componentDidAppend() {
+      super.componentDidAppend();
+
+      // Extract props.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       const {
         attributes,
         setAttributes
       } = this.props;
       const {
         $el
+<<<<<<< HEAD
       } = this.state; // Callback for updating block data.
 
       function serializeData() {
         let silent = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
         const data = acf.serialize($el, `acf-${attributes.id}`);
 
+=======
+      } = this.state;
+
+      // Callback for updating block data.
+      function serializeData() {
+        let silent = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+        const data = acf.serialize($el, `acf-${attributes.id}`);
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         if (silent) {
           attributes.data = data;
         } else {
@@ -993,22 +1613,40 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
             data: data
           });
         }
+<<<<<<< HEAD
       } // Add events.
 
 
+=======
+      }
+
+      // Add events.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       var timeout = false;
       $el.on('change keyup', function () {
         clearTimeout(timeout);
         timeout = setTimeout(serializeData, 300);
+<<<<<<< HEAD
       }); // Ensure newly added block is saved with data.
       // Do it silently to avoid triggering a preview render.
 
+=======
+      });
+
+      // Ensure newly added block is saved with data.
+      // Do it silently to avoid triggering a preview render.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (!attributes.data) {
         serializeData(true);
       }
     }
+<<<<<<< HEAD
 
   }
+=======
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * BlockPreview Class.
    *
@@ -1020,17 +1658,27 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	string id the block id.
    * @return	void
    */
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   class BlockPreview extends DynamicHTML {
     setup(props) {
       this.id = `BlockPreview-${props.attributes.id}`;
       var blockType = getBlockType(props.name);
+<<<<<<< HEAD
 
       if (blockType.supports.jsx) {
         this.renderMethod = 'jsx';
       } //console.log('setup', this.id);
 
+=======
+      if (blockType.supports.jsx) {
+        this.renderMethod = 'jsx';
+      }
+      //console.log('setup', this.id);
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     }
 
     fetch() {
@@ -1038,12 +1686,23 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
       const {
         attributes = this.props.attributes,
         delay = 0
+<<<<<<< HEAD
       } = args; // Remember attributes used to fetch HTML.
 
       this.setState({
         prevAttributes: attributes
       }); // Request AJAX and update HTML on complete.
 
+=======
+      } = args;
+
+      // Remember attributes used to fetch HTML.
+      this.setState({
+        prevAttributes: attributes
+      });
+
+      // Request AJAX and update HTML on complete.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       fetchBlock({
         attributes: attributes,
         query: {
@@ -1054,15 +1713,23 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         this.setHtml('<div class="acf-block-preview">' + json.data.preview + '</div>');
       });
     }
+<<<<<<< HEAD
 
     componentDidAppend() {
       super.componentDidAppend(); // Extract props.
 
+=======
+    componentDidAppend() {
+      super.componentDidAppend();
+
+      // Extract props.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       const {
         attributes
       } = this.props;
       const {
         $el
+<<<<<<< HEAD
       } = this.state; // Generate action friendly type.
 
       const type = attributes.name.replace('acf/', ''); // Do action.
@@ -1086,11 +1753,38 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
           delay = 300;
         }
 
+=======
+      } = this.state;
+
+      // Generate action friendly type.
+      const type = attributes.name.replace('acf/', '');
+
+      // Do action.
+      acf.doAction('render_block_preview', $el, attributes);
+      acf.doAction(`render_block_preview/type=${type}`, $el, attributes);
+    }
+    shouldComponentUpdate(nextProps, nextState) {
+      const nextAttributes = nextProps.attributes;
+      const thisAttributes = this.props.attributes;
+
+      // Update preview if block data has changed.
+      if (!compareObjects(nextAttributes, thisAttributes)) {
+        let delay = 0;
+
+        // Delay fetch when editing className or anchor to simulate conscistent logic to custom fields.
+        if (nextAttributes.className !== thisAttributes.className) {
+          delay = 300;
+        }
+        if (nextAttributes.anchor !== thisAttributes.anchor) {
+          delay = 300;
+        }
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         this.fetch({
           attributes: nextAttributes,
           delay: delay
         });
       }
+<<<<<<< HEAD
 
       return super.shouldComponentUpdate(nextProps, nextState);
     }
@@ -1098,24 +1792,41 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
     componentDidRemount() {
       super.componentDidRemount(); // Update preview if data has changed since last render (changing from "edit" to "preview").
 
+=======
+      return super.shouldComponentUpdate(nextProps, nextState);
+    }
+    componentDidRemount() {
+      super.componentDidRemount();
+
+      // Update preview if data has changed since last render (changing from "edit" to "preview").
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (!compareObjects(this.state.prevAttributes, this.props.attributes)) {
         //console.log('componentDidRemount', this.id);
         this.fetch();
       }
     }
+<<<<<<< HEAD
 
   }
+=======
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Initializes ACF Blocks logic and registration.
    *
    * @since 5.9.0
    */
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function initialize() {
     // Add support for WordPress versions before 5.2.
     if (!wp.blockEditor) {
       wp.blockEditor = wp.editor;
+<<<<<<< HEAD
     } // Register block types.
 
 
@@ -1129,6 +1840,21 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 
   acf.addAction('prepare', initialize);
+=======
+    }
+
+    // Register block types.
+    var blockTypes = acf.get('blockTypes');
+    if (blockTypes) {
+      blockTypes.map(registerBlockType);
+    }
+  }
+
+  // Run the initialize callback during the "prepare" action.
+  // This ensures that all localized data is available and that blocks are registered before the WP editor has been instantiated.
+  acf.addAction('prepare', initialize);
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns a valid vertical alignment.
    *
@@ -1138,12 +1864,19 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	string align A vertical alignment.
    * @return	string
    */
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function validateVerticalAlignment(align) {
     const ALIGNMENTS = ['top', 'center', 'bottom'];
     const DEFAULT = 'top';
     return ALIGNMENTS.includes(align) ? align : DEFAULT;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns a valid horizontal alignment.
    *
@@ -1153,13 +1886,20 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	string align A horizontal alignment.
    * @return	string
    */
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function validateHorizontalAlignment(align) {
     const ALIGNMENTS = ['left', 'center', 'right'];
     const DEFAULT = acf.get('rtl') ? 'right' : 'left';
     return ALIGNMENTS.includes(align) ? align : DEFAULT;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Returns a valid matrix alignment.
    *
@@ -1171,27 +1911,46 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	string align A matrix alignment.
    * @return	string
    */
+<<<<<<< HEAD
 
 
   function validateMatrixAlignment(align) {
     const DEFAULT = 'center center';
 
+=======
+  function validateMatrixAlignment(align) {
+    const DEFAULT = 'center center';
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     if (align) {
       const [y, x] = align.split(' ');
       return validateVerticalAlignment(y) + ' ' + validateHorizontalAlignment(x);
     }
+<<<<<<< HEAD
 
     return DEFAULT;
   } // Dependencies.
 
 
+=======
+    return DEFAULT;
+  }
+
+  // Dependencies.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   const {
     AlignmentToolbar,
     BlockVerticalAlignmentToolbar
   } = wp.blockEditor;
+<<<<<<< HEAD
   const BlockAlignmentMatrixToolbar = wp.blockEditor.__experimentalBlockAlignmentMatrixToolbar || wp.blockEditor.BlockAlignmentMatrixToolbar; // Gutenberg v10.x begins transition from Toolbar components to Control components.
 
   const BlockAlignmentMatrixControl = wp.blockEditor.__experimentalBlockAlignmentMatrixControl || wp.blockEditor.BlockAlignmentMatrixControl;
+=======
+  const BlockAlignmentMatrixToolbar = wp.blockEditor.__experimentalBlockAlignmentMatrixToolbar || wp.blockEditor.BlockAlignmentMatrixToolbar;
+  // Gutenberg v10.x begins transition from Toolbar components to Control components.
+  const BlockAlignmentMatrixControl = wp.blockEditor.__experimentalBlockAlignmentMatrixControl || wp.blockEditor.BlockAlignmentMatrixControl;
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Appends extra attributes for block types that support align_content.
    *
@@ -1201,13 +1960,20 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	object attributes The block type attributes.
    * @return	object
    */
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function withAlignContentAttributes(attributes) {
     attributes.align_content = {
       type: 'string'
     };
     return attributes;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * A higher order component adding align_content editing functionality.
    *
@@ -1218,23 +1984,33 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	object blockType The block type settings.
    * @return	component
    */
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function withAlignContentComponent(OriginalBlockEdit, blockType) {
     // Determine alignment vars
     let type = blockType.supports.align_content;
     let AlignmentComponent, validateAlignment;
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     switch (type) {
       case 'matrix':
         AlignmentComponent = BlockAlignmentMatrixControl || BlockAlignmentMatrixToolbar;
         validateAlignment = validateMatrixAlignment;
         break;
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       default:
         AlignmentComponent = BlockVerticalAlignmentToolbar;
         validateAlignment = validateVerticalAlignment;
         break;
+<<<<<<< HEAD
     } // Ensure alignment component exists.
 
 
@@ -1246,6 +2022,20 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
     blockType.align_content = validateAlignment(blockType.align_content); // Return wrapped component.
 
+=======
+    }
+
+    // Ensure alignment component exists.
+    if (AlignmentComponent === undefined) {
+      console.warn(`The "${type}" alignment component was not found.`);
+      return OriginalBlockEdit;
+    }
+
+    // Ensure correct block attribute data is sent in intial preview AJAX request.
+    blockType.align_content = validateAlignment(blockType.align_content);
+
+    // Return wrapped component.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     return class WrappedBlockEdit extends Component {
       render() {
         const {
@@ -1255,13 +2045,19 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         const {
           align_content
         } = attributes;
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         function onChangeAlignContent(align_content) {
           setAttributes({
             align_content: validateAlignment(align_content)
           });
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockControls, {
           group: "block"
         }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(AlignmentComponent, {
@@ -1270,9 +2066,15 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
           onChange: onChangeAlignContent
         })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(OriginalBlockEdit, this.props));
       }
+<<<<<<< HEAD
 
     };
   }
+=======
+    };
+  }
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * Appends extra attributes for block types that support align_text.
    *
@@ -1282,14 +2084,21 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	object attributes The block type attributes.
    * @return	object
    */
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   function withAlignTextAttributes(attributes) {
     attributes.align_text = {
       type: 'string'
     };
     return attributes;
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    * A higher order component adding align_text editing functionality.
    *
@@ -1300,6 +2109,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
    * @param	object blockType The block type settings.
    * @return	component
    */
+<<<<<<< HEAD
 
 
   function withAlignTextComponent(OriginalBlockEdit, blockType) {
@@ -1307,6 +2117,15 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
     blockType.align_text = validateAlignment(blockType.align_text); // Return wrapped component.
 
+=======
+  function withAlignTextComponent(OriginalBlockEdit, blockType) {
+    const validateAlignment = validateHorizontalAlignment;
+
+    // Ensure correct block attribute data is sent in intial preview AJAX request.
+    blockType.align_text = validateAlignment(blockType.align_text);
+
+    // Return wrapped component.
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     return class WrappedBlockEdit extends Component {
       render() {
         const {
@@ -1316,19 +2135,28 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
         const {
           align_text
         } = attributes;
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         function onChangeAlignText(align_text) {
           setAttributes({
             align_text: validateAlignment(align_text)
           });
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
         return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(BlockControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(AlignmentToolbar, {
           value: validateAlignment(align_text),
           onChange: onChangeAlignText
         })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(OriginalBlockEdit, this.props));
       }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     };
   }
 })(jQuery);
@@ -4132,7 +4960,10 @@ function _defineProperty(obj, key, value) {
   } else {
     obj[key] = value;
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   return obj;
 }
 

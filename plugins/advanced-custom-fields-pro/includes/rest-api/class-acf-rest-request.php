@@ -87,16 +87,30 @@ class ACF_Rest_Request {
 	 * Determine the HTTP method of the current request.
 	 */
 	private function set_http_method() {
+<<<<<<< HEAD
 		$this->http_method = strtoupper( $_SERVER['REQUEST_METHOD'] );
+=======
+		$this->http_method = 'GET';
+
+		if ( ! empty( $_SERVER['REQUEST_METHOD'] ) ) {
+			$this->http_method = strtoupper( sanitize_text_field( $_SERVER['REQUEST_METHOD'] ) );
+		}
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 		// phpcs:disable WordPress.Security.NonceVerification.Recommended -- Verified elsewhere.
 		// HTTP method override for clients that can't use PUT/PATCH/DELETE. This is identical to WordPress'
 		// handling in \WP_REST_Server::serve_request(). This block of code should always be identical to that
 		// in core.
 		if ( isset( $_GET['_method'] ) ) {
+<<<<<<< HEAD
 			$this->http_method = strtoupper( $_GET['_method'] );
 		} elseif ( isset( $_SERVER['HTTP_X_HTTP_METHOD_OVERRIDE'] ) ) {
 			$this->http_method = strtoupper( $_SERVER['HTTP_X_HTTP_METHOD_OVERRIDE'] );
+=======
+			$this->http_method = strtoupper( sanitize_text_field( $_GET['_method'] ) );
+		} elseif ( isset( $_SERVER['HTTP_X_HTTP_METHOD_OVERRIDE'] ) ) {
+			$this->http_method = strtoupper( sanitize_text_field( $_SERVER['HTTP_X_HTTP_METHOD_OVERRIDE'] ) );
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 		}
 		// phpcs:enable WordPress.Security.NonceVerification.Recommended
 	}

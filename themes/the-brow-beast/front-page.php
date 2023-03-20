@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+<<<<<<< HEAD
 <!-- <iframe src="https://app.acuityscheduling.com/schedule.php?owner=19201786&appointmentType=category:HENNA" title="Schedule Appointment" width="100%" height="800" frameBorder="0"></iframe><script src="https://embed.acuityscheduling.com/js/embed.js" type="text/javascript"></script> -->
 
 <section class="c-homepage-slider">
@@ -83,4 +84,6 @@ endif; ?>
 
 
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 <?php get_footer(); ?>

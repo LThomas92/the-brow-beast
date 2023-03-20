@@ -746,7 +746,11 @@ function acf_render_field_wrap( $field, $element = 'div', $instruction = 'label'
 	if ( $element !== 'td' ) {
 		echo "<$inner_element class=\"acf-label\">" . "\n";
 			acf_render_field_label( $field );
+<<<<<<< HEAD
 		if ( $instruction == 'label' && ! ( $field_setting && 'name' === $field['_name'] ) ) {
+=======
+		if ( $instruction == 'label' ) {
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			acf_render_field_instructions( $field, $field_setting );
 		}
 			echo "</$inner_element>" . "\n";
@@ -758,10 +762,13 @@ function acf_render_field_wrap( $field, $element = 'div', $instruction = 'label'
 	}
 		echo "</$inner_element>" . "\n";
 
+<<<<<<< HEAD
 	if ( 'name' === $field['_name'] && $field_setting ) {
 		acf_render_field_instructions( $field, $field_setting );
 	}
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 	if ( $field_setting && $instruction == 'field' ) {
 		acf_render_field_instructions( $field );
 	}
@@ -950,10 +957,22 @@ function acf_render_field_setting( $field, $setting, $global = false ) {
 	}
 
 	// If we're using a hint, set the label location as field so it appears after.
+<<<<<<< HEAD
 	$label_location = ! empty( $setting['instructions'] ) ? 'label' : 'field';
 
 	// Render setting.
 	acf_render_field_wrap( $setting, 'div', $label_location, true );
+=======
+	$label_location = ! empty( $setting['instructions'] ) ? 'field' : 'label';
+
+	// If we're a true false field, force label location to label.
+	if ( $setting['type'] === 'true_false' ) {
+		$label_location = 'label';
+	}
+
+	// Render setting.
+	acf_render_field_wrap( $setting, 'div', $label_location );
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 }
 
 /**

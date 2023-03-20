@@ -2880,7 +2880,11 @@ p.submit .acf-spinner {
     /* field */
   }
   .media-modal .setting span,
+<<<<<<< HEAD
 .media-modal .compat-attachment-fields > tbody > .acf-field > .acf-label {
+=======
+  .media-modal .compat-attachment-fields > tbody > .acf-field > .acf-label {
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     width: 98%;
     float: none;
     text-align: left;
@@ -2888,8 +2892,13 @@ p.submit .acf-spinner {
     padding: 0;
   }
   .media-modal .setting input,
+<<<<<<< HEAD
 .media-modal .setting textarea,
 .media-modal .compat-attachment-fields > tbody > .acf-field > .acf-input {
+=======
+  .media-modal .setting textarea,
+  .media-modal .compat-attachment-fields > tbody > .acf-field > .acf-input {
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
     float: none;
     height: auto;
     max-width: none;

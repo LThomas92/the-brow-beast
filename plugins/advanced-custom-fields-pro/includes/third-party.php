@@ -162,11 +162,19 @@ if ( ! class_exists( 'acf_third_party' ) ) :
 			// check $_GET because it is too early to use functions / global vars.
 			if ( ! empty( $_GET['post_type'] ) ) {
 
+<<<<<<< HEAD
 				$post_type = $_GET['post_type'];
 
 			} elseif ( ! empty( $_GET['post'] ) ) {
 
 				$post_type = get_post_type( $_GET['post'] );
+=======
+				$post_type = sanitize_text_field( $_GET['post_type'] );
+
+			} elseif ( ! empty( $_GET['post'] ) ) {
+
+				$post_type = get_post_type( $_GET['post'] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Sanitized when get_post_type() calls get_post().
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 			}
 			// phpcs:enable WordPress.Security.NonceVerification.Recommended

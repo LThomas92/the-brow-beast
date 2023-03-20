@@ -17,7 +17,11 @@ $title_placeholder = apply_filters( 'enter_title_here', __( 'Add title' ), $post
 			</div>
 		</div>
 
+<<<<<<< HEAD
 		<div class="acf-headerbar-actions">
+=======
+		<div class="acf-headerbar-actions" id="submitpost">
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			<a href="#" class="acf-btn acf-btn-secondary add-field"><i class="acf-icon acf-icon-plus"></i><?php _e( 'Add Field', 'acf' ); ?></a>
 			<button form="post" class="acf-btn acf-publish" type="submit"><?php _e( 'Save Changes', 'acf' ); ?></button>
 		</div>

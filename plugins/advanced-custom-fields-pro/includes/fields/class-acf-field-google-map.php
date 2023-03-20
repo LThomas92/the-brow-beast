@@ -190,7 +190,11 @@ if ( ! class_exists( 'acf_field_google_map' ) ) :
 				$field,
 				array(
 					'label'        => __( 'Center', 'acf' ),
+<<<<<<< HEAD
 					'instructions' => __( 'Center the initial map', 'acf' ),
+=======
+					'hint' => __( 'Center the initial map', 'acf' ),
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 					'type'         => 'text',
 					'name'         => 'center_lat',
 					'prepend'      => 'lat',
@@ -203,7 +207,11 @@ if ( ! class_exists( 'acf_field_google_map' ) ) :
 				$field,
 				array(
 					'label'        => __( 'Center', 'acf' ),
+<<<<<<< HEAD
 					'instructions' => __( 'Center the initial map', 'acf' ),
+=======
+					'hint' => __( 'Center the initial map', 'acf' ),
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 					'type'         => 'text',
 					'name'         => 'center_lng',
 					'prepend'      => 'lng',

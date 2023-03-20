@@ -19,17 +19,31 @@
    *  @param	void
    *  @return	void
    */
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   var CloneDisplayFieldSetting = acf.FieldSetting.extend({
     type: 'clone',
     name: 'display',
     render: function () {
       // vars
+<<<<<<< HEAD
       var display = this.field.val(); // set data attribute used by CSS to hide/show
 
+=======
+      var display = this.field.val();
+
+      // set data attribute used by CSS to hide/show
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.$fieldObject.attr('data-display', display);
     }
   });
   acf.registerFieldSetting(CloneDisplayFieldSetting);
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  ClonePrefixLabelFieldSetting
    *
@@ -47,6 +61,7 @@
     name: 'prefix_label',
     render: function () {
       // vars
+<<<<<<< HEAD
       var prefix = ''; // if checked
 
       if (this.field.val()) {
@@ -54,10 +69,24 @@
       } // update HTML
 
 
+=======
+      var prefix = '';
+
+      // if checked
+      if (this.field.val()) {
+        prefix = this.fieldObject.prop('label') + ' ';
+      }
+
+      // update HTML
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.$('code').html(prefix + '%field_label%');
     }
   });
   acf.registerFieldSetting(ClonePrefixLabelFieldSetting);
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  ClonePrefixNameFieldSetting
    *
@@ -75,6 +104,7 @@
     name: 'prefix_name',
     render: function () {
       // vars
+<<<<<<< HEAD
       var prefix = ''; // if checked
 
       if (this.field.val()) {
@@ -82,10 +112,24 @@
       } // update HTML
 
 
+=======
+      var prefix = '';
+
+      // if checked
+      if (this.field.val()) {
+        prefix = this.fieldObject.prop('name') + '_';
+      }
+
+      // update HTML
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.$('code').html(prefix + '%field_name%');
     }
   });
   acf.registerFieldSetting(ClonePrefixNameFieldSetting);
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  cloneFieldSelectHelper
    *
@@ -106,18 +150,34 @@
       // check
       if (data.ajaxAction == 'acf/fields/clone/query') {
         // remain open on select
+<<<<<<< HEAD
         options.closeOnSelect = false; // customize ajaxData function
 
         instance.data.ajaxData = this.ajaxData;
       } // return
 
 
+=======
+        options.closeOnSelect = false;
+
+        // customize ajaxData function
+        instance.data.ajaxData = this.ajaxData;
+      }
+
+      // return
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       return options;
     },
     ajaxData: function (data) {
       // find current fields
+<<<<<<< HEAD
       data.fields = {}; // loop
 
+=======
+      data.fields = {};
+
+      // loop
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       acf.getFieldObjects().map(function (fieldObject) {
         // append
         data.fields[fieldObject.prop('key')] = {
@@ -126,10 +186,19 @@
           label: fieldObject.prop('label'),
           ancestors: fieldObject.getParents().length
         };
+<<<<<<< HEAD
       }); // append title
 
       data.title = $('#title').val(); // return
 
+=======
+      });
+
+      // append title
+      data.title = $('#title').val();
+
+      // return
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       return data;
     }
   });
@@ -155,6 +224,10 @@
    *  @param	void
    *  @return	void
    */
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   var FlexibleContentLayoutFieldSetting = acf.FieldSetting.extend({
     type: 'flexible_content',
     name: 'fc_layout',
@@ -188,7 +261,10 @@
     initialize: function () {
       // add sortable
       var $tbody = this.$el.parent();
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (!$tbody.hasClass('ui-sortable')) {
         $tbody.sortable({
           items: '> .acf-field-setting-fc_layout',
@@ -200,9 +276,15 @@
             this.fieldObject.save();
           })
         });
+<<<<<<< HEAD
       } // add meta to sub fields
 
 
+=======
+      }
+
+      // add meta to sub fields
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.updateFieldLayouts();
     },
     updateFieldLayouts: function () {
@@ -214,8 +296,14 @@
     onChangeLabel: function (e, $el) {
       // vars
       var label = $el.val();
+<<<<<<< HEAD
       var $name = this.$input('name'); // render name
 
+=======
+      var $name = this.$input('name');
+
+      // render name
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if ($name.val() == '') {
         acf.val($name, acf.strSanitize(label));
       }
@@ -223,14 +311,21 @@
     onClickAdd: function (e, $el) {
       // vars
       var prevKey = this.get('id');
+<<<<<<< HEAD
       var newKey = acf.uniqid('layout_'); // duplicate
 
+=======
+      var newKey = acf.uniqid('layout_');
+
+      // duplicate
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       $layout = acf.duplicate({
         $el: this.$el,
         search: prevKey,
         replace: newKey,
         after: function ($el, $el2) {
           // vars
+<<<<<<< HEAD
           var $list = $el2.find('.acf-field-list:first'); // remove sub fields
 
           $list.children('.acf-field-object').remove(); // show empty
@@ -245,17 +340,46 @@
 
       layout.$input('key').val(newKey); // save
 
+=======
+          var $list = $el2.find('.acf-field-list:first');
+
+          // remove sub fields
+          $list.children('.acf-field-object').remove();
+
+          // show empty
+          $list.addClass('-empty');
+
+          // reset layout meta values
+          $el2.find('.acf-fc-meta input').val('');
+        }
+      });
+
+      // get layout
+      var layout = acf.getFieldSetting($layout);
+
+      // update hidden input
+      layout.$input('key').val(newKey);
+
+      // save
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.fieldObject.save();
     },
     onClickDuplicate: function (e, $el) {
       // vars
       var prevKey = this.get('id');
+<<<<<<< HEAD
       var newKey = acf.uniqid('layout_'); // duplicate
 
+=======
+      var newKey = acf.uniqid('layout_');
+
+      // duplicate
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       $layout = acf.duplicate({
         $el: this.$el,
         search: prevKey,
         replace: newKey
+<<<<<<< HEAD
       }); // get all fields in new layout similar to fieldManager.onDuplicateField().
       // important to run field.wipe() before making any changes to the "parent_layout" prop
       // to ensure the correct input is modified.
@@ -264,10 +388,21 @@
         parent: $layout
       });
 
+=======
+      });
+
+      // get all fields in new layout similar to fieldManager.onDuplicateField().
+      // important to run field.wipe() before making any changes to the "parent_layout" prop
+      // to ensure the correct input is modified.
+      var children = acf.getFieldObjects({
+        parent: $layout
+      });
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       if (children.length) {
         // loop
         children.map(function (child) {
           // wipe field
+<<<<<<< HEAD
           child.wipe(); // update parent
 
           child.updateParent();
@@ -281,17 +416,45 @@
 
       layout.$input('key').val(newKey); // save
 
+=======
+          child.wipe();
+
+          // update parent
+          child.updateParent();
+        });
+
+        // action
+        acf.doAction('duplicate_field_objects', children, this.fieldObject, this.fieldObject);
+      }
+
+      // get layout
+      var layout = acf.getFieldSetting($layout);
+
+      // update hidden input
+      layout.$input('key').val(newKey);
+
+      // save
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.fieldObject.save();
     },
     onClickDelete: function (e, $el) {
       // Bypass confirmation when holding down "shift" key.
       if (e.shiftKey) {
         return this.delete();
+<<<<<<< HEAD
       } // add class
 
 
       this.$el.addClass('-hover'); // add tooltip
 
+=======
+      }
+
+      // add class
+      this.$el.addClass('-hover');
+
+      // add tooltip
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       var tooltip = acf.newTooltip({
         confirmRemove: true,
         target: $el,
@@ -306,6 +469,7 @@
     },
     delete: function () {
       // vars
+<<<<<<< HEAD
       var $siblings = this.$el.siblings('.acf-field-setting-fc_layout'); // validate
 
       if (!$siblings.length) {
@@ -314,18 +478,42 @@
       } // delete sub fields
 
 
+=======
+      var $siblings = this.$el.siblings('.acf-field-setting-fc_layout');
+
+      // validate
+      if (!$siblings.length) {
+        alert(acf.__('Flexible Content requires at least 1 layout'));
+        return false;
+      }
+
+      // delete sub fields
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.getFields().map(function (child) {
         child.delete({
           animate: false
         });
+<<<<<<< HEAD
       }); // remove tr
 
       acf.remove(this.$el); // save
 
+=======
+      });
+
+      // remove tr
+      acf.remove(this.$el);
+
+      // save
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       this.fieldObject.save();
     }
   });
   acf.registerFieldSetting(FlexibleContentLayoutFieldSetting);
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   /**
    *  flexibleContentHelper
    *
@@ -345,6 +533,7 @@
     },
     updateParentLayout: function (fieldObject) {
       // vars
+<<<<<<< HEAD
       var parent = fieldObject.getParent(); // delete meta
 
       if (!parent || parent.prop('type') !== 'flexible_content') {
@@ -362,6 +551,27 @@
       } // update meta
 
 
+=======
+      var parent = fieldObject.getParent();
+
+      // delete meta
+      if (!parent || parent.prop('type') !== 'flexible_content') {
+        fieldObject.prop('parent_layout', null);
+        return;
+      }
+
+      // get layout
+      var $layout = fieldObject.$el.closest('.acf-field-setting-fc_layout');
+      var layout = acf.getFieldSetting($layout);
+
+      // check if previous prop exists
+      // - if not, set prop to allow following code to trigger 'change' and save the field
+      if (!fieldObject.has('parent_layout')) {
+        fieldObject.prop('parent_layout', 0);
+      }
+
+      // update meta
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       fieldObject.prop('parent_layout', layout.get('id'));
     }
   });
@@ -388,6 +598,10 @@
    *  @param	n/a
    *  @return	n/a
    */
+<<<<<<< HEAD
+=======
+
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
   var RepeaterCollapsedFieldSetting = acf.FieldSetting.extend({
     type: 'repeater',
     name: 'collapsed',
@@ -396,6 +610,7 @@
     },
     onFocus: function (e, $el) {
       // vars
+<<<<<<< HEAD
       var $select = $el; // collapsed
 
       var choices = []; // keep 'null' choice
@@ -410,13 +625,39 @@
         list: $list
       }); // loop
 
+=======
+      var $select = $el;
+
+      // collapsed
+      var choices = [];
+
+      // keep 'null' choice
+      choices.push({
+        label: $select.find('option[value=""]').text(),
+        value: ''
+      });
+
+      // find sub fields
+      var $list = this.fieldObject.$('.acf-field-list:first');
+      var fields = acf.getFieldObjects({
+        list: $list
+      });
+
+      // loop
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       fields.map(function (field) {
         choices.push({
           label: field.prop('label'),
           value: field.prop('key')
         });
+<<<<<<< HEAD
       }); // render
 
+=======
+      });
+
+      // render
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
       acf.renderSelect($select, choices);
     }
   });

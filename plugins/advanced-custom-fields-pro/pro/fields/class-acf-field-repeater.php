@@ -12,6 +12,7 @@ if ( ! class_exists( 'acf_field_repeater' ) ) :
 		public $is_rendering = false;
 
 		/**
+<<<<<<< HEAD
 		 * The total number of rows added to the repeater.
 		 *
 		 * @var int
@@ -24,6 +25,13 @@ if ( ! class_exists( 'acf_field_repeater' ) ) :
 		 * @var string
 		 */
 		public $orig_name = '';
+=======
+		 * The post/page ID that we're rendering for.
+		 *
+		 * @var mixed
+		 */
+		public $post_id = false;
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 		/**
 		 * This function will set up the field type data
@@ -118,9 +126,16 @@ if ( ! class_exists( 'acf_field_repeater' ) ) :
 		 * @param mixed $post_id The post ID for the field being rendered.
 		 * @return array
 		 */
+<<<<<<< HEAD
 		function pre_render_fields( $fields, $post_id = false ) {
 			if ( is_admin() ) {
 				$this->is_rendering = true;
+=======
+		public function pre_render_fields( $fields, $post_id = false ) {
+			if ( is_admin() ) {
+				$this->is_rendering = true;
+				$this->post_id      = $post_id;
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			}
 
 			return $fields;
@@ -134,9 +149,15 @@ if ( ! class_exists( 'acf_field_repeater' ) ) :
 		 *
 		 * @param array $field An array holding all the field's data.
 		 */
+<<<<<<< HEAD
 		function render_field( $field ) {
 			$field['orig_name']  = $this->orig_name;
 			$field['total_rows'] = $this->total_rows;
+=======
+		public function render_field( $field ) {
+			$field['orig_name']  = $this->get_field_name_from_input_name( $field['name'] );
+			$field['total_rows'] = (int) acf_get_metadata( $this->post_id, $field['orig_name'] );
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			$table               = new ACF_Repeater_Table( $field );
 			$table->render();
 		}
@@ -311,10 +332,14 @@ if ( ! class_exists( 'acf_field_repeater' ) ) :
 		 * @param array $field    The field array holding all the field options.
 		 * @return array $value
 		 */
+<<<<<<< HEAD
 		function load_value( $value, $post_id, $field ) {
 			$this->total_rows = 0;
 			$this->orig_name  = $field['name'];
 
+=======
+		public function load_value( $value, $post_id, $field ) {
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			// Bail early if we don't have enough info to load the field.
 			if ( empty( $value ) || ! is_numeric( $value ) || empty( $field['sub_fields'] ) ) {
 				return false;
@@ -324,9 +349,19 @@ if ( ! class_exists( 'acf_field_repeater' ) ) :
 			$rows   = array();
 			$offset = 0;
 
+<<<<<<< HEAD
 			if ( ! empty( $field['pagination'] ) && $this->is_rendering ) {
 				$this->total_rows = $value;
 				$rows_per_page    = isset( $field['rows_per_page'] ) ? (int) $field['rows_per_page'] : 20;
+=======
+			// Ensure pagination is disabled inside blocks.
+			if ( acf_get_data( 'acf_inside_rest_call' ) || doing_action( 'wp_ajax_acf/ajax/fetch-block' ) ) {
+				$field['pagination'] = false;
+			}
+
+			if ( ! empty( $field['pagination'] ) && $this->is_rendering ) {
+				$rows_per_page = isset( $field['rows_per_page'] ) ? (int) $field['rows_per_page'] : 20;
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 				if ( $rows_per_page < 1 ) {
 					$rows_per_page = 20;
@@ -894,7 +929,10 @@ if ( ! class_exists( 'acf_field_repeater' ) ) :
 
 				// Return array of [field, sub_1, sub_2, ...].
 				return array_merge( array( $field ), $sub_fields );
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			}
 
 			return $field;
@@ -992,6 +1030,52 @@ if ( ! class_exists( 'acf_field_repeater' ) ) :
 		}
 
 		/**
+<<<<<<< HEAD
+=======
+		 * Takes the provided input name and turns it into a field name that
+		 * works with repeater fields that are subfields of other fields.
+		 *
+		 * @param string $input_name The name attribute used in the repeater.
+		 *
+		 * @return string|bool
+		 */
+		public function get_field_name_from_input_name( $input_name ) {
+			$parts = array();
+			preg_match_all( '/\[([^\]]*)\]/', $input_name, $parts );
+
+			if ( ! isset( $parts[1] ) ) {
+				return false;
+			}
+
+			$field_keys = $parts[1];
+			$name_parts = array();
+
+			foreach ( $field_keys as $field_key ) {
+				if ( ! acf_is_field_key( $field_key ) ) {
+					if ( 'acfcloneindex' === $field_key ) {
+						$name_parts[] = 'acfcloneindex';
+						continue;
+					}
+
+					$row_num = str_replace( 'row-', '', $field_key );
+					if ( is_numeric( $row_num ) ) {
+						$name_parts[] = (int) $row_num;
+						continue;
+					}
+				}
+
+				$field = acf_get_field( $field_key );
+
+				if ( $field ) {
+					$name_parts[] = $field['name'];
+				}
+			}
+
+			return implode( '_', $name_parts );
+		}
+
+		/**
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 		 * Returns an array of rows used to populate the repeater table over AJAX.
 		 *
 		 * @since 6.0.0
@@ -1052,7 +1136,11 @@ if ( ! class_exists( 'acf_field_repeater' ) ) :
 			$response['rows'] = $repeater_table->rows( true );
 
 			if ( $args['refresh'] ) {
+<<<<<<< HEAD
 				$response['total_rows'] = $this->total_rows;
+=======
+				$response['total_rows'] = (int) acf_get_metadata( $post_id, $args['field_name'] );
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			}
 
 			wp_send_json_success( $response );
@@ -1062,6 +1150,9 @@ if ( ! class_exists( 'acf_field_repeater' ) ) :
 
 	// initialize
 	acf_register_field_type( 'acf_field_repeater' );
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 endif; // class_exists check
 

@@ -110,7 +110,11 @@ if ( ! class_exists( 'acf_field_time_picker' ) ) :
 				$field,
 				array(
 					'label'        => __( 'Display Format', 'acf' ),
+<<<<<<< HEAD
 					'instructions' => __( 'The format displayed when editing a post', 'acf' ),
+=======
+					'hint'         => __( 'The format displayed when editing a post', 'acf' ),
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 					'type'         => 'radio',
 					'name'         => 'display_format',
 					'other_choice' => 1,
@@ -126,7 +130,11 @@ if ( ! class_exists( 'acf_field_time_picker' ) ) :
 				$field,
 				array(
 					'label'        => __( 'Return Format', 'acf' ),
+<<<<<<< HEAD
 					'instructions' => __( 'The format returned via template functions', 'acf' ),
+=======
+					'hint'         => __( 'The format returned via template functions', 'acf' ),
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 					'type'         => 'radio',
 					'name'         => 'return_format',
 					'other_choice' => 1,
@@ -139,7 +147,10 @@ if ( ! class_exists( 'acf_field_time_picker' ) ) :
 			);
 
 			echo '</div>';
+<<<<<<< HEAD
 
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 		}
 
 		/*
@@ -186,7 +197,11 @@ if ( ! class_exists( 'acf_field_time_picker' ) ) :
 			}
 
 			return $field;
+<<<<<<< HEAD
         }
+=======
+		}
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 
 		/**
 		 * Return the schema array for the REST API.

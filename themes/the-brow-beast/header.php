@@ -33,6 +33,7 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'the-brow-beast' ); ?></a>
 
 	<header id="masthead" class="site-header">
+<<<<<<< HEAD
 	<a href="<?php echo get_site_url(); ?>"><svg class="site-header__logo" version="1.0" xmlns="http://www.w3.org/2000/svg"
  width="2048.000000pt" height="2732.000000pt" viewBox="0 0 2048.000000 2732.000000"
  preserveAspectRatio="xMidYMid meet">
@@ -76,6 +77,29 @@ l-844 0 0 1665 0 1665 863 0 c524 0 897 -4 952 -10z"/>
 </a>
 
 		<nav id="site-navigation" class="main-navigation">
+=======
+		<div class="site-branding">
+			<?php
+			the_custom_logo();
+			if ( is_front_page() && is_home() ) :
+				?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php
+			else :
+				?>
+				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php
+			endif;
+			$the_brow_beast_description = get_bloginfo( 'description', 'display' );
+			if ( $the_brow_beast_description || is_customize_preview() ) :
+				?>
+				<p class="site-description"><?php echo $the_brow_beast_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
+			<?php endif; ?>
+		</div><!-- .site-branding -->
+
+		<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'the-brow-beast' ); ?></button>
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 			<?php
 			wp_nav_menu(
 				array(
@@ -85,5 +109,8 @@ l-844 0 0 1665 0 1665 863 0 c524 0 897 -4 952 -10z"/>
 			);
 			?>
 		</nav><!-- #site-navigation -->
+<<<<<<< HEAD
 		<img class="search-icon" src="<?php echo get_template_directory_uri(); ?>/img/search.svg" alt="Search Icon"/>
+=======
+>>>>>>> dc6dea2c9f01025355a14ae096c92c56b27c0123
 	</header><!-- #masthead -->
