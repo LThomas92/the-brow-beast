@@ -108,6 +108,10 @@ $(document).ready(function () {
     $('.mobile-menu-overlay').removeClass('mobile-overlay-show');
   });
 
+  $('.search-icon').click(function () {
+    $('.header-search-form').toggleClass('show-search-form');
+  });
+
   //slick js
   $('.c-homepage-slider__slides').slick({
     slidesToShow: 1,

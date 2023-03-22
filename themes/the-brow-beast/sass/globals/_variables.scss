@@ -26,3 +26,9 @@ $poppins: 'Poppins', sans-serif;
   $content_desktop_max_width: 620px;
   $content_widescreen_margins: 32px;
   $content_widescreen_max_width: 750px;
+
+  //Box Shadow 
+  $box-shadow-light-black: 0px -25px 20px -20px rgba(0,0,0,0.2),
+  25px 0px 20px -20px rgba(0,0,0,0.2),
+  0px 25px 20px -20px rgba(0,0,0,0.2),
+  -25px 0px 20px -20px rgba(0,0,0,0.2);

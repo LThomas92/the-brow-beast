@@ -86,6 +86,14 @@ l-844 0 0 1665 0 1665 863 0 c524 0 897 -4 952 -10z"/>
 			?>
 		</nav><!-- #site-navigation -->
 		<img class="search-icon" src="<?php echo get_template_directory_uri(); ?>/img/search.svg" alt="Search Icon"/>
+		<div class="header-search-form">
+			<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<label>
+				<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search for something...', 'placeholder' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+			</label>
+			<button type="submit" name="submit" value="submit"></button>
+			</form>
+		</div>
 		<img src="<?php echo get_template_directory_uri(); ?>/img/hamburger-menu.svg" alt="Hamburger Menu Icon" class="hamburger-menu">
 	</header><!-- #masthead -->
 

@@ -119,3 +119,35 @@
     opacity: 1;
     z-index: 2000;
 }
+
+.header-search-form {
+    opacity: 0;
+    transition: all 300ms ease-in;
+    position: absolute;
+    pointer-events: none;
+    form {
+        border-bottom: 1.2px solid $lightBrown;
+        display: flex;
+        .search-field {
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: $lightBrown;
+            font-family: $poppins;
+            font-size: 1.1rem;
+        }
+    }
+    @media only screen and (max-width: $mobile_max) {
+        display: none;
+    }
+    button {
+        display: none;
+    }
+}
+
+.show-search-form {
+    opacity: 1;
+    width: 25%;
+    position: unset;
+    pointer-events: all;
+}
