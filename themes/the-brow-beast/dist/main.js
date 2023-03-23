@@ -112,6 +112,20 @@ $(document).ready(function () {
     $('.header-search-form').toggleClass('show-search-form');
   });
 
+  $('.c-terms-and-conditions__list-title').click(function () {
+    $('.c-terms-and-conditions__list-title').removeClass('c-terms-and-conditions__active-title');
+    var termTitle = $(this).attr('key');
+    $(this).toggleClass('c-terms-and-conditions__active-title').siblings().removeClass('c-terms-and-conditions__active-title');
+
+    $('.c-terms-and-conditions__list-item-content').each(function () {
+      if (termTitle !== $(this).attr('key')) {
+        $(this).hide(300);
+      } else {
+        $(this).show(300);
+      }
+    });
+  });
+
   //slick js
   $('.c-homepage-slider__slides').slick({
     slidesToShow: 1,

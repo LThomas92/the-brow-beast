@@ -1,0 +1,92 @@
+.c-page-contact-us {
+    margin: 4rem 0;
+    &__title {
+        color: $lightBrown;
+        margin-bottom: 5rem;
+        font-weight: 300;
+        &::after {
+            content: '';
+            background-color: $lightBrown;
+            width: 25%;
+            height: 1.2px;
+            display: inline-block;
+            margin-left: 2rem;
+            vertical-align: middle;
+            @media only screen and (max-width: $mobile_max) {
+                width: 50%;
+            }
+        }
+    }
+    &__content {
+        display: flex;
+        box-shadow: $box-shadow-light-black--2;
+        position: relative;
+        @media only screen and (max-width: $tablet_max) {
+            flex-direction: column;
+        }
+    }
+    &__left-side-content {
+        background-color: $brown;
+        padding: 2rem 1.2rem;
+    }
+    &__right-side-content {
+        background-color: $white;
+        padding-left: 2rem;
+        padding-top: 2rem;
+        padding-right: 3.5rem;
+        padding-bottom: 2.5rem;
+        width: 100%;
+        form {
+            .gfield_label, label {
+                font-family: $poppins !important;
+                font-weight: 300 !important;
+                color: $lightBrown !important;
+                margin-bottom: 2.5rem !important;
+            }
+            #gform_submit_button_1 {
+                background-color: $lightBrown;
+                color: $white;
+                font-family: $poppins;
+                border: none;
+                outline: none;
+                padding: 0.8rem 3.5rem;
+                margin: 0 auto;
+                margin-top: 2.5rem;
+                cursor: pointer;
+                transition: all 300ms ease-in;
+                &:hover {
+                    background-color: $brown;
+                }
+            }
+            textarea, input[type="text"], input[type="email"] {
+                border: none;
+                border-bottom: 1.2px solid $lightBrown;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+    &__header-title {
+        color: $white;
+        font-weight: 300;
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+    &__header-desc {
+        color: $white;
+        @media only screen and (max-width: $tablet_max) {
+            text-align: center;
+        }
+    }
+    &__social-media {
+        list-style-type: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-top: 1.2px solid $white;
+        width: 50%;
+        padding: 2rem 0;
+    }
+}

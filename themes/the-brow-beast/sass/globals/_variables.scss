@@ -27,8 +27,18 @@ $poppins: 'Poppins', sans-serif;
   $content_widescreen_margins: 32px;
   $content_widescreen_max_width: 750px;
 
-  //Box Shadow 
+  //Box Shadow $white
   $box-shadow-light-black: 0px -25px 20px -20px rgba(0,0,0,0.2),
   25px 0px 20px -20px rgba(0,0,0,0.2),
   0px 25px 20px -20px rgba(0,0,0,0.2),
   -25px 0px 20px -20px rgba(0,0,0,0.2);
+
+  $box-shadow-light-black--2: 0px -25px 20px -20px rgba(0,0,0,0.15),
+  25px 0px 20px -20px rgba(0,0,0,0.15),
+  0px 25px 20px -20px rgba(0,0,0,0.15),
+  -25px 0px 20px -20px rgba(0,0,0,0.15);
+
+  $box-shadow-white: 0px -25px 20px -20px $white,
+  25px 0px 20px -20px $white,
+  0px 25px 20px -20px $white,
+  -25px 0px 20px -20px $white;
