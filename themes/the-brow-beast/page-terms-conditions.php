@@ -13,7 +13,7 @@
         ?>
         <li class="c-terms-and-conditions__list-item">
             <h2 key="<?php echo $title; ?>" class="c-terms-and-conditions__list-title"><?php echo $title; ?></h2>
-            <div key="<?php echo $title;?>" class="c-terms-and-conditions__list-item-content"><?php echo $content; ?></div>
+            <div key="<?php echo $title; ?>" class="c-terms-and-conditions__list-item-content"><?php echo $content; ?></div>
         </li>
 
     <?php // End loop.

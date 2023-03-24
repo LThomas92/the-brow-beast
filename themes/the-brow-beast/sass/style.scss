@@ -13,6 +13,7 @@
 @import "pages/search";
 @import "pages/terms-and-conditions";
 @import "pages/contact-us";
+@import "pages/gallery";
 
 body {
   background-color: $offWhite;
@@ -73,3 +74,7 @@ $bezier: cubic-bezier(0.64, 0.04, 0.35, 1);
   height: 100%;
   visibility: visible;
  }
+
+ [aria-current="page"] {
+  border-bottom: 1.2px solid $black;
+}

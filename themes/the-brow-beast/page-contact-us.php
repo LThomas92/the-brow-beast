@@ -13,13 +13,26 @@
             <div class="c-page-contact-us__left-side-content">
                 <h4 class="c-page-contact-us__header-title"><?php echo $headerTitle; ?></h4>
                 <p class="c-page-contact-us__header-desc"><?php echo $headerDesc; ?></p>
-                    <ul class="c-page-contact-us__social-media">
-                        <li class="c-page-contact-us__sm-item">
-                            <a href="">
-                                <img src="" alt="">
+
+                    <?php if( have_rows('social_media_items') ): ?>
+                        <ul class="c-page-contact-us__social-media">
+                    <?php while( have_rows('social_media_items') ) : the_row(); ?>
+                        <?php $icon = get_sub_field('social_media_icon');
+                              $link = get_sub_field('social_media_link'); 
+                        ?>
+                        <li class="c-page-contact-us__social-media-item">
+                            <a target="_blank" href="<?php echo $link; ?>">
+                            <img src="<?php echo $icon['url']; ?>" alt="<?php echo $icon['alt']; ?>">
                             </a>
                         </li>
+
+                    <?php
+                    endwhile; ?>
                     </ul>
+
+                <?php
+                else :
+                endif; ?>
             </div>
             <div class="c-page-contact-us__right-side-content">
                 <?php the_content(); ?>

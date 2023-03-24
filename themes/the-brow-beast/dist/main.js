@@ -114,17 +114,32 @@ $(document).ready(function () {
 
   $('.c-terms-and-conditions__list-title').click(function () {
     $('.c-terms-and-conditions__list-title').removeClass('c-terms-and-conditions__active-title');
+    $('.c-terms-and-conditions__list-item-content').removeClass('active-content');
     var termTitle = $(this).attr('key');
     $(this).toggleClass('c-terms-and-conditions__active-title').siblings().removeClass('c-terms-and-conditions__active-title');
 
     $('.c-terms-and-conditions__list-item-content').each(function () {
       if (termTitle !== $(this).attr('key')) {
-        $(this).hide(300);
+        $(this).removeClass('active-content');
       } else {
-        $(this).show(300);
+        $(this).addClass('active-content');
       }
     });
   });
+
+  $('.grid').masonry({
+    itemSelector: ".grid-item",
+    columnWidth: ".grid-item",
+    // percentPosition: true,
+    gutter: 10,
+    fitWidth: true
+  });
+
+  var colWidth = $(".grid-item").width();
+
+  window.onresize = function () {
+    var colWidth = $(".grid-item").width();
+  };
 
   //slick js
   $('.c-homepage-slider__slides').slick({

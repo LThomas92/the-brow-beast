@@ -31,6 +31,7 @@
     }
     &__content {
         padding-left: 7.5rem;
+        padding-right: 5rem;
         width: 100%;
         @media only screen and (max-width: $tablet_max) {
             padding-right: 3rem;
@@ -71,10 +72,9 @@
         margin-bottom: 2.5rem;
         width: 100%;
         max-width: 800px;
-        display: none;
-        &__hide {
-            display: none;
-        }
+        max-height: 0;
+        overflow: hidden;
+        transition: all 300ms ease-in;
         @media only screen and (max-width: $mobile_max) {
             max-width: 100%;
         }
@@ -85,4 +85,8 @@
             margin: 1.2rem 0;
         }
     }
+}
+
+.active-content {
+    max-height: 800px;
 }

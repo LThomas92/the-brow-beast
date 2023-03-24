@@ -20,7 +20,6 @@
     &__content {
         display: flex;
         box-shadow: $box-shadow-light-black--2;
-        position: relative;
         @media only screen and (max-width: $tablet_max) {
             flex-direction: column;
         }
@@ -28,6 +27,10 @@
     &__left-side-content {
         background-color: $brown;
         padding: 2rem 1.2rem;
+        position: relative;
+        @media only screen and (max-width: $tablet_max) {
+            padding-bottom: 15rem;
+        }
     }
     &__right-side-content {
         background-color: $white;
@@ -61,6 +64,8 @@
             textarea, input[type="text"], input[type="email"] {
                 border: none;
                 border-bottom: 1.2px solid $lightBrown;
+                padding: 0 !important;
+                padding-left: 0.1px;
                 &:focus {
                     outline: none;
                 }
@@ -86,7 +91,18 @@
         bottom: 0;
         left: 0;
         border-top: 1.2px solid $white;
-        width: 50%;
+        width: 100%;
         padding: 2rem 0;
+        display: flex;
+        justify-content: center
+    }
+    &__social-media-item {
+        &:first-child {
+            margin-right: 1.5rem;
+        }
+        img {
+            height: 2.5rem;
+            object-fit: cover;
+        }
     }
 }
