@@ -42,7 +42,16 @@ endif; ?>
 
             <h2 class="c-homepage-featured-services__title"><?php echo $featServicesTitle; ?></h2>
             <p class="c-homepage-featured-services__desc"><?php echo $featServicesDesc; ?></p>
-            <a class="c-homepage-featured-services__link" href="<?php echo $servicesCTA['url']; ?>"><?php echo $servicesCTA['title']; ?></a>
+            <a class="c-homepage-featured-services__link" href="<?php echo $servicesCTA['url']; ?>"><?php echo $servicesCTA['title']; ?>
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 700 700" style="enable-background:new 0 0 700 700;" xml:space="preserve">
+            <g>
+            <path d="M183.4,288.4h313l-53,52.6c-3.3,3.3-3.3,8.6,0,11.9c1.6,1.7,3.8,2.5,6,2.5c2.1,0,4.3-0.8,5.9-2.4l67.2-66.7
+            c3.3-3.3,3.3-8.6,0-11.9l-66.7-67.2c-3.3-3.3-8.6-3.3-11.9,0c-3.3,3.3-3.3,8.6,0,11.9l52.3,52.7H183.4c-4.6,0-8.4,3.8-8.4,8.4
+            C175,284.6,178.8,288.4,183.4,288.4L183.4,288.4z"/>
+            </g>
+             </svg>
+            </a>
 
         </div> <!-- description -->
 

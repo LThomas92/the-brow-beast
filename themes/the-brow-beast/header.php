@@ -99,7 +99,9 @@ l-844 0 0 1665 0 1665 863 0 c524 0 897 -4 952 -10z"/>
 
 	<div class="mobile-menu-overlay">
 		<div class="mobile-menu-overlay__header">
+			<a href="<?php echo site_url(); ?>">
 			<img src="<?php echo get_template_directory_uri(); ?>/img/logo.svg" alt="The Brow Beast Logo" class="mobile-menu-overlay__logo"/>
+			</a>
 			<img class="mobile-menu-overlay__close" src="<?php echo get_template_directory_uri(); ?>/img/close-white.svg" alt="Close Icon">
 		</div>
 	<?php
@@ -110,6 +112,17 @@ l-844 0 0 1665 0 1665 863 0 c524 0 897 -4 952 -10z"/>
 				)
 			);
 			?>
+
+			<div class="mobile-menu-header-search-form">
+				<div class="header-search-form">
+						<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+						<label>
+							<input type="search" class="search-field" placeholder="<?php echo esc_attr_x( 'Search for something...', 'placeholder' ); ?>" value="<?php echo get_search_query(); ?>" name="s" />
+						</label>
+						<button type="submit" name="submit" value="submit"></button>
+						</form>
+					</div>
+			</div>
 
 			<div class="mobile-menu-overlay__footer">
 			<?php if( have_rows('mobile_menu_social_media', 'option') ): ?>

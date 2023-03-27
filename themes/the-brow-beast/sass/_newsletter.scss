@@ -1,0 +1,83 @@
+.c-newsletter-popup {
+    background-color: $white;
+    display: flex;
+    max-width: 50%;
+    margin: 0 auto;
+    box-shadow: $box-shadow-light-black;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+    transition: 600ms;
+    svg {
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 0.5rem;
+        margin-right: 0.5rem;
+        cursor: pointer;
+    }
+    &__image {
+        max-width: 30%;
+        max-height: 100%;
+        margin: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+    &__form {
+        padding-top: 5rem;
+        padding-left: 5rem;
+        padding-right: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+    #gform_wrapper_2 {
+        label {
+            display: none !important;
+        }
+        .gform_button {
+            background: none;
+            border: none;
+            outline: none;
+            background-color: $black;
+            color: $white;
+            font-family: $poppins !important;
+            padding: 0.8rem 1.4rem;
+            cursor: pointer;
+        }
+        input[type="email"] {
+            padding: 1rem 1.4rem;
+            &:focus {
+                outline: none;
+            }
+            &::placeholder {
+                font-weight: 300;
+                font-style: italic;
+                text-align: center;
+            }
+        }
+    }
+    .gform_title {
+        margin-bottom: 2.5rem;
+        font-family: $poppins;
+        font-weight: 300;
+        text-align: center;
+    }
+    .gform_description {
+        margin-bottom: 1.5rem;
+    }
+    &__active {
+        opacity: 1;
+        z-index: 10000;
+    }
+    .gform_confirmation_message {
+        font-family: $poppins;
+        margin-top: -1rem;
+    }
+}

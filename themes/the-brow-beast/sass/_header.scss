@@ -98,9 +98,9 @@
         }
     }
     &__footer {
+        margin-top: 7.5rem;
         border-top: 2.5px solid $white;
         position: absolute;
-        bottom: 0;
         left: 0;
         width: 100%;
     }
@@ -111,6 +111,10 @@
     &__social-media-item {
         &:first-child {
             margin-right: 2.5rem;
+        }
+        img {
+            width: 2.5rem;
+            display: block;
         }
     }
 }
@@ -150,4 +154,23 @@
     width: 25%;
     position: unset;
     pointer-events: all;
+}
+
+.mobile-menu-header-search-form {
+    @media only screen and (max-width: $mobile_max) {
+        margin-top: 2.5rem;
+    }
+    .header-search-form {
+        display: block;
+        opacity: 1;
+        @media only screen and (max-width: $mobile_max) {
+            margin-left: 3rem;
+        }
+    }
+    form {
+        border-bottom: 1px solid $white;
+    }
+    .search-field {
+        color: $white !important;
+    }
 }

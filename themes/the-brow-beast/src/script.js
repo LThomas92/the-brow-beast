@@ -45,6 +45,16 @@ $('.c-terms-and-conditions__list-title').click(function() {
   });
 });
 
+$('.site-footer__signup-cta').click(function() {
+  $('.dark-bg').addClass('show-dark-bg');
+  $('.c-newsletter-popup').addClass('c-newsletter-popup__active');
+});
+
+$('.c-newsletter-popup__close').click(function() {
+  $('.dark-bg').removeClass('show-dark-bg');
+  $('.c-newsletter-popup').removeClass('c-newsletter-popup__active');
+});
+
 var $grid = jQuery('.grid');
 
 $grid.imagesLoaded().progress( function() {
@@ -61,7 +71,7 @@ $grid.imagesLoaded().progress( function() {
   $('.c-homepage-slider__slides').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: false,
+    dots: true,
     arrows: false,
     autoplay: true,
     autoplaySpeed: 3000,

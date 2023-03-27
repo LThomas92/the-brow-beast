@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <section class="c-gallery">
+    <h2 class="c-gallery__title"><?php the_title(); ?></h2>
     <div class="c-gallery__container">
     <?php $monImages = get_field('gallery_images');
     ?>

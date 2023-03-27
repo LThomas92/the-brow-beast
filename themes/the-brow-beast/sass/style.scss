@@ -4,6 +4,7 @@
 
 @import "header";
 @import "footer";
+@import "newsletter";
 
 @import "pages/home";
 @import "pages/about";
@@ -15,6 +16,8 @@
 @import "pages/contact-us";
 @import "pages/gallery";
 @import "pages/course";
+
+
 
 body {
   background-color: $offWhite;
@@ -77,5 +80,5 @@ $bezier: cubic-bezier(0.64, 0.04, 0.35, 1);
  }
 
  [aria-current="page"] {
-  border-bottom: 1.2px solid $black;
+    color: $black !important;
 }

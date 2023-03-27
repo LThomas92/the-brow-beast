@@ -3,6 +3,10 @@
   margin-bottom: 4rem;
   &__img {
     position: relative;
+    display: block;
+    @media only screen and (max-width: $tablet_max) {
+      order: 2;
+    }
     &::before {
       content: '';
       background-color: $lightBrown;
@@ -26,11 +30,16 @@
       z-index: -1;
     }
     img {
+      width: 100%;
+      display: block;
       object-fit: cover;
     }
   }
   &__main-content {
     display: flex;
+    @media only screen and (max-width: $tablet_max) {
+      flex-direction: column;
+    }
   }
   &__title {
     color: $lightBrown;
@@ -54,5 +63,10 @@
   &__content {
     display: block;
     margin-left: 10rem;
+    @media only screen and (max-width: $tablet_max) {
+      margin-left: 0;
+      order: 1;
+      margin-bottom: 6.5rem;
+    }
   }
 }

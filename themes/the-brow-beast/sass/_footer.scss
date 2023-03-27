@@ -9,6 +9,12 @@
     &__logo {
         width: 8rem;
         height: 8rem;
+        @media only screen and (max-width: $mobile_max) {
+          width: 4rem;
+          height: 4.5rem;
+          position: relative;
+          left: -2rem;
+        }
         g {
             fill: $lightBrown !important;
         }
@@ -24,6 +30,9 @@
                     letter-spacing: 0.5px;
                     display: inline-block;
                     margin-bottom: 0.5rem;
+                    @media only screen and (max-width: $mobile_max) {
+                      font-size: 0.8rem;
+                    }
                 }
             }
         }
@@ -34,8 +43,14 @@
         color: $lightBrown;
         font-weight: 300;
         margin-bottom: 1.2rem;
+        @media only screen and (max-width: $mobile_max) {
+          font-size: 0.8rem;
+        }
     }
     &__design-credit {
+      @media only screen and (max-width: $mobile_max) {
+        font-size: 0.8rem;
+      }
         a {
             color: $brown;
             font-style: italic;
@@ -74,6 +89,9 @@
 
     &__signup-section {
       display: flex;
+      @media only screen and (max-width: $mobile_max) {
+        flex-direction: column;
+      }
     }
     &__signup-cta {
       padding: 0.5rem 0.8rem;
@@ -83,6 +101,12 @@
       text-decoration: none;
       color: $lightBrown;
       margin-right: 1.2rem;
+      cursor: pointer;
+      background: none;
+      @media only screen and (max-width: $mobile_max) {
+        margin-right: 0;
+        padding: 0.4rem 0.2rem;
+      }
     }
     &__signup-newsletter-text {
       color: $lightBrown;
@@ -91,6 +115,11 @@
       vertical-align: middle;
       max-width: 220px;
       width: 100%;
+      @media only screen and (max-width: $mobile_max) {
+        margin-top: 1.2rem;
+        max-width: 100%;
+        font-size: 0.8rem;
+      }
     }
 }
 

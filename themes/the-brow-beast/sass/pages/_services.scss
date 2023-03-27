@@ -14,6 +14,11 @@
       height: 4px;
       display: inline-block;
       vertical-align: middle;
+      @media only screen and (max-width: $mobile_max) { 
+        background-size: 75px 4px;
+        width: 75px;
+        margin-right: 1rem;
+      }
     }
     &::after {
       content: '';
@@ -24,6 +29,11 @@
       height: 4px;
       display: inline-block;
       vertical-align: middle;
+      @media only screen and (max-width: $mobile_max) { 
+        background-size: 75px 4px;
+        width: 75px;
+        margin-left: 1rem;
+      }
     }
   }
   &__all-services {
