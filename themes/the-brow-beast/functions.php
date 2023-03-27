@@ -157,6 +157,8 @@ function that_hair_glow_scripts() {
 	// wp_register_script( 'slick', "//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js");
 	// wp_enqueue_script("slick");
 	wp_enqueue_script('slick-js', "//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js", ['jquery'], null, true);
+  wp_enqueue_script('imagesloaded', "https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js", ['jquery'], null, true);
+wp_enqueue_script('packery', "https://unpkg.com/packery@2/dist/packery.pkgd.js", ['jquery'], null, true);
 
 	wp_enqueue_script('veganease-styles-js', get_template_directory_uri() . $main->js, ['jquery', 'slick-js'], null, true);
 

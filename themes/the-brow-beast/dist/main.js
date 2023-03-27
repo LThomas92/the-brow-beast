@@ -127,19 +127,16 @@ $(document).ready(function () {
     });
   });
 
-  $('.grid').masonry({
-    itemSelector: ".grid-item",
-    columnWidth: ".grid-item",
-    // percentPosition: true,
-    gutter: 10,
-    fitWidth: true
+  var $grid = jQuery('.grid');
+
+  $grid.imagesLoaded().progress(function () {
+    $grid.packery({
+      // options
+      itemSelector: '.grid-item',
+      gutter: '.gutter',
+      percentPosition: true
+    });
   });
-
-  var colWidth = $(".grid-item").width();
-
-  window.onresize = function () {
-    var colWidth = $(".grid-item").width();
-  };
 
   //slick js
   $('.c-homepage-slider__slides').slick({
