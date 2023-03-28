@@ -5,6 +5,17 @@ let gutenbergScrollAnims = false;
 let blockTriggerHeight = $(window).height() * 0.33;
 
 $( document ).ready(function() {
+  $('.site-footer__signup-cta').click(function() {
+    $('.dark-bg').addClass('show-dark-bg');
+    $('.c-newsletter-popup').addClass('c-newsletter-popup__active');
+  });
+  
+  $('.c-newsletter-popup__close').click(function() {
+    $('.dark-bg').removeClass('show-dark-bg');
+    $('.c-newsletter-popup').removeClass('c-newsletter-popup__active');
+  });
+  
+
   $('.c-page-services__service').each(function() {
     $(this).find('.c-page-services__more-info').click(function() {
     $(this).siblings('.c-page-services__more-info-text').removeClass('hide-popup');
@@ -43,16 +54,6 @@ $('.c-terms-and-conditions__list-title').click(function() {
       $(this).addClass('active-content');
     }
   });
-});
-
-$('.site-footer__signup-cta').click(function() {
-  $('.dark-bg').addClass('show-dark-bg');
-  $('.c-newsletter-popup').addClass('c-newsletter-popup__active');
-});
-
-$('.c-newsletter-popup__close').click(function() {
-  $('.dark-bg').removeClass('show-dark-bg');
-  $('.c-newsletter-popup').removeClass('c-newsletter-popup__active');
 });
 
 var $grid = jQuery('.grid');

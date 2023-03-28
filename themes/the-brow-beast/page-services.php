@@ -13,7 +13,7 @@ $the_query = new WP_Query( $args ); ?>
     <?php while ( $the_query->have_posts() ) : $the_query->the_post(); 
       $cat = get_the_category();
       $catName = $cat[0]->cat_name;
-      $catLink = get_category_link($cat[0]->cat_ID);
+      // $catLink = get_category_link($cat[0]->cat_ID);
       $thumbnail_id = get_post_thumbnail_id( $post->ID );
       $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
       $serviceDuration = get_field('service_duration_&_price', $post->ID);
@@ -28,7 +28,7 @@ $the_query = new WP_Query( $args ); ?>
           </div>
           <div class="c-page-services__white-bottom">
             <div class="c-page-services__service-meta">
-            <a class="c-page-services__service-cat" href="<?php echo esc_url($catLink); ?>" class="c-page-services__cat"><?php echo $catName; ?></a>
+            <p class="c-page-services__service-cat" class="c-page-services__cat"><?php echo $catName; ?></p>
             <a class="c-page-services__more-info">More Info</a>
             <?php if($serviceMoreInfo) { ?>
             <div class="c-page-services__more-info-text hide-popup">
