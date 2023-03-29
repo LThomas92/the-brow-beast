@@ -84,9 +84,31 @@ endif; ?>
     </div> <!-- Inner Content -->
 </section>
 
-<section class="c-homepage-testimonials">
+
+<section class="c-homepage-testimonials gutenberg-styles">
     <div class="c-homepage-testimonials-content container-margins">
+       <?php $args = array( 
+        'posts_per_page' => -1, 
+        'post_type' => 'reviews', 
+        'post_status' => 'publish' 
+    ); ?>
         <h2 class="c-homepage-testimonials__title">Testimonials</h2>
+
+        <?php $reviewsQuery = new WP_Query( $args ); 
+              if( $reviewsQuery->have_posts() ) : ?>
+                <ul class="c-testimonials">
+                <?php while( $reviewsQuery->have_posts() ):
+                    $reviewsQuery->the_post(); ?>
+                    <li class="c-testimonials__testimonial">
+                        <div class="c-testimonials__testimonial-content"><?php the_content(); ?></div>
+                        <h4 class="c-testimonials__testimonial-author"><?php the_title(); ?></h4>
+                    </li>
+                    <!-- Do something here -->
+                    <?php endwhile; ?>
+                </ul>
+                   
+                       <?php wp_reset_postdata(); ?>
+                   <?php endif; ?>
     </div>
 </section>
 

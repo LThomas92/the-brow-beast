@@ -149,6 +149,17 @@ $(document).ready(function () {
   });
 
   //slick js
+  $('.c-testimonials').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: false,
+    autoplay: false,
+    autoplaySpeed: 5000,
+    fade: true,
+    fadeSpeed: 3000
+  });
+
   $('.c-homepage-slider__slides').slick({
     slidesToShow: 1,
     slidesToScroll: 1,

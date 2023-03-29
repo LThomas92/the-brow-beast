@@ -29,7 +29,9 @@ $the_query = new WP_Query( $args ); ?>
           <div class="c-page-services__white-bottom">
             <div class="c-page-services__service-meta">
             <p class="c-page-services__service-cat" class="c-page-services__cat"><?php echo $catName; ?></p>
+            <?php if($serviceMoreInfo) { ?>
             <a class="c-page-services__more-info">More Info</a>
+            <?php } ?>
             <?php if($serviceMoreInfo) { ?>
             <div class="c-page-services__more-info-text hide-popup">
               <?php echo $serviceMoreInfo; ?>

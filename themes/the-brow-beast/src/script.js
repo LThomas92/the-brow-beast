@@ -15,8 +15,7 @@ $( document ).ready(function() {
     $('.c-newsletter-popup').removeClass('c-newsletter-popup__active');
   });
   
-
-  $('.c-page-services__service').each(function() {
+$('.c-page-services__service').each(function() {
     $(this).find('.c-page-services__more-info').click(function() {
     $(this).siblings('.c-page-services__more-info-text').removeClass('hide-popup');
     $(this).siblings('.c-page-services__more-info-text').addClass('show-more-info-popup');
@@ -69,6 +68,17 @@ $grid.imagesLoaded().progress( function() {
 });
 
   //slick js
+  $('.c-testimonials').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrows: false,
+    autoplay: false,
+    autoplaySpeed: 5000,
+    fade: true,
+    fadeSpeed: 3000
+  });
+
   $('.c-homepage-slider__slides').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -79,7 +89,6 @@ $grid.imagesLoaded().progress( function() {
     fade: true,
     fadeSpeed: 1000
   });
-
 
   if ( jQuery(".gutenberg-styles > *").length &&
   !(window.location.hash != "" && jQuery(window.location.hash).length)
