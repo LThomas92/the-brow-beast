@@ -25,7 +25,7 @@
     height: 6rem; }
     @media only screen and (max-width: 767px) {
       .site-header__logo {
-        max-width: 45px;
+        max-width: 100px;
         width: 100%; } }
     .site-header__logo g {
       fill: #B06F44 !important; }
@@ -150,7 +150,8 @@
   @media only screen and (max-width: 767px) {
     .mobile-menu-header-search-form .header-search-form {
       margin-left: 3rem;
-      margin-right: 3rem; } }
+      margin-right: 3rem;
+      pointer-events: unset; } }
 
 .mobile-menu-header-search-form form {
   border-bottom: 1px solid #fff; }
@@ -1057,7 +1058,7 @@
     @media only screen and (max-width: 767px) {
       .c-search-results__cat {
         position: unset;
-        margin-left: 7rem; } }
+        margin-left: 3rem; } }
 
 .c-terms-and-conditions {
   background-color: #fff;
@@ -1138,6 +1139,9 @@
 
 .active-content {
   max-height: 800px; }
+  @media only screen and (max-width: 767px) {
+    .active-content {
+      max-height: 100%; } }
 
 .c-page-contact-us {
   margin: 4rem 0; }

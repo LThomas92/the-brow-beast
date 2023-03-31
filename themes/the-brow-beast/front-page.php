@@ -66,7 +66,7 @@ endif; ?>
             $desc = get_field('service_description', $service->ID)
             ?>
             <li class="c-homepage-featured-services__service">
-                <a href="<?php echo $link; ?>">
+                <a href="<?php echo site_url() . '/book-now'; ?>">
                 <figure class="c-homepage-featured-services__service-img">
                     <img src="<?php echo $image; ?>" alt="The Brow Beast Service">
                 </figure>

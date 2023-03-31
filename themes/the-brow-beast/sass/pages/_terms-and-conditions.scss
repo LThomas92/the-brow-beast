@@ -89,4 +89,7 @@
 
 .active-content {
     max-height: 800px;
+    @media only screen and (max-width: $mobile_max) {
+        max-height: 100%;
+    }
 }
