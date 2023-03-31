@@ -3,6 +3,7 @@
   &__bg-container {
     background-color: $white;
     padding: 2rem 4.5rem;
+    box-shadow: $box-shadow-light-black;
     @media only screen and (max-width: $mobile_max) {
       padding: 2rem 2.5rem;
     }
