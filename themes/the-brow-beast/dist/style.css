@@ -536,14 +536,14 @@
       vertical-align: middle;
       margin-right: 2.5rem; }
 
+.c-homepage-testimonials-content {
+  display: block; }
+
 .c-testimonials {
   list-style-type: none; }
   .c-testimonials .slick-track {
     width: 100% !important; }
   .c-testimonials__testimonial {
-    max-width: 500px;
-    width: 100% !important;
-    margin-top: 2rem;
     position: relative; }
     .c-testimonials__testimonial p {
       font-weight: 200; }

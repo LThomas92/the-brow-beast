@@ -223,15 +223,16 @@
     }
 }
 
+.c-homepage-testimonials-content {
+    display: block;
+}
+
 .c-testimonials {
     list-style-type: none;
     .slick-track {
         width: 100% !important;
     }
     &__testimonial {
-        max-width: 500px;
-        width: 100% !important;
-        margin-top: 2rem;
         position: relative;
         p {
             font-weight: 200;

@@ -103,15 +103,12 @@ endif; ?>
                         <div class="c-testimonials__testimonial-content"><?php the_content(); ?></div>
                         <h4 class="c-testimonials__testimonial-author"><?php the_title(); ?></h4>
                     </li>
-                    <!-- Do something here -->
                     <?php endwhile; ?>
                 </ul>
-                   
+
                        <?php wp_reset_postdata(); ?>
                    <?php endif; ?>
     </div>
 </section>
-
-
 
 <?php get_footer(); ?>
